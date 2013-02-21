@@ -31,7 +31,7 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
         
    * Remove the index.html
    
-       $ rm public/index.html
+            $ rm public/index.html
        
    * Setup your routes to go to the blog index by changing config/routes.rb to 
    
@@ -49,8 +49,10 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
        - Change of labels
        - Change of layout - have the index look more like a blog showing the whole blog article, or a larger portion with a "read the rest"
 
-4. Commit and Push your code to your fork
-5. Send a pull request, we will review your code and get back to you.  If your GitHub profile does not include your name, please include your name in the pull request.
+# When you're done
+
+1. Commit and Push your code to your fork
+2. Send a pull request, we will review your code and get back to you.  If your GitHub profile does not include your name, please include your name in the pull request.
 
 
 Good luck!
