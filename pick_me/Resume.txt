@@ -25,7 +25,7 @@ Related Courses:
 
 ==== Tsinghua University ====
 
-Sep 2006 ¨C Jul 2010  Beijing, China 
+Sep 2006 - Jul 2010  Beijing, China 
 
 Bachelor of Engineering - Automation Major
             
@@ -38,7 +38,7 @@ Bachelor of Engineering - Automation Major
 Mar 2012 - Jan 2013  Minneapolis, MN
  
 Part-time Software Developer Intern                                                                      
--- Individually design and develop the windows version of the company¡¯s major 
+-- Individually design and develop the windows version of the company's major 
    product Smart Chess based on its iOS version. [ C# .Net, MySQL ]
 
 ==== National CIMS Engineering Research Center ====  
@@ -71,4 +71,4 @@ Software Developer Intern
 
 ==== Other Projects ====
 
--- Firefox Extension ¨C eSports Game Reminder [ HTML, CSS, JavaScript, JQuery ]
+-- Firefox Extension - eSports Game Reminder [ HTML, CSS, JavaScript, JQuery ]
