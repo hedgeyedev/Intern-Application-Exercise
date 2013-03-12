@@ -1,0 +1,51 @@
+<div id = "wholepage">
+  <h1> Hedgeye Web development internship</h1>
+  <h3> Created by: Dmitri Ostapenko</h2>
+	<p id="notice"><%= notice %></p>
+	<div id = "show">
+		<div class = "post">
+			<p>
+			  <b>Title:</b>
+			  <%= @post.title %>
+			</p>
+
+			<p>
+			  <b>Content:</b>
+			  <%= @post.content %>
+			</p>
+
+			<%= link_to 'Edit the Post', edit_post_path(@post) %> |
+			<%= link_to 'Back to Posts', posts_path %>
+		</div>
+		<div id = "comment">
+			<h2>Comments</h2>
+			<% @post.comments.each do |comment| %>
+			<div class = "post">
+				  <p>
+				    <b>Name:</b>
+				    <%= comment.commenter %>
+				  </p>
+				 
+				  <p>
+				    <%= comment.body %>
+				  </p>
+				  
+			</div>
+			<% end %>
+			<h2>Post a new comment:</h2>
+			<%= form_for([@post, @post.comments.build]) do |f| %>
+			  <div class="field">
+			    <%= f.label :Name  %><br />
+			    <%= f.text_field :commenter%>
+			  </div>
+			  <div class="field">
+			    <%= f.text_area :body, "size"=> 150%>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit %>
+			  </div>
+			<% end %>
+		</div>
+
+	</div>
+</div>
