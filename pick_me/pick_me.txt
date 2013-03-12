@@ -1,0 +1,26 @@
+Hello Forrest Chang,
+
+Thank you for giving me this opportunity to apply to Hedgeye and show that I am the best candidate for this position. I am excited to see this position posting because my interests and the skills I have developed recently fall right into the skillset you are looking for.
+
+Here are some reasons why you should pick me:
+
+1. I have a passion for technology and coding.
+
+My passion in programming began in college when I took introductory courses in Java. As I gained more experience as a computer science student, I began to love programming. The process of developing something from my mind and describing it so the computer can solve my problem was intoxicating. I had this sense of accomplishment and ownership that I couldn't find in my other classes. This passion translated into a drive to seek out new technologies that I could use for future programs. In addition to my college coursework, I have taken online Udacity courses on many subjects, including JavaScript and Python. My proven drive to advance myself as a developer will translate into a desire to be a quick learner and contributor at Hedgeye.
+
+2. I have experience in object-oriented languages including Java and C++.
+
+I have taken two years of college coursework in Java and C++ where I learned the basic techniques for coding as well as debugging, testing and linear data structures in Java, so I have a strong foundation in object-oriented programming. I am currently taking a course in assembly language and I am beginning to understand the differences between OO and procedural programming. Beyond the scope of my classes, I have dabbled in JavaScript and I have taken two online courses in Python. My knowledge of object-oriented programming and desire to learn the tools I need to solve problems will be a great asset to Hedgeye because I will be familiar with new concepts and be able to learn and produce with new tools quickly.
+
+3. I am familiar with HTTP, XHTML, CSS, and JavaScript.
+
+I have recently focused my studies on web development, working through a Udacity course on web development. In that class, I developed a blog using a combination of Google App Engine, HTML, Python and CSS. The class taught me the basics of XML and XHTML along with other web technologies like databases (MySQL), cookies and encryption. I really enjoyed learning these technologies and look forward to using them at Hedgeye. In addition to this course, I took a short course on JavaScript so I know its syntax and structure. I will be famliar with the technologies used at Hedgeye and I am looking forward to helping the team develop with them.
+
+4. I am currently pursuing a Master in Computer Science degree at Cal Poly Pomona.
+
+If all goes well, I will be enrolling in Cal Poly Pomona's CS Master's program in the Fall. I only recently decided to pursue computer science, so I am currently taking additional classes there to qualify for the program. I decided to enroll in the program so I could qualify for internships like this one and pursue a career in software development.
+
+Thank you for considering my application for developer intern. I am the man for the job, and I will not disappoint.
+
+Pick me,
+James Kahng
