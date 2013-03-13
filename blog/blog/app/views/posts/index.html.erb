@@ -5,12 +5,12 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <div class = "post">
+  <div class="post">
     <h2>
-      <span class = "title">
+      <span class="title">
         <%= post.title %>
       </span>
-      <span class = "operation">
+      <span class="operation">
         <%= link_to 'Show', post %> |
         <%= link_to 'Edit', edit_post_path(post) %> |
         <%= link_to 'Delete', post, confirm: 'Are you sure?', method: :delete %>
