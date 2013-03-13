@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<div class = "post">
+<div class="post">
   <h2>
-    <span class = "title">
+    <span class="title">
       <%= @post.title %>
     </span>
-    <span class = "operation">
+    <span class="operation">
       <%= link_to 'Edit', edit_post_path(@post) %> |
       <%= link_to 'Delete', @post, confirm: 'Are you sure?', method: :delete %>
     </span>
