@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Title</th>
     <th>Content</th>
     <th></th>
@@ -11,11 +12,12 @@
 
 <% @posts.each do |post| %>
   <tr>
+    <td><%= post.name %></td>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Do you want to delete?' } %></td>
   </tr>
 <% end %>
 </table>
