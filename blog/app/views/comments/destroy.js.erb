@@ -1,0 +1,14 @@
+<%#
+# after destroy a comment, it removes the element from the dom
+%>
+
+$("#comment-id-<%=@comment.id%>").hide("blind"
+                                    , { direction: "vertical" }
+                                    , 500
+                                    , function() {
+                                      $(this).delete;
+                                    });
+
+myBlog.setDirty('all-posts',true);
+
+myBlog.refeshWidgets();

@@ -1,0 +1,52 @@
+
+@import 'shared-mixin';
+@import 'shared-colors';
+
+#most-popular-box {
+    
+    min-height: 200px;
+}
+
+#latest-comments-box {
+    .comment-box:hover {
+        cursor: pointer;
+        background: rgb(238,238,238);
+    }
+}
+
+#search-box {
+    input[type=text] {
+        width : 73%;
+        height: 28px;
+        padding: 1%;
+        @include inputStyle;
+        -webkit-appearance: textfield;
+        float: left;
+        margin: 3px;
+    }
+    .button {
+        float: left;
+    }
+    .content-body{
+        overflow: hidden;
+    }
+
+}
+
+.ui-sortable {
+    header {
+        cursor: move;
+    }
+    .ui-sortable-helper {
+        box-shadow: 1px 1px 20px #AAA;
+    }
+}
+
+
+.ui-tooltip.ui-widget {
+    background: rgba(0,0,0,0.7);
+    color: $opaqueWhite;
+    box-shadow: $tooltipShadow;
+    border: none;
+    border-radius: 3px;
+}

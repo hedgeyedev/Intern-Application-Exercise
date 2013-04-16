@@ -1,0 +1,45 @@
+<%#
+# manages the form errors and append the new comment into the dom
+%>
+
+<%if @comment.errors.any?%>
+
+var jsonErrors = <%=@comment.errors.to_json.html_safe%>;
+var jsonComment = <%=@comment.to_json.html_safe%>;
+Blog.$singlePostContainer
+          .children(".post")
+          .data("post-obj")
+          .setCommentForm('<%=escape_javascript(render "form_comment")%>');
+
+$("#comment_commenter").val(jsonComment.commenter);
+$("#comment_body").val(jsonComment.body);
+
+for (var key in jsonErrors) {
+  if (jsonErrors.hasOwnProperty(key)) {
+    var $message = $('<div class="error-message"/>');
+    $message.text(jsonErrors[key]);
+
+    var $fieldError = $('<div class="field-error"/>');
+    $("#comment_"+key).wrap($fieldError);
+
+    var $fieldError = $("#comment_"+key).parents(".field-error");
+
+    $fieldError.append($message);
+    
+  }
+}
+
+<%else%>
+myBlog.prependComment(<%=@comment.to_json(:methods => :created_at_formatted).html_safe%>
+                    ,$(".comments-content",Blog.$singlePostContainer)
+                    , {animate: true});
+
+myBlog.setDirty('all-posts',true);
+Blog.$singlePostContainer
+          .children(".post")
+          .data("post-obj")
+          .setCommentForm('<%=escape_javascript(render "form_comment")%>');
+
+myBlog.refeshWidgets();
+<%end%>
+

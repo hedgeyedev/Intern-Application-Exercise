@@ -1,0 +1,18 @@
+<%#
+# displays lates comments into widget container
+%>
+
+
+<%if @comments.empty?%>
+  Blog.$latestCommentsWidget.MyUIwidget("body").html(myBlog.createEmptyMessageElm("no comment has been written yet"))
+<%else%>
+
+myBlog.populateCommentsContainer(<%=@comments.to_json(:methods => :created_at_formatted).html_safe%>
+                      , Blog.$latestCommentsWidget.MyUIwidget("body"),{type: 'append'
+                                                                        , commentOptions :{deletable: false}});
+
+$(".comment-box",Blog.$latestCommentsWidget).attr("title","Go to post");
+$(".comment-box",Blog.$latestCommentsWidget).attr("id",false);
+$(".comment-box",Blog.$latestCommentsWidget).tooltip();
+
+<%end%>

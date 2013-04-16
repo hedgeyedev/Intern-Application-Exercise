@@ -1,0 +1,93 @@
+
+
+@import 'shared-colors';
+
+form input[type=submit] {
+    margin-left: 0px;
+}
+
+form .label {
+    margin-bottom: 3px;
+}
+form .field {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    display: none;
+}
+
+form .field-error {
+  margin-bottom: 10px;
+}
+
+form .field-error input[type=text],
+form .field-error textarea {
+    background: #fef1ec;
+    border: 1px solid #ff1f1f
+}
+form .field-error .error-message {
+  display: block;
+  font-size:12px;
+  font-weight: bold;
+  color : #ff1f1f;
+
+}
+
+
+/*blog customization*/
+
+@mixin inputStyle {
+    border-radius: 4px;
+    font-size: 1.2em;
+    border: 1px solid #aaa;
+    padding: 1%;
+
+}
+
+form {
+
+    font-size: 12px;
+    input[type=text].small{
+        height: 1em;
+        width: 100px;
+    }
+    textarea.small {
+        height: 40px;
+        width: 98%;
+
+    }
+
+
+}
+
+form input[type=text]{
+    height: 25px;
+    @include inputStyle;
+    width: 98%;
+    padding: 7px;
+}
+
+form textarea {
+    @include inputStyle;
+    width: 98%;
+    height: 300px;
+}
+
+
+.label {
+    color : #FF8000;
+    font-size: 1.2em;
+    text-shadow: $whiteShadow;
+}
+
+input[type=text],
+textarea{
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+input[type=text]:focus,
+textarea:focus{
+     box-shadow:inset -3px 5px 6px #ccc;
+}

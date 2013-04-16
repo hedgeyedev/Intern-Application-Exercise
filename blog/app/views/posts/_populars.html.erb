@@ -1,0 +1,14 @@
+<%#
+# Get the list of most popular posts in a html list
+%>
+
+
+
+<ul class="most-popular">
+    <%if @posts.empty?%>
+      <li class="empty-message">No post has been read yet</li>
+    <%end%>
+    <%@posts.each do |post| %>
+    <li id="mp-post-<%=post.id%>"><%= link_to "#{post.title}", post, :title =>  pluralize( post.readers , "reader"),:remote => true %> </li>
+    <%end%>
+</ul>

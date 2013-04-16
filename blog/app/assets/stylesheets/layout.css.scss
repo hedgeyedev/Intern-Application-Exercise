@@ -1,0 +1,95 @@
+
+
+@import 'shared-mixin';
+
+@import 'shared-colors';
+
+
+body,html {
+    background : $opaqueWhite;
+    height: 100%;
+}
+
+
+#body-wrapper {
+    display: block;
+    overflow: scroll;
+    height: 100%;
+    
+}
+
+#banner {
+    text-shadow: $blackShadow;
+    font-size: 2em;
+    line-height: normal;
+    padding-left: 150px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background: url('bg.png');
+    color: $opaqueWhite;
+    box-shadow: 0px 5px 5px #DDD;
+    position: relative;
+
+}
+
+#outer-wrapper {
+    color: #333;
+    width: 1040px;
+    margin: 0px auto 100px !important;
+    background: $opaqueWhite;
+    overflow: hidden;
+    min-height: 100%;
+    //box-shadow: $blackShadow;
+
+}
+
+
+
+#top-bar {
+    clear: both;
+    height: 40px;
+    box-shadow: $topBarShadow;
+    text-align:right;
+    z-index: 10;
+    @include bar-style;
+    color : $opaqueWhite;
+    a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      color: $opaqueWhite;
+      &:hover{
+        color: $opaqueWhite;
+        text-shadow: none;
+      }
+    }
+    
+}
+
+#side-content {
+    float: right;
+    width: 300px;
+}
+
+#main-content {
+    float: left;
+    width: 720px;
+    min-height: 450px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    .content-header {
+      margin-top:15px;
+      margin-left:10px;
+    }
+    .content-body {
+        amargin-left:2%;
+        amargin-top :10px;
+        awidth: 95%;
+    }
+}
+
+
+
+
+

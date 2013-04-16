@@ -1,0 +1,12 @@
+<%#
+# Display a form with empty fields for creation of a post
+%>
+
+myBlog.appendForm("<%=escape_javascript(render 'form')%>");
+
+myBlog.toggleWallContent('form');
+myBlog.changeTemplate('new');
+
+//remove loader if any
+Blog.loading(Blog.$wallContainer, false);
+

@@ -1,0 +1,19 @@
+<%#
+# loads Post comments into a popup
+%>
+
+
+var $commentsContainer = myBlog.populateCommentsContainer(<%=@post.comments.to_json(:methods => :created_at_formatted).html_safe%>
+                                                        , $('<div/>'));
+
+var postId = <%=@post.id%>;
+$(".delete",$commentsContainer).remove();
+var $addCommentLink = $('<a href="#" class="add-comment">write your own comment</a>');
+$addCommentLink.click(function(){
+  Blog.$popupContainer.MyUIwidget("destroy");
+  
+  controller.getPost(postId);
+});
+$commentsContainer.prepend($addCommentLink);
+
+myBlog.openPopup($commentsContainer, 'Comments for <%=escape_javascript(@post.title)%>');

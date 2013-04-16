@@ -1,0 +1,21 @@
+<%#
+# manages fields with errors
+%>
+
+myBlog.appendForm("<%=escape_javascript(render 'form')%>");
+myBlog.toggleWallContent('form');
+
+<% if @post.errors.any? %>
+  var options = {msg: '', type:'error'};
+
+
+      options.msg = '<%= escape_javascript(pluralize(@post.errors.count, "error")) %> prohibited this post from being saved';
+
+
+   $("#notice").MyUInotice(options).show();
+
+
+   $("form").on("click",".field-error", function(){
+     $(this).removeClass("field-error");
+   });
+<% end %>

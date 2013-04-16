@@ -1,0 +1,68 @@
+@mixin action-bar-color {
+    background: -moz-linear-gradient(top, #f2f2f2, #e2e2e2);
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e2e2e2));
+    background: linear-gradient(top, #f2f2f2, #e2e2e2);
+    border-bottom: 1px solid rgba(172,179,183,0.5);
+    -webkit-box-shadow: 0 1px 1px #fff inset;
+    box-shadow: 0 1px 1px #fff  inset;
+}
+
+
+@mixin button-style($bg,$color,$borderColor) {
+    padding: 5px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 16px;
+    color: $color;
+    text-shadow: none;
+    background: $bg;
+    text-align: center;
+    border: 1px solid $borderColor;
+    transition: border, box-shadow 1.5s;
+    -moz-transition: border, box-shadow 1.5s;
+    -webkit-transition: border, box-shadow 1.5s;
+    -o-transition: border, box-shadow 1.5s;
+    &:hover {
+        cursor: pointer;
+        box-shadow:inset 0px 10px 10px #eee ;
+        text-decoration:none;
+        text-shadow: $whiteShadow;
+   }
+
+}
+
+
+@mixin inputStyle {
+    border-radius: 4px;
+    font-size: 1.2em;
+    border: 1px solid #aaa;
+    padding: 1%;
+
+}
+
+@mixin bar-style {
+    background: rgb(0,89,206); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(0,89,206,1) 0%, rgba(0,136,204,1) 50%, rgba(0,101,209,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,89,206,1)), color-stop(50%,rgba(0,136,204,1)), color-stop(100%,rgba(0,101,209,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,89,206,1) 0%,rgba(0,136,204,1) 50%,rgba(0,101,209,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,89,206,1) 0%,rgba(0,136,204,1) 50%,rgba(0,101,209,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,89,206,1) 0%,rgba(0,136,204,1) 50%,rgba(0,101,209,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,89,206,1) 0%,rgba(0,136,204,1) 50%,rgba(0,101,209,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0059ce', endColorstr='#0065d1',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin comment-background {
+    background: rgb(241,241,241); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(241,241,241,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,241,241,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin empty-message-style {
+    color: #888;
+    text-shadow: 1px 1px 1px #fff;
+}

@@ -1,0 +1,20 @@
+<%#
+# Display all posts
+%>
+
+
+myBlog.flushWall();
+
+var post;
+<%@posts.each do |post|%>
+  post = <%=post.to_json(:methods => [:updated_at_formatted,:no_of_comments]).html_safe%>
+  myBlog.appendPost(post);
+<%end%>
+
+//remove loading if any
+Blog.loading(Blog.$wallContainer, false);
+
+$(".post",Blog.$allPostsContainer).addClass("title-only");
+myBlog.setDirty('all-posts',true);
+
+myBlog.changeTemplate("index-all");
