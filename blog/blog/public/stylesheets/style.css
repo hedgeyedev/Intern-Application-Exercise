@@ -1,0 +1,296 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: #d6e4cd;
+  background-image: url("/images/bg.jpg");
+  background-repeat: repeat-x;
+  margin:0;
+  padding:0;
+  text-align:center;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+p{
+  font-size: 14px;
+  text-align:justify;
+  text-indent: 3em;
+}
+
+#flash{
+  width: 100%;
+  background: #faffae;
+  border: solid 1px #666;
+  font-size: 10px;  
+}
+
+#main{
+  position:relative;
+  margin:0 auto;
+  margin-top:0px;
+  text-align:left;
+  color:#333;
+  width:990px;
+  font-size: 14px;
+}
+
+/************ TOPO *************/
+#top{
+  position: relative;
+  width: 100%;
+  display:table;
+}
+
+/* Logotipo UFABC */
+#top h1{
+  font-family: "Verdana";
+  position: relative;
+  float: left;
+  left:25px;
+  width: 112px;
+  height: 91px;
+  display: block;
+  text-indent: -99999px;
+  background: url(/images/logo_ufabc.jpg);
+}
+
+#top h1 a{
+  outline: none;
+  width: 112px;
+  height: 91px;
+  display: block;
+  text-decoration: none;
+}
+
+#top #right{
+  position: relative; 
+  float: right; 
+  width: 840px;
+}
+
+/* Título do Site */
+#top #right h2{
+  font-family:"Comic Sans MS";
+  font-size: 20px;
+  color: #00A030;
+  position:relative;
+  top: 0px;
+  right: 0px;
+  background: url(/images/titulo.jpg) no-repeat;
+  width: 840px;
+  height: 29px;
+  text-align: center;
+  padding-top: 0px;
+  letter-spacing: 2px;
+}
+
+/* Menu horizontal */
+#top #right ul{
+  position: relative;
+  display: table;
+  top: 33px;
+  right: 0px;
+  width: 840px;
+  text-align: center;
+}
+
+#top #right ul li {display: inline; margin-left:25px;}
+#top #right ul li a{font-size:11px; text-decoration:none; color:#666; letter-spacing: 1px;}
+#top #right ul li a:hover{color:#00A030; text-decoration:underline;}
+
+
+
+/************ MEIO *************/
+#middle{
+  position: relative;
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Menu vertical */
+#middle ul.menu{
+  position: relative;
+  float: left;
+  width: 145px;
+  top: 80px;
+  list-style: none;
+}
+
+#middle ul.menu p{font-size: 8px; text-align: center; text-indent:0;}
+#middle ul.menu li{margin-bottom: 15px; margin-left:10px;}
+#middle ul.menu li a{font-size:12px; text-decoration:none; color:#666; font-weight: bold;}
+#middle ul.menu li a:hover{color:#00A030; text-decoration:underline;}
+
+/* Conteúdo */
+#middle #content{
+  float: right;
+  width: 840px;
+  background: #d6e4cd;
+}
+
+#middle #content #top_img{
+  position: relative;
+  background: url("/images/top.jpg");
+  height: 24px;
+  width: 840px;
+}
+
+#middle #content #inside{
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 550px;
+}
+
+#middle #content #inside h1{font-size: 17px; border-bottom: solid 1px #00A030; width: 820px; margin-top: -15px; margin-bottom: 20px; padding-bottom: 3px; color: #00A030;}
+#middle #content #inside h2{font-size: 13px; margin-bottom: 5px;}
+#middle #content #inside p{font-size: 11px; margin-bottom: 10px;}
+#middle #content #inside ul{font-size: 12px; margin-bottom: 20px; list-style: inside;}
+#middle #content #inside ul li{margin-bottom: 5px;}
+#middle #content #inside a{/*color: #0d593b; */text-decoration: underline; font-size: 10px;}
+#middle #content #inside a:hover{text-decoration: none;}
+#middle #content #inside ul.listagem{list-style: none}
+#middle #content #inside ul.listagem li{margin-bottom: 25px; border-bottom: dashed 1px #666; padding-bottom: 5px}
+#middle #content #inside ul.listagem li p{font-size: 12px}
+#middle #content #inside ul.listagem li p.data_criacao{font-size: 9px; text-indent: 0}
+#middle #content #inside #home{width: 600px; border: dashed 2px #aaa; padding: 10px; margin: 0 auto; margin-top: 40px; }
+#middle #content #inside ul.nomes{font-size: 14px; text-align: center; list-style: none; width: 700px; border: dashed 2px #aaa; padding: 10px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;}
+ 
+
+
+
+/*RODAPE
+#bottom{
+  font-size: 10px;
+  color: #333;
+  margin-top:5px;
+  padding:5px;
+  text-align:center;
+  background:#ccc;
+   
+}
+
+
+/*FORMULÁRIO*/
+      
+
+        #formulario fieldset{
+                        margin:0px;
+                padding:5px;
+                border: solid 1px #CCCCCC;
+                        width:96%;
+        }
+        
+        #formulario legend{
+                margin:0px;
+                        padding:0px;
+                        font-weight:bold;
+        }
+
+                #formulario input{
+                border-top: 1px solid #333;
+                border-left: 1px solid #333;
+                border-bottom: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                font-size: 12px;
+                margin-bottom: 0.8em;
+                color: #000000;
+                        height:15px;
+
+        }
+                
+#formulario input.Submit {
+        
+        border-top: 1px solid #333;
+        border-left: 1px solid #333;
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        font-size: 12px;
+        margin-bottom: 0.8em;
+        height:20px;
+        width:200px;
+        color:#000;
+        
+}
+#formulario input.Button {
+        background-color:#ccc;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 9px;
+        color: #000;
+        font-weight: bold;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        width: 150px;
+        height: 20px;
+}
+        #formulario textarea{
+                border-top: 1px solid #333;
+                border-left: 1px solid #333;
+                border-bottom: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                font-size: 12px;
+                margin-bottom: 0.8em;
+                color: #000000;
+                
+    }
+        #formulario select{
+        border: 1px solid #333;
+        font-size: 13px;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+        
+        #formulario select.lista{
+        border: 1px solid #333;
+        font-size: 13px;
+        margin-bottom: 5px;
+        color: #000000;
+                margin-top:5px;
+                height:100px;
+    }
+
+       
+
+        #formulario label{
+
+                display: block;
+
+	        width: 100px;
+
+
+                float: left;
+
+        }
+
+#listas .lista-par {
+  background: #f0f0f0;
+}
+
+#listas .lista-impar {
+  background: #d0d0d0;
+}
+
+#listas .lista-acoes {
+  font-size: x-small;
+  text-align: right;
+  padding-left: 1em;
+}
+
+#listas .lista-titulo {
+color: #244;
+font-weight: bold;
+font-size: larger;
+}
+
+#listas .lista-arquivo {
+color: #003366;
+font-weight: bold;
+font-size: small;
+}
+
+#icaro_testando{
+margin:0px;
+}
