@@ -10,6 +10,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def index_comments
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+
+
+
   # GET /posts/1
   # GET /posts/1.json
   def show

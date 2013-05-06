@@ -7,14 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!--div id="user_nav">
+  <%# if current_user %>
+    Signed in as <strong><%=# current_user.name %></strong>!
+    <%#= link_to "Sign out", signout_path, id: "sign_out" %>
+  <%# else %>
+    <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <%# end %>
+</div-->
 <div id="top">
-New blog
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+My first blog
 </div>
 <div id = "middle">
 <div id = "content" >

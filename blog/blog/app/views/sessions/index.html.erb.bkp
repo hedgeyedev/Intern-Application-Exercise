@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <td>
+            <div id = 'writers_login'>
+                <%=form_tag 'sessions#login' do %>
+                    Login <%=text_field_tag 'username' %> <br/>
+                    Password <%=password_field_tag 'password' %>
+                    <%= submit_tag "Login" %>
+                <%end%>
+            </div>
+        </td>
+        <td>
+            <div id= 'commenters_login'>
+                Login with Facebook account:
+                <%= link_to 'Connect to Facebook',  "/auth/facebook", id: "sign_in" %>
+
+               
+            </div>
+        </td>
+    </tr>
+</table>

@@ -1,10 +1,26 @@
 Blog::Application.routes.draw do
 
-  resources :posts
+  resources :logins
 
 
-  resources :posts
-  root :to => "posts#index"
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'posts4comments', to: 'posts#index_comments', via: 'get'
+  match 'sessions' => 'sessions#index'
+
+  resources :posts do
+    resources :comments
+  end
+  root to: 'sessions#index'
+
+
+
+#  resources :comments
+
+
+ # resources :posts
+#  root :to => "posts#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -61,4 +77,7 @@ Blog::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
+
 end
