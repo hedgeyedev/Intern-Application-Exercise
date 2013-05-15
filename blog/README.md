@@ -14,23 +14,24 @@
             $ rails generate scaffold Post title:string content:text
             $ rake db:migrate
 
-        
+
    * Remove the index.html
-   
+
        $ rm public/index.html
-       
-   * Setup your routes to go to the blog index by changing config/routes.rb to 
-   
+
+   * Setup your routes to go to the blog index by changing config/routes.rb to
+
             App::Application.routes.draw do
                resources :posts
                root :to => "posts#index"
             end
-       
+
    * Run the server and when it's up [check it out](http://localhost:3000)
-   
+
             $ rails s
-       
+
    * Congratulations, you now have a functional but "butt ugly" (the technical term) blog, make it a little less ugly and clunky. Do what you can. Suggestions:
        - Better (any) styling
        - Change of labels
        - Change of layout - have the index look more like a blog showing the whole blog article, or a larger portion with a "read the rest"
+       - Additional functionality, esp. that showing Ruby and/or other web development skills for extra credit
