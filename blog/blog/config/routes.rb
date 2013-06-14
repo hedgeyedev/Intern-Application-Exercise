@@ -1,4 +1,4 @@
-App::Application.routes.draw do
+Blog::Application.routes.draw do
        resources :posts
        root :to => "posts#index"
     end
