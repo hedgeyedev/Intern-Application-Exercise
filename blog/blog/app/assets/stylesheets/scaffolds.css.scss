@@ -1,16 +1,15 @@
+
+
 body {
-  background-color: #fff;
+  background-color: #F2DC87;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+ 
 }
-
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+h1 { height: 2em; padding-top: 1em; margin-top: -.3em; text-align: center; 
+  background: #993120; color: #FFFFFF;}
 
 pre {
   background-color: #eee;
@@ -67,3 +66,4 @@ div {
     list-style: square;
   }
 }
+
