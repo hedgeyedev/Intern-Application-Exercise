@@ -1,0 +1,8 @@
+Hello!
+
+My name is John Marinelli.  Firstly, I want to say that this exercise made your company stand out to me - when I am applying for software development internships, I am always worried that my resume/portfolio doesn't totally reflect my skills and abilities.  
+
+Personal website: marinelliworks.com
+Portfolio: marinelliworks.com/portfolio.html
+
+//TODO: the rest...  
