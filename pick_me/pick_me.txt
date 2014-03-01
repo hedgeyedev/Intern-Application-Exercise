@@ -2,7 +2,25 @@ Hello!
 
 My name is John Marinelli.  Firstly, I want to say that this exercise made your company stand out to me - when I am applying for software development internships, I am always worried that my resume/portfolio doesn't totally reflect my skills and abilities.  
 
+I am a good candidate to work at Hedgeye because I am goal-oriented, am able to work independently without pestering others, and take great pride in my work.
+I would be excited to work at Hedgeye because business and investing is 
+a field that I am not familiar with, but have had an interest in for a couple of years.
+
+I am interested in building software with robust and manageable designs.
+Since I started with C++ and use it almost every day, I know the importance of 
+project organization.  
+For web development, I use Django; in fact, this is my first Ruby on Rails app!
+However, I hope that this exercise shows I can pick up new technologies pretty easily.
+
+Other than programming, I enjoy performing and composing music, Arduino, and reading.
+
+I hope I have shown myself to be a good candidate for this position!
+
 Personal website: marinelliworks.com
 Portfolio: marinelliworks.com/portfolio.html
 
-//TODO: the rest...  
+*Quick note about the time of internship:  I would *prefer* to be in a summer
+internship, but am completely capable of doing a spring/fall/winter internship.
+
+Thanks for your time,
+John
