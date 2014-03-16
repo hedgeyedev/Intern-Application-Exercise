@@ -1,0 +1,35 @@
+
+ <h1 class="title_thing">Hidden Gems</h1>
+ <h2 id="tagline">My Ruby on Rails Blog</h2> 
+ <h2 class="new_post"><%= link_to 'New Post', new_post_path %></h2>
+<table align="center">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+        <tr>
+          <td class="post_title"><%= link_to post.title, post %>
+          <div class="content_div">
+          <p class="post_content"><%= post.content %></p>
+          </div>
+          </td>
+          
+          <div class="button">
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+        </tr>  
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

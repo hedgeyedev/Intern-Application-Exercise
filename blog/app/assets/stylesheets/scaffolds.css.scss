@@ -1,0 +1,137 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: helvetica neue, verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+
+  font-family: helvetica neue, verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #ffffff;
+  &:visited {
+    color: #4682b4;
+  }
+  &:hover {
+    color: red;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 20px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#tagline {
+  color: #B0C4DE;
+  font-size: 15px;
+  text-align: left;
+}
+
+.title_thing {
+  padding-top: 20px;
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 72px;
+}
+
+.post_title{
+  color: #ffffff;
+  font-size: 36px;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.content_div{
+    text-align: left;
+    background-color: #B0C4DE;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    border-radius: 3px;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.post_content{
+    font-size: 12px;
+}
+
+#post{
+    font-size: 12px;
+    text-align: left;
+}
+
+#title{
+    padding-top: 20px;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 72px;
+    text-align: center;
+
+}
+.new_post{
+    text-align: right;
+    font-size: 20px;
+}
+
+#show_button{
+    font-size: 15px;
+    margin-top: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
