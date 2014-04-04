@@ -1,0 +1,22 @@
+<h1>My Blog</h1>
+    <% @posts.each do |post| %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>     <td><%= post.title %></td>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <tr>
+         <th>Content</th>
+        <td><%= post.content %></td><tr><%= link_to 'Show', post %>&nbsp;<%= link_to 'Edit', edit_post_path(post) %>&nbsp;<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
