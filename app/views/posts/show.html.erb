@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
+<center><p id="notice"><%= notice %></p>
+<table>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+ <tr><td> <strong>Title:</strong>
+  <td><%= @post.title %>
 
-<p>
+
+<tr><td>
   <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <td><%= @post.content %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<tr>
+<%= link_to image_tag("edit.png"), edit_post_path(@post) %> |
+<%= link_to image_tag("home.png"), posts_path %>
+</table></center>

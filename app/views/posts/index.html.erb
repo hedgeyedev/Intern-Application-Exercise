@@ -1,9 +1,14 @@
-<h1>My Blog</h1>
+<center><h1>My Blog</h1> <br><a href='<%=new_post_path %>'> <img src="images/newpost.png" alt="New post" /> </a><br><br>
+
     <% @posts.each do |post| %>
+
 <table>
   <thead>
+  <tr><td><%= post.created_at %><td><a href='<%= edit_post_path(post) %>'> <img src="images/edit.png"  alt="Edit" /> </a>
+              	 <%= link_to image_tag("delete.png"), post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+
     <tr>
-      <th>Title</th>     <td><%= post.title %></td>
+      <th>Title</th>     <td><a href='<%= post_path(post) %>'><%= post.title %></a></td>
     </tr>
   </thead>
 
@@ -11,7 +16,7 @@
 
       <tr>
          <th>Content</th>
-        <td><%= post.content %></td><tr><%= link_to 'Show', post %>&nbsp;<%= link_to 'Edit', edit_post_path(post) %>&nbsp;<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%=h truncate(post.content, :length => 50) %> <%= link_to "Read More", post_path(post)%></td><tr>
       </tr>
     <% end %>
   </tbody>
@@ -19,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+</center>
