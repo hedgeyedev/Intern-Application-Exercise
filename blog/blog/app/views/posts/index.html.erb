@@ -1,0 +1,56 @@
+<div class="container">
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="center jumbotron">
+  <h1>Simple blog</h1>
+</div> 
+
+<div class="row"> 
+<div class="col-sm-6 col-md-4 btn-custom">
+<%= link_to 'New Post', new_post_path, class: "btn btn-default btn-lg btn-block" %> 
+ </div>  
+ </div> 
+      <div class="row"> 
+      <% @posts.each do |post| %>
+
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+         <div class="caption">
+          <h3><%= post.title %></h3>
+          <% if post.content.length > 400 %>
+            <%= truncate(post.content, :length => 400) %>
+            <%= link_to '...Read more', '', class: "read-more-#{post.id}" %>
+            <script>
+             $('.read-more-<%= post.id %>').on('click', function(e) {
+             e.preventDefault()
+             $(this).parent().html('<h3><%= escape_javascript post.title %></h3> <%= escape_javascript post.content %> <%= escape_javascript link_to '...Read less', '', class: "read-more-#{post.id}" %>')
+              })
+
+             $('.read-less-<%= post.id %>').on('click', function(e) {
+             e.preventDefault()
+             $(this).parent().html('<h3><%= escape_javascript post.title %></h3> <%= escape_javascript truncate(post.content, :length => 400) %> <%= escape_javascript link_to '...Read more', '', class: "read-more-#{post.id}" %>')
+              })
+           </script>
+          <% else %>
+            <%= post.content %>
+          <% end %>
+        
+        
+        <p><%= link_to 'Show', post %> 
+        <%= link_to 'Edit', edit_post_path(post) %>
+        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+        
+      </div>
+    </div>
+    
+  </div>
+  <% end %>
+</div>
+</div>
+
+
+
+

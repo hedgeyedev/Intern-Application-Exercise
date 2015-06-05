@@ -1,0 +1,25 @@
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Simple blog</h1>
+</div> 
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class=" col-md-12">
+    <h3>
+      <%= @post.title %>
+    </h3>
+
+    <h4>
+      <%= @post.content %>
+    </h4>
+
+  <td><%= link_to 'Edit', edit_post_path(@post) %></td> |
+      <%= link_to 'Back', posts_path %>
+
+  </div>
+  
+</div>
+</div>

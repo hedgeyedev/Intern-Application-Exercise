@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "Title one"
+  content: "Content one"
+
+two:
+  title: "Title two"
+  content: "Content two"
