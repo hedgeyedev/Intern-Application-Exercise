@@ -15,7 +15,7 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
    * Add a file pick_me.txt which describes why we should choose you as an intern.  It would be nice to stand out, but a fallback would be typical cover letter type verbiage.  Include why you think our internship is interesting to you.
    * (Optional) Anything else you want us to know, resume, portfolio, etc. is appropriate.
 3. In the blog directory, create a simple Ruby on Rails scaffold based blog.  you will have to do the following
-   * setup your computer for Ruby on Rails development.  [Rails Installer](http://railsinstaller.org/) is a good start point for Windows and OSX, if you're running Linux, I imagine you know how to use your package manager to set it up.  This [setup for Ubuntu](http://coding.smashingmagazine.com/2011/06/21/set-up-an-ubuntu-local-development-machine-for-ruby-on-rails/) might be a good start point.
+   * setup your computer for Ruby on Rails development.  [Rails Installer](http://railsinstaller.org/) is a good start point for Windows and OSX, if you're running Linux, I imagine you know how to use your package manager to set it up.  This [setup for Ubuntu](https://gorails.com/setup/ubuntu/15.10) might be a good start point.
    * Create a rails project in the blog directory
 
             $ rails new blog
@@ -29,14 +29,9 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
             $ rails generate scaffold Post title:string content:text
             $ rake db:migrate
 
-
-   * Remove the index.html
-
-            $ rm public/index.html
-
    * Setup your routes to go to the blog index by changing config/routes.rb to
 
-            App::Application.routes.draw do
+            Rails.application.routes.draw do
                resources :posts
                root :to => "posts#index"
             end
