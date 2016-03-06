@@ -1,0 +1,20 @@
+  *******************************************
+  *                                         *
+  *        W E L C O M E  to  R O O T       *
+  *                                         *
+  *   Version   5.34/14  16 December 2013   *
+  *                                         *
+  *  You are welcome to visit our Web site  *
+  *          http://root.cern.ch            *
+  *                                         *
+  *******************************************
+
+ROOT 5.34/14 (heads/v5-34-00-patches@v5-34-13-131-gd110ad3, Jan 07 2014, 00:12:00 on linuxx8664gcc)
+
+CINT/ROOT C/C++ Interpreter version 5.18.00, July 2, 2010
+Type ? for help. Commands must be C++ statements.
+Enclose multiple statements between { }.
+Couldn't find font "-adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1",
+trying "fixed". Please fix your system so helvetica can be found, 
+this font typically is in the rpm (or pkg equivalent) package 
+XFree86-[75,100]dpi-fonts or fonts-xorg-[75,100]dpi.
