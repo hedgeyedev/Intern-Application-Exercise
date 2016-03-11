@@ -1,1 +1,14 @@
+### FOR THE BLOG LOGIN USERNAME: hedg PASSWORD: eye ###
 
+Hello, I'm Michael Trueba.
+
+I am a very organized and goal-oriented developer. Although, I am a student I use Python almost everyday for various programming assignments and sometimes personal projects.
+I've only ever published hackathon projects, but through them I've developed a very efficient workflow, that would be valuable in a production environment, over the past few years.
+I discovered Rails roughly a year ago and I've been using it alongside Django ever since.
+The level of automation in Rails makes it my preferred framework for meeting deadlines.
+
+I've always had an interest in the synergy between financial markets and technology.
+Hedgeye appears to be a company that is leveraging technology to the fullest extent to gain insight into financial markets.
+To me, that is very exciting. After I complete the classes for my degree in computer science this semester I plan to pursue a second major in economics.
+
+Thanks for your time and consideration.  --Also thanks for the programming exercise, it's a nice way to let applicants showcase their talent.

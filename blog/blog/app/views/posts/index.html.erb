@@ -1,0 +1,25 @@
+
+<% @posts.each do |post| %>
+<tr>
+  <h1><%= post.title %></h1>
+  <td><%= post.content.truncate_words(50) %></td>
+</tr>
+<div class = "container">
+  <div class="row">
+    <div class="span9">
+<div class="btn-group" role="group">
+  <a href="<%= post_path(post) %>" class="btn btn-primary" role="button">Read More</a>
+  <a href="<%= edit_post_path(post) %>" class="btn btn-primary" role="button">Edit</a>
+</div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class = "container">
+  <div class="row">
+    <div class="span11">
+      <a href="<%= new_post_path %>" class="btn btn-primary" role="button">New Post</a>
+    </div>
+  </div>
+</div>
