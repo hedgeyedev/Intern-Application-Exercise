@@ -11,7 +11,7 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
 # Instructions
 
 1. Fork this repository
-2. In the *pick_me* directly
+2. In the *pick_me* directory
    * Add a file pick_me.txt which describes why we should choose you as an intern.  It would be nice to stand out, but a fallback would be typical cover letter type verbiage.  Include why you think our internship is interesting to you.
    * (Optional) Anything else you want us to know, resume, portfolio, etc. is appropriate.
 3. In the blog directory, create a simple Ruby on Rails scaffold based blog.  you will have to do the following
