@@ -1,0 +1,67 @@
+Xhafer Rama
+
+
+101 Chestnut Street Berea CPO 1286, Kentucky 40404 | (859) 302-5175 | ramax@berea.edu
+
+
+
+EDUCATION
+Berea College, Berea, KY
+B.A. Computer & Information Science, Mathematics, and Economics        Expected: May 2017
+Concentration: Computational Mathematics                               Cumulative GPA: 3.71
+
+
+
+Honors/Awards: 
+•	Full Tuition Scholarship Recipient | Pugsley Freshman Award Excellence in Mathematics & Dean’s List
+•	Mathematics Labor Award: Most Distinguished Math TA Recipient for two consecutive years 
+•	Served as President of Danforth Hall and member of student government for an academic year   
+•	Pi Mu Epsilon Inductee Spring 2015 | EPT Honors Society 
+
+
+
+RELEVANT COURSEWORK:
+Mathematics: Calculus I-II-III, Linear Algebra, Numerical Linear Algebra, Probability, Statistics, Fundamental Concepts of Math, Advanced Discrete Mathematics, Differential Equation, Numerical Analysis, Abstract Algebra
+Computer Science: Intro to Robotics, Computer Security, Python Programming, Data Structures, Networking, Computational Complexity, Electronics
+Economics: Macroeconomics, Microeconomics, Money and Banking
+
+
+
+SKILLS:
+Proficient in the following: Python, C++, C, Matlab, Maple, Latex, CSS, SQL, HTML, MS (Word, Excel & PowerPoint)
+Basic Knowledge: Ruby & Rails, JAVA, Javascript, phpMyAdmin, PHP, Gretl, RoboLab
+Languages: English, Albanian, Japanese, French, Spanish, Arabic, Serbian 
+
+
+
+EXPERIENCE
+Math Lab Supervisor                                 					                               Fall 2013 - Present
+Berea College Mathematics Department, Berea, KY
+•	Manage, recruit & supervise 15 Math TA’s and provide one on one tutoring for all students coming to the math lab 
+•	Grade daily homework and quizzes for two sections of Cal 1 classes; teach class material when professors are absent
+•	Maintain working 20-25 hours a week while undertaking a full academic course load 
+•	Hold weekly meetings and evaluate the work of 15 Math TA’s over an academic year
+•	Worked as a Math TA for: Remedial Math, Discrete Math, Statistics, Calc I-II-III & Linear Algebra
+
+Undergraduate Summer Math Research                                                                                                           Summer 2015
+Berea College Mathematics Department, Berea, KY
+•	Studied the mathematical relationship between 3D Reconstruction and Phase Measuring Profilometry 
+•	Developed programming skills through Python & MATLAB coding to create videos that performed Phase Measuring Profilometry by projecting light patterns on a 3D object 
+•	Applied Fourier Analysis, Linear Algebra, & Trigonometry in the reduction of noise in the reconstructed 3D object 
+•	Performed two 15 minute talks in front of audiences; wrote an 11 page paper on results obtained from the research
+
+Statistics Teaching Associate and Resident Assistant                    				                         Summer 2014
+Berea College Bridge Program, Berea, KY
+•	Held and conducted study hall sessions, composed lesson plans, graded homework, and managed high school seniors transition into college in residence hall environment
+•	Maintained a 40 hour job position while having daily interactions with students and their struggles 
+•	Trained students to question statistics; investigated and corrected statistical data on newspapers & websites
+
+Interactive Robot Demo for Elementary & Middle School Students                                                                     Fall 2013
+Berea College Computer Science Department, Berea, KY			
+•	Enabled an average of 50 elementary and middle school students to interact with Lego Robots
+•	Wrote code in RoboLab to make Lego Robots perform impressive tasks for the kids; built 15 robots from Legos, tested and ensured the Lego Robots would perform efficiently
+•	Talked to students one on one and instilled a desire in them to pursue computer science and/or robotics 
+
+
+ADDITIONAL
+•	Activities: Pi Mu Epsilon, Intramural Soccer, Volleyball, Swimming, Martial Arts, Ping Pong, Biking, Dancing   
