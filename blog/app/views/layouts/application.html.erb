@@ -41,21 +41,12 @@ hello
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>HEDGEYE<br><small>Intern Exercise</small></h1>
-          </div>
+            <h1>HEDGEYE<br><small>Intern Exercise</small></h1></div>
         </div>
         </div>
   </div>
 </div>
-<div id="sidebar">
-  <div class="side-list">
-    <ul>
-      <li>
-        <%= link_to "New Post",posts_new_path%>
-      </li>
-    </ul>
-  </div>
-</dov>
+
   <!-- Main Content -->
   <div class="container">
       <div class="row">
@@ -65,6 +56,15 @@ hello
                         <%= yield %>
                       </h3>
               </div>
+          </div>
+          <div class="sidebar">
+            <div class="side-list">
+              <ul class="nav nav-pills ">
+                <li>
+                  <%= link_to "New Post",new_post_path%>
+                </li>
+              </ul>
+            </div>
           </div>
       </div>
   </div>
