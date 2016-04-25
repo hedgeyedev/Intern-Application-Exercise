@@ -3,7 +3,7 @@ Intern-Application-Exercise
 
 Welcome prospective intern!
 
-This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-Exercise which is the 1st step of the intern interview process at [Hedgeye](http://www2.hedgeye.com).  Th purposes for this exercise are twofold:
+This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-Exercise which is the 1st step of the intern interview process at [Hedgeye](http://www2.hedgeye.com). The purposes for this exercise are twofold:
 
 1. Expose the prospective intern to some of the technologies (Ruby, Rails, Git)/process(Pull Requests) that will be used daily in the internship.
 2. A test of the interns ability to follow directions and execute.  Often a resume and/or cover letter don't fairly represent what the intern is capable of, this exercises hopefully helps show what an intern can do.
