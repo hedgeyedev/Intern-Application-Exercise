@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  
+  def format_post(content)
+    content.split(" ")[0 .. 75].join(" ")
+  end
 
   # GET /posts
   # GET /posts.json
