@@ -1,0 +1,54 @@
+<header class="main-header">
+  
+  <div class="header-text-container">
+    <%= image_tag "forum2.png", id: "header-icon" %>
+    <h1 id="header-title">The Public Forum</h1>
+    <h2 id="header-description">A blog where anyone can say anything they want (what could go wrong?)</h2>
+    <h3 id="header-invite">Go ahead...</h3>
+    <%= link_to "Say Something", new_post_path, id: "header-invitation-link", class: "primary-button" %>
+  </div>
+  
+</header>
+
+
+<div class="selector-container">
+  <ul class="selectors">
+    <li class="selector"><a href="#newest" class="selector-link selected-link">Newest</a></li>
+    <li class="selector"><a href="#most-popular" class="selector-link">Popular</a></li>
+  </ul>
+</div>
+
+<div class="main">
+
+  <div class="posts-container" id="most-popular">
+    <% @popular_posts.each do |post| %>
+      <div class="post-list-item">
+        <%= render partial: "post_preview", locals: {post: post} %>
+      </div>
+    <% end %>
+
+    <%= will_paginate @popular_posts %>
+  </div>
+
+  <div class="posts-container selected" id="newest">
+    <% @newest_posts.each do |post| %>
+      <div class="post-list-item">
+        <%= render partial: "post_preview", locals: {post: post} %>
+      </div>
+    <% end %>
+
+    <%= will_paginate @newest_posts %>
+  </div>
+  
+</div>
+
+<script>
+  $('.selector-link').click(function(event) {
+    event.preventDefault();
+    target = $(this).attr("href");
+    $('.selected-link').removeClass("selected-link");
+    $(this).addClass("selected-link");
+    $('.selected').removeClass("selected");
+    $(target).addClass("selected");
+  });
+</script>
