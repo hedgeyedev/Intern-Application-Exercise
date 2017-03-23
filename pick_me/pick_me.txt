@@ -1,0 +1,26 @@
+Hey! This is the neatest job application I've ever seen! I hate writing cover letters, so this is a nice change.
+
+Frequently asked questions:
+My name is Caleidgh, I am in my third year of a Bachelor of Computer Science at Dalhousie University.
+My school is located in Halifax, Nova Scotia Canada, and I selected this school because I am a dual citizen of the US and Canada, my tuition is like $4,000 CAD a semester. My rent ends up being more than my classes.
+I currently work for BeyondTrust, I started as an intern in May 2016 and continued to work part time throughout the school year. While they would keep me another summer, my manager pointed out that this is the one time in my life that I can work somewhere for four months and not have anyone question it later.
+
+I'm sure you have plenty of applicants to comb through, so here's a list of the pros and cons of hiring me:
+
+Pros:
+
+- 10 months experience at BeyondTrust doing HTML, LESS, AngularJS on the front end, C# back end
+- also dabbled in Android development
+- Scrum and Agile are literally the best things ever and I'm super productive when given a list
+- born and raised in the USA, 100% allowed to work
+- sometimes I make good jokes
+- familiar and comfortable with command line
+- I get an immense amount of satisfaction from programming because I love problem solving
+- I own a car, so I will always have a ride to work
+
+Cons:
+
+- I literally know nothing about investing money (but want to learn!)
+- also I don't know how to pronounce the name of this company
+- not familiar with Ruby on Rails, but am familiar with PHP
+- 90% of errors I make are small and careless because I tend to rush
