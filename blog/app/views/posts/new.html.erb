@@ -1,0 +1,42 @@
+<head>
+<style>
+	body {
+      width:  100%;
+      height: 100%;
+      margin: 0px;
+	  display: block;
+      background-image: url("https://tse3.mm.bing.net/th?id=OIP.A_eAZRRsFs1Ks42fVPnaLAEsDh&pid=15.1&P=0&w=219&h=165");
+    }
+	h1 {
+		text-align:center;
+	}
+	p {margin-top:1em}
+h3{margin-bottom:0em
+text-align:left} 
+		section {
+      width: 36em;
+      margin: 2em auto;
+      z-index: 0;
+	   text-align: center;
+	   background: white;
+	   padding: 0.5em 0.5em 0.5em 0.5em
+    }
+	</style>
+</head>
+
+<section>
+<h1>New Post</h1>
+
+<hr>
+
+<%= render 'form', post: @post %>
+
+<hr>
+
+
+<img src="http://i.imgur.com/0cxGfF8.jpg"/>
+
+<br>
+
+<%= link_to 'Back', posts_path %>
+</section>
