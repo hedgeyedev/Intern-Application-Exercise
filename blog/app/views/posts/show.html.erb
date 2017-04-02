@@ -1,44 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<head>
-<style>
-	body {
-      width:  100%;
-      height: 100%;
-      margin: 0px;
-	  display: block;
-    }
-	h1 {
-		text-align:center;
-	}
-	
-	img {max-width:100%;}
-	
-	p {margin:0.5em 0 0 0;
-		text-align:left;}
-h3{margin-bottom:0em
-text-align:left} 
-		section {
-      width: 36em;
-      margin: 2em auto;
-      z-index: 0
-    }
-	</style>
-</head>
-
 <section align="center">
 <h1>Vlad's Blog.</h1>
  
 <hr>
 
-	<h3 align="center"><%= @post.title %></h3>
+	<h3><%= @post.title %></h3>
 	<% if @post.imageSrc.length > 0 %>
 		  <img src="<%= @post.imageSrc %>"/>
 	<% end %>
 	<p><%= simple_format(@post.content) %></p>
 
 <br>
-<section>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</section>
