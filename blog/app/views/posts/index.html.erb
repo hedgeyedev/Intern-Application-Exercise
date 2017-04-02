@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <head>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/start/jquery-ui.css" type="text/css" media="all" />
 <style>
 	body {
 		  width:  100%;
@@ -13,14 +14,28 @@
 			margin-bottom:0.5em;
 		}
 		p {margin:0.5em 0 0 0;
-		text-align: "left";}
-		h3{margin-bottom:0em;
+		clear: both;
+		text-align:left;
+		}
+		h3, h4{margin-bottom:0em;
 		text-align:left;} 
+
+		img {max-width:100%;}
 		
 		#header {
 			text-align:center;
 			margin: 0 auto;
 		}
+		
+		#postImage {
+			margin-top:0.5em;
+		}
+		
+		.item {
+		margin: 0 0 0 0;
+    display:block;
+    overflow:hidden;
+}
 		
 		section {
 		  width: 36em;
@@ -33,18 +48,76 @@
 
 <section align="center">
 <h1>Vlad's Blog.</h1>
-<p id="header">You call it "Minimalism", I call it "I suck at web design."</p>
+<p id="header">Some call it "Minimalism", I call it "I suck at web design."</p>
 
 <hr>
 
 <% @posts.each do |post| %>
 		<h3><%= link_to post.title, post %></h3>
-		<p><%= simple_format(post.content) %></p>
+		<% if post.imageSrc.length > 0 %>
+		  <img id="postImage" src="<%= post.imageSrc %>"/>
+		<% end %>
+		<div class="item"><p><%= simple_format(post.content) %></p></div>
         <%# <p><%= link_to 'Edit', edit_post_path(post) %></p>
         <%# <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <% end %>
-
-<br>
 <section>
+
+<hr>
+
+<section align="center">
+<h4 id="garfieldText"></h4>
+<img id="todaysGarfieldStrip"/>
+</section>
+
+<script>
+//Code stolen from here: http://stackoverflow.com/questions/5270227/how-to-hide-show-more-text-within-a-certain-length-like-youtube#comment14270612_5270351
+var collapsedSize = '77px';
+$('.item').each(function() {
+    var h = this.scrollHeight;
+    console.log(h);
+    var div = $(this);
+    if (h > 30) {
+        div.css('height', collapsedSize);
+        div.after('<a id="more" align="left" class="item" href="#">Read more</a><br/>');
+        var link = div.next();
+        link.click(function(e) {
+            e.stopPropagation();
+
+            if (link.text() != 'Collapse') {
+                link.text('Collapse');
+                div.animate({
+                    'height': h
+                });
+
+            } else {
+                div.animate({
+                    'height': collapsedSize
+                });
+                link.text('Read more');
+            }
+
+        });
+    }
+
+});
+
+	var garfieldImg = document.getElementById("todaysGarfieldStrip");
+	var todaysDate = new Date();
+	var month = todaysDate.getMonth() + 1; //Plus 1 because getMonth returns 0-11
+	var day = todaysDate.getDate();
+	var year = todaysDate.getFullYear();
+	var dayFiller = "0";
+	var monthFiller = "0";
+	
+	if (day > 9)
+		dayFiller = "";
+	if (month > 9)
+		monthFiller = "";
+	
+	garfieldImg.src = "https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + year + "/" + year + "-" + monthFiller + month + "-" + dayFiller + day + ".gif";
+	
+	document.getElementById("garfieldText").innerText = "Daily Garfield Strip: " + monthFiller + month + "-" + dayFiller + day + "-" + year;
+</script>
 
 <%= link_to 'New Post', new_post_path %>

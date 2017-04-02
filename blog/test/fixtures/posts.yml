@@ -3,7 +3,9 @@
 one:
   title: MyString
   content: MyText
+  imageSrc: MyString
 
 two:
   title: MyString
   content: MyText
+  imageSrc: MyString
