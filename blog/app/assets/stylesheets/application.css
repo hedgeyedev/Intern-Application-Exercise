@@ -15,46 +15,64 @@
  */
 
 body {
-		  width:  100%;
-		  height: 100%;
-		  margin: 0px;
-		  display: block;
-		}
-		h1 {
-			text-align:center;
-			margin-bottom:0.5em;
-		}
-		
-		p {
-			margin:0.5em 0 0 0;
-			clear: both;
-			text-align:left;
-		}
-		
-		h3{
-			margin-top:0.25em;
-			margin-bottom:0.5em;
-			text-align:left;
-		} 
-		
-		h4{
-			margin: 0 0 0 0;
-			text-align:left;
-		} 
-
-		img {max-width:100%;}
-		
-		section {
-		  width: 37.25em;
-		  margin: 2em auto;
-		  z-index: 0
-		}
-		
-		#header {
-			text-align:center;
-			margin: 0 auto;
-		}
-		
-		#postImage {
-			margin-top:0.5em;
-		}
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    display: block;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+p {
+    margin: 0.5em 0 0 0;
+    clear: both;
+    text-align: left;
+}
+h3 {
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+a:link {
+    color: #000000;
+    background-color: rgba(255, 255, 255, .4);
+}
+a:hover {
+    color: #708090;
+}
+h4 {
+    margin: 0 0 0 0;
+    text-align: left;
+}
+img {
+    max-width: 100%;
+}
+section {
+    width: 37.25em;
+    margin: 2em auto;
+    z-index: 0
+}
+#header {
+    text-align: center;
+    margin: 0 auto;
+}
+#quote {
+    text-align: center;
+    margin: 0 0 0 0;
+    font-family: 'Abel';
+    font-size: 15px;
+}
+#quote:hover, #person:hover{
+    cursor: pointer; 
+	cursor: hand;
+}
+#person {
+    text-align: center;
+    margin: 0.15em 0 0 0;
+    font-family: 'Acme';
+    font-size: 14px;
+}
+#postImage {
+    margin-top: 0.5em;
+}

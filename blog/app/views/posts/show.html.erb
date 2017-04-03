@@ -5,11 +5,11 @@
  
 <hr>
 
-	<h3><%= @post.title %></h3>
-	<% if @post.imageSrc.length > 0 %>
-		  <img src="<%= @post.imageSrc %>"/>
-	<% end %>
-	<p><%= simple_format(@post.content) %></p>
+<h3><%= @post.title %></h3>
+<% if @post.imageSrc.length > 0 %>
+	<img src="<%= @post.imageSrc %>"/>
+<% end %>
+<p><%= simple_format(@post.content) %></p>
 
 <br>
 
