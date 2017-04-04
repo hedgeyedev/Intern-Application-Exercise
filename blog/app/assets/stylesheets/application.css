@@ -51,11 +51,15 @@ img {
 section {
     width: 37.25em;
     margin: 2em auto;
-    z-index: 0
+    z-index: 0;
+	text-align:center;
 }
 #header {
     text-align: center;
     margin: 0 auto;
+}
+#quoteSection {
+	margin-bottom: 0.5em;
 }
 #quote {
     text-align: center;
@@ -75,4 +79,16 @@ section {
 }
 #postImage {
     margin-top: 0.5em;
+}
+#errorMessage {
+	color: #FF0000;
+}
+#postCommentHeader {
+	text-align:center;
+}
+#timePostedComment {
+	float:right;
+}
+#commentBody {
+	margin: 2.25em 0 0 0;
 }
