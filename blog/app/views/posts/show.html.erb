@@ -54,7 +54,7 @@
   
   <span id="timePostedComment"><%= comment.created_at.localtime.strftime("%B %e, %Y at %-I:%M %p") %></span>
  </div>
-  <p id="commentBody"><%= comment.body %></p>
+  <p id="commentBody"><%= simple_format(comment.body) %></p>
   <hr>
 <% end %>
 

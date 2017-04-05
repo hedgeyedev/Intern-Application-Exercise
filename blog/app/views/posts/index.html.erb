@@ -68,8 +68,8 @@ h3 {
 <section id="quoteSection">
 <hr>
 
-<p id="quote" onclick="changeQuote();">"The universe is a big place, perhaps the biggest."</p>
-<p id="person" onclick="changeQuote();">-Kurt Vonnegut</p>
+<p id="quote" onclick="nextQuote();">"The universe is a big place, perhaps the biggest."</p>
+<p id="person" onclick="nextQuote();">-Kurt Vonnegut</p>
 </section>
 
 <script>
@@ -117,16 +117,15 @@ var maxIndex = quotesArr.length - 1;
 	
 var quote = document.getElementById("quote");
 var person = document.getElementById("person");
-var currentIndex = -1;
+var currentIndex = Math.floor(Math.random() * (maxIndex + 1));
 
-changeQuote();
+nextQuote();
 
-function changeQuote() {
-	var randInt = Math.floor(Math.random() * (maxIndex + 1));
-	while (currentIndex == randInt) {
-		randInt = Math.floor(Math.random() * (maxIndex + 1));
-	}
-	currentIndex = randInt;
+function nextQuote() {
+	currentIndex += 1;
+	if (currentIndex >= quotesArr.length)
+		currentIndex = 0;
+		
 	quote.innerHTML = quotesArr[currentIndex];
 	person.innerHTML = "-<i>" + peopleArr[currentIndex] + "</i>";
 }
