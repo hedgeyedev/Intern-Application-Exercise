@@ -1,79 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-<style>
-.text_area_align {
-	vertical-align:top;
-	width:100%;
-}
-.input_font {
-	font-family: 'Tahoma';
-	font-size: 13px;
-}
-.customButton {
-    margin: 0.5em auto;
-    background: white;
-    border-radius: 25px;
-    border: 2px solid #000000;
-    text-align: center;
-    text-decoration: none;
-    padding-bottom: 0.15em;
-	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-.customButton:hover {
-    background: #000000;
-    border-radius: 25px;
-    color: white;
-}
-.post-comment-paragraph {
-	text-align:center;
-}
-</style>
-
 <section align="center">
-<h1>Vlad's Blog.</h1>
+    <h1><%= link_to 'Vlad\'s Blog.', posts_path, class: "blog-header" %></h1>
  
-<hr>
+    <hr>
 
-<h3><%= @post.title %></h3>
-<% if @post.imageSrc.length > 0 %>
-	<img src="<%= @post.imageSrc %>"/>
-<% end %>
-<p><%= simple_format(@post.content) %></p>
+    <h3><%= @post.title %></h3>
+    <% if @post.imageSrc.length > 0 %>
+        <img src="<%= @post.imageSrc %>"/>
+    <% end %>
+    <p><%= simple_format(@post.content) %></p>
 
-<br>
+    <br />
 
-<hr>
+    <hr>
 
-<h3>Comments:</h3>
+    <h3>Comments:</h3>
 
-<hr>
-<% @post.comments.each do |comment| %>
-<div>
-  <span style="float:left;"><b><%= comment.commenter %></b></span>
-  
-  <span id="timePostedComment"><%= comment.created_at.localtime.strftime("%B %e, %Y at %-I:%M %p") %></span>
- </div>
-  <p id="commentBody"><%= simple_format(comment.body) %></p>
-  <hr>
-<% end %>
+    <hr>
+    <% @post.comments.each do |comment| %>
+        <div>
+            <span style="float:left;"><b><%= comment.commenter %></b></span>
+            <span id="timePostedComment"><%= comment.created_at.localtime.strftime("%B %e, %Y at %-I:%M %p") %></span>  <!-- Ex. April 4, 2017 at 3:30 PM -->
+        </div>
+		
+        <p id="commentBody"><%= simple_format(comment.body) %></p>
+        <hr>
+    <% end %>
 
-<% if @post.comments.length == 0 %>
-<p>No one has commented on this post yet.</p>
-<hr>
-<% end %>
+    <% if @post.comments.length == 0 %>
+        <p>No one has commented on this post yet.</p>
+        <hr>
+    <% end %>
 
-<br />
+    <br />
 
-<h3>Post a comment:</h3>
-<% flash.each do |key, value| %>
-  <h4 id="errorMessage"><%= value %></h4>
-<% end %>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>Display name: <%= f.text_field :commenter, class: "input_font" %></p>
-  <p>Comment: <%= f.text_area :body, class: "text_area_align input_font" %></p>
-  <p><%= f.submit "Post comment", class: "customButton" %></p>
-<% end %>
-
-<%#= link_to 'Back', posts_path %>
+    <h3>Post a comment:</h3>
+        <% flash.each do |key, value| %>
+            <h4 id="errorMessage"><%= value %></h4>
+        <% end %>
+		
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+        <p>Display name: <%= f.text_field :commenter, class: "input-font" %></p>
+        <p>Comment: <%= f.text_area :body, class: "text-area-align input-font" %></p>
+        <p><%= f.submit "Post comment", class: "custom-button" %></p>
+    <% end %>
 </section>

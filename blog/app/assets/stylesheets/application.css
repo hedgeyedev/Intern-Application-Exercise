@@ -36,7 +36,7 @@ h3 {
 }
 a:link {
     color: #000000;
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, .1);
 }
 a:hover {
     color: #708090;
@@ -79,6 +79,9 @@ section {
 }
 #postImage {
     margin-top: 0.5em;
+}
+#postTitle {
+    margin-bottom: 0;
 }
 #errorMessage {
 	color: #FF0000;

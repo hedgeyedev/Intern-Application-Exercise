@@ -1,0 +1,59 @@
+/* 
+Styling for index.html.erg that wasn't functioning properly when placed into
+application.css 
+*/
+
+.item {
+    margin: 0 0 0 0;
+    display: block;
+    overflow: hidden;
+}
+.post-section {
+    width: 36em;
+    padding: 0 0.5em 0 0.5em;
+    margin: 0 0 0.5em 0;
+    border-radius: 25px;
+    border: 2px solid #000000;
+}
+.custom-button {
+    margin: 0.5em auto;
+    background: white;
+    border-radius: 25px;
+    border: 2px solid #333333;
+    text-align: center;
+    text-decoration: none;
+    padding-bottom: 0.15em;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.custom-button:hover {
+    background: #333333;
+    border-radius: 25px;
+    color: white;
+}
+.blog-header:link {
+	text-align: center;
+    margin-bottom: 0.5em;
+    color: #333333;
+	text-decoration: none;
+}
+.blog-header:hover {
+    color: #333333;
+}
+
+/* 
+Styling for show.html.erg
+
+Note: show.html.erg also uses custom-button and blog-header
+*/
+.text-area-align {
+	vertical-align:top; 
+	width:100%;
+}
+.input-font {
+	font-family: 'Tahoma';
+	font-size: 13px;
+}
+.post-comment-paragraph {
+	text-align:center;
+}
