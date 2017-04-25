@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div class="container">
+        <button type="button" class="btn btn-default"><%= link_to 'New article', new_article_path %></button>
+      <div class="jumbotron">
+        <h1 class="text-center">A neat blog</h1>
+
+      </div>
+    </div>
+    <%= yield %>
+
+  </body>
+</html>
