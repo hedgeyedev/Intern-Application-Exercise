@@ -1,0 +1,36 @@
+<h1><%= @post.title %></h1>
+
+<p>
+  <%= @post.content %>
+</p>
+
+<h3>Comments</h3>
+<% for comment in @post.comments %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Comment:</h2>
+<%= form_for([@post, @post.comments.build]) do |x| %>
+    <p>
+      <%= x.label :commenter %><br>
+      <%= x.text_field :commenter %>
+    </p>
+    <p>
+      <%= x.label :body %><br>
+      <%= x.text_area :body %>
+    </p>
+    <p>
+      <%= x.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
