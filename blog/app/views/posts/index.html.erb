@@ -1,0 +1,27 @@
+<div id="container">
+  <div id="head">
+    <h1>Sample blog</h1>
+  </div>
+  <div id="centered">
+    <p id="notice"><%= notice %></p>
+    
+    <% @posts.each do |post| %>
+      <div class="postblock">
+        <h2 class="nostyle"><%= link_to post.title, post %></h2>
+        <p><%= format_post(post.content) %></p>
+        <button class="nostyle">
+          <%= link_to 'Edit', edit_post_path(post) %>
+        </button>
+        <button class="nostyle">
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </button>
+      </div>
+      <div class="divider"></div>
+    <% end %>
+
+    <br>
+    <button class="nostyle">
+      <%= link_to 'New Post', new_post_path %>
+    </button>
+  </div>
+</div>
