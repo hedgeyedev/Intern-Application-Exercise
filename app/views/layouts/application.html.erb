@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table { 
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+width: 640px; 
+}
+
+td, th { 
+border: 1px solid transparent; 
+height: 30px; 
+width : 200px;
+transition: all 0.3s; 
+}
+
+th {
+background: #DFDFDF; 
+font-weight: bold;
+
+}
+
+td {
+background: #FAFAFA;
+text-align: center;
+}
+
+tr td:hover { background: #666; color: #FFF; } 
+
+</style>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
