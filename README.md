@@ -3,7 +3,7 @@ Intern-Application-Exercise
 
 Welcome prospective intern!
 
-This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-Exercise which is the 1st step of the intern interview process at [Hedgeye](http://www2.hedgeye.com).  Th purposes for this exercise are twofold:
+This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-Exercise which is the 1st step of the intern interview process at [Hedgeye](http://www2.hedgeye.com). The purposes for this exercise are twofold:
 
 1. Expose the prospective intern to some of the technologies (Ruby, Rails, Git)/process(Pull Requests) that will be used daily in the internship.
 2. A test of the interns ability to follow directions and execute.  Often a resume and/or cover letter don't fairly represent what the intern is capable of, this exercises hopefully helps show what an intern can do.
@@ -11,7 +11,7 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
 # Instructions
 
 1. Fork this repository
-2. In the *pick_me* directly
+2. In the *pick_me* directory
    * Add a file pick_me.txt which describes why we should choose you as an intern.  It would be nice to stand out, but a fallback would be typical cover letter type verbiage.  Include why you think our internship is interesting to you.
    * (Optional) Anything else you want us to know, resume, portfolio, etc. is appropriate.
 3. In the blog directory, create a simple Ruby on Rails scaffold based blog.  you will have to do the following
@@ -29,14 +29,9 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
             $ rails generate scaffold Post title:string content:text
             $ rake db:migrate
 
-
-   * Remove the index.html
-
-            $ rm public/index.html
-
    * Setup your routes to go to the blog index by changing config/routes.rb to
 
-            App::Application.routes.draw do
+            Rails.application.routes.draw do
                resources :posts
                root :to => "posts#index"
             end
