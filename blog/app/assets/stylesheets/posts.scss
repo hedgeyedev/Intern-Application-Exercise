@@ -1,0 +1,703 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/**********************
+
+		  MY 
+		C S S 
+
+*********************/
+
+/**********************
+General rules
+**********************/
+
+$screen-break: 850px;
+$color1: #36B1BF;
+$color2: #F2385A;
+$color3: #f0f0f0;
+
+$content-width: 700px;
+
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+}
+
+body {
+	background-color: $color3;
+}
+
+.primary-button,
+.primary-button:visited {
+	color: white;
+	background: $color2;
+	text-align: center;
+	display: block;
+}
+.primary-button:hover, 
+.primary-button:focus {
+	color: rgb(230, 230, 230);
+background: darken($color2, 20%);
+}
+
+form {
+	padding: 40px 0px;
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+.form-row {
+	padding: 5px 10px;
+	&:after {
+		display: block;
+		content: " ";
+		height: 0;
+		clear: both;
+	}
+}
+
+.form-row.first-row {
+	padding-top: 0px;
+}
+
+.form-row:last-child {
+	padding-bottom: 0px;
+}
+
+.form-row label, 
+.form-row input, 
+.form-row textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.form-row label {
+	padding: 2.5px 0px;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 900;
+	@media screen and (min-width: 650px) {
+		text-align: left;
+	}
+}
+
+.form-row input, 
+.form-row textarea {
+	padding: 5px;
+	font-size: 1.4em;
+}
+
+textarea { resize: none; }
+
+input, 
+input:focus, 
+textarea, 
+textarea:focus {
+	border: none;
+	outline: none;
+}
+
+.form-row input[type="submit"] {
+	width: 200px;
+	padding: 10px 5px;
+	text-align: center;
+	margin: 20px auto 0px;
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+
+/**********************
+NAVIGATION
+**********************/
+
+nav {
+	background: #000;
+}
+
+.nav-list:after {
+	content: " ";
+	height: 0;
+	display: block;
+	clear: both;
+}
+
+@media screen and (min-width: $screen-break) {
+	.nav-list {
+		width: 250px;
+		margin: 0 auto;
+	}
+}
+
+.nav-item {
+	width: 50%;
+	float: left;
+}
+
+.nav-link,
+.nav-link:visited {
+	display: block;
+	text-align: center;
+	padding: 15px 0;
+	color: $color2;
+}
+
+.nav-link:hover {
+	color: lighten($color2, 50%);
+}
+
+/**********************
+HEADER
+**********************/
+
+.main-header {
+	text-align: center;
+	padding: 40px 20px;
+	background: $color1;
+	color: white;
+	@media screen and (min-width: $screen-break) {
+		padding: 80px 40px;
+	}
+}
+
+#header-icon {
+	width: 200px;
+	margin: 0 auto 20px;
+}
+
+.header-text-container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+#header-title {
+	padding-bottom: 20px;
+}
+
+#header-description {
+	padding: 20px 0px;
+}
+
+#header-invite {
+	padding: 20px 0px;
+}
+
+#header-invitation-link, 
+#header-invitation-link:visited {
+	width: 200px;
+	margin: 20px auto 0;
+	padding: 20px 10px;
+	border-bottom: 4px solid darken($color2, 20%);
+}
+
+#header-invitation-link:hover, 
+#header-invitation-link:focus {
+	border-bottom: 4px solid darken($color2, 40%);
+}
+
+/**********************
+MAIN BODY
+**********************/
+
+	//selectors 
+
+.selectors:after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.selector {
+	float: left;
+	width: 50%;
+}
+
+.selector-link {
+	display: block;
+	text-align: center;
+	padding: 20px 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border-bottom: 2px solid darken($color3, 30%);
+	background: darken($color3, 10%);
+}
+
+.selector-link, 
+.selector-link:visited {
+	color: rgb(100, 100, 100);
+}
+
+.selected-link,
+.selected-link:hover,
+.selected-link:focus,
+.selected-link:visited {
+	color: black;
+	margin-top: -2px;
+	padding-bottom: 22px;
+	background: $color3;
+	border-top: 2px solid darken($color3, 30%);
+	border-bottom: none;
+
+}
+.selector:first-child .selected-link {
+	border-right: 2px solid darken($color3, 30%);
+}
+
+.selector:last-child .selected-link {
+	border-left: 2px solid darken($color3, 30%);
+}
+
+	//mian container 
+
+.main {
+	padding: 40px 10px;
+	max-width: 900px;
+	margin: 0 auto;
+	background: $color3;
+}
+
+	//posts list
+
+.posts-container {display: none;}
+.selected {display: block;}
+
+.post-list-item {
+	padding: 20px;
+}
+
+.post-list-item:first-child {padding-top: 0px;}
+.post-list-item:last-child {padding-bottom: 0px;}
+
+.post-list-item:not(:last-child):after {
+	content: " ";
+	display: block;
+	height: 30px;
+	background: rgb(180, 180, 180);
+	margin: 0 -20px;
+}
+
+.post-preview-header:after {
+	content: " ";
+	display: block;
+	height: 0px;
+	clear: both;
+}
+
+
+
+.post-list-item .post-title,
+.post-list-item .post-title:visited {
+	display: block;
+	color: black;
+}
+
+.post-list-item .post-title:hover,
+.post-list-item .post-title:focus {
+	color: rgb(100, 100, 100);
+}
+
+.post-list-item .post-author {
+	padding: 0px 0px 20px;
+}
+
+.post-list-item .post-title, 
+.post-list-item .post-author {
+	text-align: center;
+	@media screen and (min-width: $screen-break) {
+		text-align: left;
+		padding: 10px 0px;
+	}
+}
+
+.preview-header-text-info {
+	@media screen and (min-width: $screen-break) {
+		float: left;
+		width: 90%;
+		width: calc(100% - 150px);
+		margin-bottom: 35px;
+	}
+}
+
+.preview-author-image {
+	display: none;
+	@media screen and (min-width: $screen-break) {
+		display: block;
+		float: left;
+		border-radius: 100%;
+		border: 3px solid white;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		height: 100px;
+		margin-right: 50px;
+	}
+}
+
+.featured-image-preview {
+	display: block;
+	width: 100%;
+	// max-width: 700px;
+	// max-height: 400px;
+	margin: 20px auto 40px;
+}
+
+.post-preview {
+	text-indent: 2em;
+}
+
+.read-more-link {
+	width: 150px;
+	padding: 15px;
+	margin: 30px auto 40px;
+}
+
+.pagination {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.pagination a, 
+.pagination a:visited {
+	color: $color2;
+}
+
+.pagination a:hover, 
+.pagination a:focus {
+	background: darken($color3, 20%);
+	color: darken($color2, 20%);
+}
+
+.pagination a, 
+.pagination span, 
+.pagination em {
+	font-size: 1.2em;
+	font-weight: 700;
+	border: 1px solid black;
+	padding: 5px 10px;
+}
+
+/**********************
+Footer
+**********************/
+
+footer {
+	background: black;
+	padding: 10px 20px;
+}
+
+/**********************
+POST PAGES SHOW ACTION
+**********************/
+
+// header 
+.post-header {
+	padding: 40px 20px;
+	text-align: center;
+	background: $color1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#post-title {
+	padding: 0px 0px 10px;
+}
+
+#post-author {
+	padding: 10px 0;
+}
+
+#post-title, #post-author {
+	color: $color3;
+	text-shadow: 0px 3px 5px rgba(50, 50, 50, 0.3);
+}
+.post-header-author-image {
+	display: block;
+	margin: 10px auto 0px;
+	width: 150px;
+	border-radius: 100%;
+	border: 4px solid $color3;
+	box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.3);
+}
+
+// main body
+
+.post-main {
+	max-width: $content-width;
+}
+
+.post-paragraph {
+	text-indent: 2.2em;
+}
+
+.post-paragraph {
+	padding: 0.2em 0px;
+}
+
+.post-paragraph:first-child {
+	padding-bottom: 0.2em;
+}
+
+.post-paragraph:last-child {
+	padding-top: 0.2em;
+}
+
+.actions  {
+	padding: 40px 0px;
+	margin: 0 auto; 
+	max-width: $content-width;
+	&:after {
+		content: " ";
+		display: block;
+		height: 0px;
+		clear: both;
+	}
+
+	 .action {
+	 	width: 200px;
+	 	margin: 0 auto;
+	 	&:nth-child(2) { margin: 10px auto; }
+		@media screen and (min-width: $content-width + 20px) {
+			float: left;
+			margin: 0px 20px;
+			&:nth-child(2) {margin: 0px;}
+		}
+
+	 	.action-link {
+	 		padding: 10px 0px;
+	 		box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			border-bottom: 4px solid darken($color2, 20%);
+			&:hover, &:focus {border-bottom: 4px solid darken($color2, 40%);}
+	 	}
+	 }
+}
+
+// comments
+
+#comment-form {
+	padding-bottom: 50px;
+	display: none;
+}
+
+.comment-form-header {
+	margin-bottom: 40px;
+}
+
+.comment-errors {
+	margin-top: -20px;
+	padding: 0px 30px;
+}
+
+.comment-error {
+	padding: 8px;
+	color: rgb(170, 0, 0);
+}
+
+.errored {
+	border: 2px solid rgb(170, 0, 0);
+}
+
+.comments-header {
+	padding-bottom: 40px;
+}
+
+.comment {
+	padding: 20px;
+	margin-bottom: 10px; 
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: white;
+	box-shadow: 0px 2px 8px rgba(100, 100, 100, 0.3);
+}
+
+.comment-date {
+	margin-bottom: 8px;
+	border-bottom: 1px solid black;
+}
+
+
+/**********************
+Create and Edit FOrm Pages
+**********************/
+
+.post-form label {
+	font-size: 2.2em;
+	line-height: 1em;
+}
+/**********************
+TYPOGRAPHY
+**********************/
+
+
+ 
+h1, h2, h3, h4, h5, h6, p, blockquote, 
+label, input, textarea, td, th, span, em, strong,
+form ul li  { 
+	font-family: 'Source Sans Pro', sans-serif; 
+}
+
+.nav-link {
+	font-size: 1.2em;
+}
+
+#header-title, #post-title {
+	font-size: 4em;
+	line-height: 1em;
+	font-weight: 900;
+}
+
+#header-description, #header-invite, #post-author {
+	font-size: 2.9em;
+	font-weight: 700;
+	line-height: 1em;
+}
+
+#header-invitation-link {
+	font-size: 1.5em;
+}
+
+.selector-link {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+.post-list-item .post-title {
+	font-size: 3em;
+	line-height: 1em;
+	font-weight: 900; 
+}
+
+.post-list-item .post-author {
+	font-size: 1.5em;
+	line-height: 1em;
+	font-weight: 700;
+}
+
+.post-preview, .post-paragraph {
+	font-size: 1.7em;
+	line-height: 1.2em;
+}
+
+.read-more-link {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+// post pages show action
+
+.post-paragraph {
+	// font-size: 1.5em;
+	line-height: 1.3em;
+	font-weight: 400;
+}
+
+.action-link {
+	font-size: 1.25em;
+	font-weight: 700;
+}
+
+// comments
+
+.comment-form-header {
+	font-size: 2.5em;
+	font-weight: 700;
+}
+
+.comment-errors {
+	font-size: 1.2em;
+}
+
+.comments-header {
+	font-size: 2.5em;
+	font-weight: 900;
+}
+
+.comment-invitation {
+	font-size: 1.75em;
+	font-weight: 700;
+	padding: 0px 20px;
+	line-height: 1.2em;
+	a {text-decoration: underline; color: $color2}
+	a:hover, a:focus {color: darken($color2, 20%);}
+
+}
+
+.comment-poster {
+	font-size: 1.4em;
+	font-weight: 700;
+}
+.comment-date {
+	font-size: 1em;
+	span {font-weight: 700; font-size: 1.2em;}
+}
+.comment-content {
+	font-size: 1.4em;
+}
+
+#form-page-title {
+	font-weight: 900;
+	font-size: 3em;
+}

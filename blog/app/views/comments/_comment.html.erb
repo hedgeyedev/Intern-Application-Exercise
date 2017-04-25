@@ -1,0 +1,7 @@
+<% if comment.content.present? %>
+	<div class="comment">
+		<p class="comment-poster"><%= comment.name %></p>
+		<p class="comment-date">Posted <span class="date"><%= clean_date(comment.created_at) if comment.created_at.present? %></span></p>
+		<div class="comment-content"><%= comment.content %></div>
+	</div>
+<% end %>

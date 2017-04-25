@@ -1,0 +1,12 @@
+<div class="post-preview-header">
+	<%= post.author_image.present? ? (image_tag(post.author_image.url, class: 'preview-author-image')) : (image_tag("anon.png", class: 'preview-author-image')) %>
+	<div class="preview-header-text-info">
+			<%= link_to post.title, post_path(post.id), class: "post-title" %>
+			<p class="post-author">By <%= post.author.present? ? (post.author) : ("Anonymous") %></p>
+
+	</div>
+</div>
+
+<%= image_tag(post.featured_image.url(:show), class: "featured-image-preview") if post.featured_image.present? %>
+<p class="post-preview"><%= post.preview %></p>
+<%= link_to "Read More", post_path(post.id), class: "read-more-link primary-button" %>

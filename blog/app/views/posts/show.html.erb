@@ -1,0 +1,93 @@
+<header class="post-header" <% if @post.featured_image.present? %> style="background-image: url(<%= @post.featured_image.url%>)"<% end %>>
+  
+  <div class="header-text-container">
+    <h1 id="post-title"><%= @post.title %></h1>
+    <h2 id="post-author">By <%= @post.author.present? ? (@post.author) : ("Anonymous") %></h2>
+    <%= @post.author_image.present? ? (image_tag(@post.author_image.url, class: "post-header-author-image")) : (image_tag("anon.png", class: "post-header-author-image")) %>
+  </div>
+  
+</header>
+
+<%# image_tag(@post.featured_image.url, class: "featured-image") if @post.featured_image.present? %>
+
+<div class="main post-main">
+
+  <div class="post-container">
+  	<% @post.content.split("\n").each do |p| %> <p class="post-paragraph"><%= p %></p> <% end %>
+  </div>
+
+  <ul class="actions">
+  	<li class="action"><%= link_to "Comment", "#", class: "action-link primary-button comment-form-toggle" %></li>
+  	<li class="action"><%= link_to "Edit", edit_post_path(@post.id), class: "action-link primary-button" %></li>
+  	<% if @post.votes_until_delete > 1 %>
+  		<li class="action"><%= link_to "Vote to Delete (#{@post.votes_until_delete})", delete_post_path(@post.id), class: "action-link primary-button", data: {confirm: "Are you sure? This will put this post #{@post.votes_until_delete - 1} votes away from being delete!"} %></li>
+  	<% else %>
+  		<li class="action"><%= link_to "Vote to Delete (#{@post.votes_until_delete})", delete_post_path(@post.id), class: "action-link primary-button", data: {confirm: "Are you sure? This will delete this post for everyone!"} %></li>
+  	<% end %>
+  </ul>	
+
+<%= form_for [@post, @post.comments.build], html: {id: "comment-form"} do |f| %>
+	<h3 class="comment-form-header">Leave A Comment</h3>
+	<div class="form-row first-row">
+		<%= f.label :name %>
+		<%= f.text_field :name, placeholder: "Name", class: "form-input" %>
+	</div>	
+	<div class="form-row">
+		<%= f.label :conent, "Comment" %>
+		<%= f.text_area :content, placeholder: "Comment", class: "form-input" %>
+	</div>
+	<div class="form-row">
+		<%= f.submit class: "btn btn-primary primary-button" %>
+	</div>
+<% end %>
+
+
+
+  <h3 class="comments-header">Comments:</h3>
+
+  <div class="comments-container">
+  	<% if @post.comments.exists? %>
+	  	<%= render @post.comments %>
+	<% else %>
+		<p class="comment-invitation">No comments yet.  <a href="#" class="comment-form-toggle">Be the first to start a discussion!</a></p>
+	<% end %>
+  </div>
+
+
+  
+</div>
+
+<script>
+	$(".comment-form-toggle").click(function(event) {
+		event.preventDefault();
+		if ( $("#comment-form").is(":hidden") ) {
+			$("#comment-form").slideDown();
+		}
+	});
+
+	$("#comment-form").submit(function(event){
+		var errors = []
+		if ( $("input[name='comment[name]']").val() == false ) {
+			errors.push("Please let everyone know who this comment is from.  Fill out your name.");
+			$("input[name='comment[name]']").addClass("errored");
+		}
+		if ( $("textarea[name='comment[content]']").val() == false ) {
+			errors.push("Please make sure you fill out your comment");
+			$("textarea[name='comment[content]']").addClass("errored");
+
+		}
+		if ( errors.length == 0 ) {
+			$("#comment-form").submit();
+		} else {
+			event.preventDefault();
+			errMsg = "<ul class='comment-errors'>";
+			for ( i = 0; i < errors.length; i ++ ) {
+				errMsg += "<li class='comment-error'>" + errors[i] + "</li>";
+			}
+			errMsg += "</ul>"
+			$("#comment-form .comment-form-header").after(errMsg);
+		}
+	});
+
+</script>
+
