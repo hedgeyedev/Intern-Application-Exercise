@@ -1,0 +1,32 @@
+.intro-header {
+  background: no-repeat center center;
+  background-size: cover;
+  margin-bottom: 50px;
+  width:100%;
+  background-color:#FF846F  
+}
+.intro-header .site-heading {
+  padding: 100px 0 50px;
+  color: white;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+  font-size: 50px;
+  text-align: center;
+}
+.navbar{
+padding:10px;
+font-size:18px;
+}
+.nav-pills{
+  font-size:18px;
+}
+#post_title{
+  width:auto;
+}
+#post_content{
+  width:400px;
+  height:150px;
+}

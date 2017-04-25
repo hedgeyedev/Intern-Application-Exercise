@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Hedgeye</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <%= link_to "Home",root_path%>
+                  </li>
+                  <li>
+                    <%= link_to "About",pages_about_path%>
+                  </li>
+                  <li>
+                    <%= link_to "Contact",pages_contact_path%>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+hello
+<div class="intro-header" style="background-image:url(assets/header.jpg)">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <h1>HEDGEYE<br><small>Intern Exercise</small></h1></div>
+        </div>
+        </div>
+  </div>
+</div>
+
+  <!-- Main Content -->
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-preview">
+                      <h4 class="post-subtitle">
+                        <%= yield %>
+                      </h4>
+              </div>
+          </div>
+          <div class="sidebar">
+            <div class="side-list">
+              <ul class="nav nav-pills ">
+                <li>
+                  <%= link_to "New Post",new_post_path%>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <hr>
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <p class="copyright text-muted">Copyright &copy;2016</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+</body>
+</html>
