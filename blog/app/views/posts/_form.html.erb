@@ -1,0 +1,22 @@
+<%#
+# Html form for new Post
+%>
+<div class="form-container">
+<%= form_for @post , :remote => true do |f| %>
+  
+  <div class="notice"></div>
+  
+  
+  <div class="label">Title</div>
+  <div class="field">
+    <%= f.text_field :title , :placeholder => "A short title here"%>
+  </div>
+  
+  <div class="label">How do you feel?</div>
+  <div class="field">
+    <%= f.text_area :content, :placeholder => "Write everything you want here" %>
+  </div>
+<% end %>
+
+</div>
+

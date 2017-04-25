@@ -1,0 +1,9 @@
+<%#
+# Called after post update or creation
+%>
+
+
+myBlog.setDirty('all-posts',true);
+<%= render "single_post.js" %>
+
+myBlog.refeshWidgets();

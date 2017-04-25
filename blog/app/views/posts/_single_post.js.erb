@@ -1,0 +1,23 @@
+<%#
+# Displays a single Post expanded with comments and notice, if any
+%>
+
+var post = <%=@post.to_json(:methods => [:updated_at_formatted, :no_of_comments]).html_safe%>;
+
+var post = new Post({post:post, expanded : true});
+
+myBlog.changeTemplate("show",'<%=@post.id%>');
+myBlog.setSinglePost(post.$());
+myBlog.toggleWallContent('post');
+
+
+post.populateComments(<%=@post.comments.to_json(:methods => :created_at_formatted).html_safe%>)
+
+post.setCommentForm('<%=escape_javascript(render "/comments/form_comment")%>')
+
+//remove loading if any
+Blog.loading(Blog.$wallContainer, false);
+
+<%if !flash[:notice].nil?%>
+$("#notice").MyUInotice({msg:'<%=escape_javascript(flash[:notice])%>'}).show();
+<%end%>

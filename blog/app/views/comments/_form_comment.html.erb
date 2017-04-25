@@ -1,0 +1,18 @@
+<%#
+# form for creating a new comment
+%>
+
+
+<div class="form-comment-container small">
+<%= form_for ([@post,@post.comments.build]), :id => "comment-form", :remote => true do |f| %>
+
+  <div class="field">
+    <%= f.text_field :commenter , :placeholder => "Who are you?", :class=> "small"%>
+  </div>
+  <div class="field">
+    <%= f.text_area :body, :placeholder => "What do you think about this post?", :class=> "small" %>
+  </div>
+<% end %>
+</div>
+
+

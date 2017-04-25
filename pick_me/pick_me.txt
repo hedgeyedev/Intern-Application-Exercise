@@ -1,0 +1,24 @@
+Hello, 
+
+my name is Amedeo D'Ascanio and I would like to be considered for a position at Hedgeye. Before explaining you why you should pick me, I would like to tell you why you would not select me:
+
+- I am applying to be considered for a training position participating in the Professional Career Training program (http://j1visa.state.gov/programs/trainee or http://www.interexchange.org/career-training-usa/hire-intern-trainee), so maybe this is not a good option for you.
+- I am not a ruby developer: I have used ruby on rails for the first time doing this exercise.
+- I am currently not in US; Visa sponsorship can be easily provieded through the above mentioned program, though.
+
+So, why you would ever think of considering my profile?
+I have already some experience in web development: 
+- I am a UI software engineer at Amadeus, in France, with responsibilities on the eretail product which provides the standard booking flows for fligths, cars and hotels for many airline companies. 
+- Besides delivering new features and performing maintenance activities, I am now involved in several activities to improve customization, usability and accessibility for people with disabilities. 
+- In doing these tasks I have been using mainly javascript and js frameworks, (x)html, css, Java, jsp.
+- Before being at Amadeus I had worked at United Nations' agency FAO in Rome as Java web developer. At FAO I had to work on the full stack (front-end, back-end and database development) of an internal Information System.
+
+After getting my Masters Degree in Computer Engineering in Italy, defending a thesis carried out at the University of California, Irvine, I have started to look at the possibility of participating in the Professional Career Training in order to gain a considerable experience working in an American company. A position at Hedgeye seems a great opportunity to achieve this goal.
+
+I hope that my profile could be somehow suitable for this position or any other opening you might have available in your company.
+
+Thank you for your time in considering my application.
+
+Sincerely
+
+Amedeo D'Ascanio

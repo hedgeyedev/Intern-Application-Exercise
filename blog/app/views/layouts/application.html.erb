@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "layout", :media => "all" %>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.9.0/build/cssreset/cssreset-min.css"/>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="body-wrapper">
+  <%= render "shared/banner" %>
+  <div id="outer-wrapper">
+    <div id="side-content">
+      <%= render "shared/left_content" %>
+    </div>
+    <div id="main-content">
+      <%= render "shared/action_bar" %>
+      <div class="content-body">
+        <%= yield %>
+      </div>
+    </div>
+ 
+  </div>
+</div>
+</body>
+</html>

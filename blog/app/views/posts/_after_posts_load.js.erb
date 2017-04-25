@@ -1,0 +1,30 @@
+<%#
+# Loads and display all posts in the main page
+%>
+
+myBlog.flushWall();
+
+<%if @dirty == true%>
+  myBlog.refeshWidgets();
+<%end%>
+
+<%if @posts.empty?%>
+    myBlog.setEmptyWall();
+<%end%>
+    
+<%@posts.each do |post|%>
+  var post = <%=post.to_json(:methods => [:updated_at_formatted,:no_of_comments]).html_safe%>
+  myBlog.appendPost(post);
+<%end%>
+
+//remove loader if any
+Blog.loading(Blog.$wallContainer, false);
+
+myBlog.setMoreLink(<%=POSTS_LIMIT%>);
+myBlog.setDirty('all-posts',false);
+myBlog.toggleWallContent('all-posts');
+myBlog.changeTemplate("index");
+
+<%if !flash[:notice].nil?%>
+  $("#notice").MyUInotice({msg:'<%=escape_javascript(flash[:notice])%>', type:'info'}).show();
+<%end%>

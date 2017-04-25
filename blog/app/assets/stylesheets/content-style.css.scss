@@ -1,0 +1,195 @@
+
+@import 'shared-colors';
+
+@import 'shared-mixin';
+
+a.add-comment {
+    margin: 5px;
+}
+
+.new-post-action  {
+    &:hover{
+        text-decoration: none;
+        text-shadow: $closeShadow;
+        color: $opaqueWhite;
+    }
+}
+
+.empty-box{
+    padding-top: 50px;
+    text-align: center;
+    color:  #BBB;
+    text-shadow: $whiteShadow;
+    &.large{
+        padding-top: 50px;
+        font-size: 3em;
+    }
+    &.medium{
+        padding-top: 30px;
+        font-size: 1.5em;
+    }
+}
+
+#blog-wall .post:last-child {
+    margin-bottom: 20px;
+    
+}
+
+.content-header {
+      border-bottom: 1px solid $borderColor;
+      height: 50px;
+      font-size: 3em;
+      font-family: 'BebasNeueRegular', Arial;
+      text-shadow: $closeShadow;
+      line-height: normal;
+      color: $headerColor;
+      &.small {
+        height: 35px;
+        font-size: 2em;
+        margin-top: 3px;
+        margin-bottom: 5px;
+      }
+}
+
+
+
+/*Banner******/
+#banner {
+    .go-home-button {
+        cursor: pointer;
+    }
+    .menu {
+        margin-left :60px;
+        a {
+           @include button-style( $opaqueWhite, #333, #777);
+        }
+    }
+}
+
+.auth {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+#action-bar {
+    width: 100%;
+    height: 40px;
+    aborder: 1px solid #ddd;
+    border-radius: 2px;
+    padding-top: 2px;
+    margin: 15px auto 0px;
+    @include action-bar-color;
+}
+
+
+.button {
+        cursor: pointer;
+        display: inline-block;
+
+        background-color: #438bc5;
+        border: 1px solid darken(#438bc5,4%);
+        border-radius: 2px;
+        padding: 2px 10px;
+        margin: 3px;
+        &:hover {
+            background-color: lighten(#438bc5,4%)
+        }
+        a {
+            display: block;
+            width: 28px;
+            height: 28px;
+            background-image: url('blog_sprite-28.png');
+        }
+        &.save-post a,
+        &.save a {
+            background-position: -0px 0px;
+        }
+        &.all-posts a{
+            background-position: -28px 0px;
+        }
+        &.back a{
+            background-position: -56px 0px;
+        }
+        &.new-post a{
+            background-position: -84px 0px;
+        }
+        &.edit-post a{
+            background-position: -112px 0px;
+        }
+        &.delete-post a{
+            background-position: -140px 0px;
+        }
+        &.comments a{
+            background-position: -84px 28px;
+            
+        }
+        &.auth.login a{
+            background-position: -0px 28px;
+            
+        }
+        &.auth a{
+            background-position: -112px 28px;
+            
+        }
+        &#search-button a {
+            background-position: -56px 28px;;
+        }
+        &.left {
+            float: left;
+        }
+        &.right {
+            float: right;
+        }
+
+        &.auth {
+            &:hover{
+                background-color: rgba(255,255,255,0.2);
+                border-color: rgba(255,255,255,0.2);
+            }
+            transition: border-color, background-color 0.5s;
+            -moz-transition: border-color, background-color 0.5s;
+            -webkit-transition: border-color, background-color 0.5s;
+            -o-transition: border-color, background-color 0.5s;
+            background-color: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+    }
+
+
+body[auth-disabled=true] .auth-aware {
+    display: none !important;
+}
+
+.empty-message {
+    @include empty-message-style;
+}
+
+#blog-wall {
+    position: relative;
+}
+
+#all-posts {
+    .empty-message {
+        display: block;
+        position: relative;
+        line-height: 2.5em;
+        font-size: 2.5em;
+    }
+}
+
+.loader {
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    display: inline-block;
+    position: absolute;
+    background-position: center;
+    background-color: rgba(255,255,255,0.7);
+    background-image: url('loader.gif');
+}

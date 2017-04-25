@@ -1,0 +1,186 @@
+
+$okresult_bg_color  : #74a446;
+$okresult_border    : 1px solid #618a3c;
+$error_bg_color     : #ff1f1f;
+$error_border       : 1px solid #cd0a0a;
+$info_bg_color      : #438bc5;
+$info_border        : 1px solid #438bc5;
+
+@mixin head-color {
+    background: -moz-linear-gradient(top, #f2f2f2, #e2e2e2);
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e2e2e2));
+    background: linear-gradient(top, #f2f2f2, #e2e2e2);
+    border-bottom: 1px solid rgba(172,179,183,0.5);
+    -webkit-box-shadow: 0 1px 1px #fff inset;
+    box-shadow: 0 1px 1px #fff  inset;
+}
+
+@mixin iconCommon {
+    padding: 2px;
+    background-repeat: no-repeat;
+    background-position-x: 2px;
+    background-position-y: 2px;
+}
+
+@mixin widget-background {
+    background: rgb(241,241,241); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(241,241,241,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,241,241,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(241,241,241,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+
+/*************************************************************/
+/* notice plugin */
+
+.notice {
+  display: none;
+  width: 100%;
+  height: 40px;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  &.okresult {
+    background-color: $okresult_bg_color;
+    border: $okresult_border;
+    .delete {
+        &:hover {
+          background-color: darken($okresult_bg_color, 9%);
+          
+       }
+    }
+    .icon {
+        background-image: url("check.ico");
+    }
+  }
+  &.error {
+    background-color: $error_bg_color;
+    border: $error_border;
+    .delete {
+        &:hover {
+          background-color: darken($error_bg_color, 15%);
+       }
+    }
+    .icon {
+        background-image: url("error.ico");
+    }
+  }
+  &.info {
+    background-color: $info_bg_color;
+    border: $info_border;
+    .delete {
+        &:hover {
+          background-color: darken($info_bg_color, 9%);
+
+       }
+    }
+    .icon {
+        background-image: url("info.ico");
+    }
+  }
+  .delete {
+    float: right;
+    background-image: url("delete.ico");
+    width: 16px;
+    height: 16px;
+    margin: 10px;
+    border-radius: 3px;
+    @include iconCommon;
+  }
+  .message {
+    display: inline-block;
+    height: 40px;
+    margin-top: 12px;
+    margin-left: 10px;
+  }
+  .icon {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 6px;
+    margin-left: 10px;
+    @include iconCommon;
+  }
+
+}
+
+/*************************************************************/
+/* Widget plugin */
+
+
+.widget-box {
+
+    &.widget-dialog {
+        position: absolute;
+        z-index: 1003;
+        top: 10%;
+        left: 3%;
+        bottom: 10%;
+        .content-body {
+            overflow-y :scroll;
+            position: absolute;
+            bottom: 0px;
+            overflow-y: scroll;
+            right: 0px;
+            left: 0px;
+            top: 35px;
+        }
+    }
+
+    @include widget-background;
+
+    header, .header{
+        display: block;
+        position: relative;
+        font-size: 28px;
+        text-shadow: #fff;
+        @include head-color;
+        text-align: center;
+        margin-bottom: 0px;
+        color: #888;
+        line-height: normal;
+
+        .widget-close {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('delete-24.ico');
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            &:hover {
+                background-position: 0px -24px;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .content-body {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 6px;
+    }
+    width: 90%;
+    margin-left: 2%;
+    margin-top: 15px;
+
+    border-radius: 3px;
+    border: 1px solid #DDD;
+}
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index :1001;
+    background: rgba(0,0,0,0.7);
+}

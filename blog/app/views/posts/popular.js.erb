@@ -1,0 +1,9 @@
+<%#
+# updates most popular widget content
+%>
+
+
+
+Blog.$mostPopularWidget.MyUIwidget("body",'<%=escape_javascript(render "populars")%>' );
+
+$(".most-popular a",Blog.$mostPopularWidget).tooltip();

@@ -1,0 +1,12 @@
+<%#
+# Display a form with post data for updating
+%>
+
+
+myBlog.appendForm("<%=escape_javascript(render 'form')%>");
+myBlog.toggleWallContent('form');
+myBlog.changeTemplate('edit','<%=@post.id%>');
+
+//remove loader if any
+Blog.loading(Blog.$wallContainer, false);
+
