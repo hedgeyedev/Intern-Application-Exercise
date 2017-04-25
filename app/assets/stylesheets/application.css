@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+h1 {
+  font-size: 100px;
+  color: green;
+  text-align: left;
+  font-family: arial, sans-serif;
+  margin: 50;
+  padding: 7px 12% 0;
+}
+
+
+
+th {
+  font-size: 40px;
+  color: grey;
+  text-align: left;
+  font-family: arial, sans-serif;
+  margin: 20px;
+  padding: 3px 2% 0;
+}
+strong {
+    font-weight: bold;
+    padding: 3px 2% 0;
+}
+table, th, td {
+    border: 2px solid yellow;
+}
+td {
+  font-size: 25px;
+  color: purple;
+  text-align: left;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 3px 2% 0;
+}
+h2 {
+  font-size: 70px;
+  color: red;
+  text-align: left;
+  font-family: arial, sans-serif;
+  margin: 80;
+  padding: 10px 10% 8;
+}
+body {
+    background-color: lightblue;
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+p {
+    border: 1px solid blue;
+    font-size: 20px;
+    padding: 10px;
+    margin: 30px;
+    color: #ff5566;
+}
