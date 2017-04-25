@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <td>
+            <div id = 'writers_login'>
+                <%=form_tag 'sessions#login' do %>
+                    Login <%=text_field_tag 'username' %> <br/>
+                    Password <%=password_field_tag 'password' %>
+                    <%= submit_tag "Login" %>
+                <%end%>
+            </div>
+        </td>
+        <td>
+            <div id= 'commenters_login'>
+                Login with Facebook account:
+                <div id="user_nav">
+
+                    <%= link_to 'Connect to Facebook',  :controller => 'sessions', :action => 'create', id: "sign_in" %>
+
+            </div>
+            </div>
+        </td>
+    </tr>
+</table>

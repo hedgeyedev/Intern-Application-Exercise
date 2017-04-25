@@ -1,0 +1,18 @@
+Hi everyone
+
+My name is Lucas Trombeta.
+I am hard-working, a quick learner, and I am highly adaptable. 
+I have experience in working with coding and design databases, 
+as well as improving features in apllications(plugins). 
+Also, I like to work in group teams, specially with people that are 
+available to learn and teach each other. 
+Unfortunately my project is not finished, but if you analyse the code 
+you will see that I tried to do something different as login with
+facebook for comments. This integration is working, unfortunately I have
+no more time this week to spend in this project to rearranje the views 
+and create a beautiful design, once I am a student and I have some projects
+to bring back this week. But I believe if you analyse it, you will see that 
+I have knowledge in coding in ruby and I am highly motivated to learn more
+and help your team as a developer: coding, giving ideas, sharing experiences.
+
+Have a nice week
