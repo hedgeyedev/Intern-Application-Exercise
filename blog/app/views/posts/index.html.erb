@@ -1,0 +1,35 @@
+<section>
+    <h1><%= link_to 'Vlad\'s Blog.', posts_path, class: "blog-header" %></h1>
+
+    <hr>
+
+    <% @posts.each do |post| %>
+        <section class="post-section w3-round-large">
+        <h3 id="postTitle"><%= link_to post.title, post %></h3>
+        <% if post.imageSrc.length > 0 %>
+            <img id="postImage" src="<%= post.imageSrc %>"/>
+        <% end %>
+        <div class="item"><p><%= simple_format(post.content) %></p></div>
+		<button align="center" class="item custom-button">Read more</button>
+        </section>
+    <% end %>
+
+	<br />
+	<hr>
+</section>
+
+<section>
+    <h4 id="garfieldText"></h4>
+    <img id="todaysGarfieldStrip" />
+</section>
+
+<section id="quoteSection">
+    <hr>
+
+    <p id="quote" onclick="nextQuote();"></p>
+    <p id="person" onclick="nextQuote();"></p>
+</section>
+
+
+<%= stylesheet_link_tag 'additionalStyling.css' %>
+<%= javascript_include_tag('index.js') %>

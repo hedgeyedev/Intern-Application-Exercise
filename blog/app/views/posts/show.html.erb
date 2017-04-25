@@ -1,0 +1,46 @@
+<section align="center">
+    <h1><%= link_to 'Vlad\'s Blog.', posts_path, class: "blog-header" %></h1>
+ 
+    <hr>
+
+    <h3><%= @post.title %></h3>
+    <% if @post.imageSrc.length > 0 %>
+        <img src="<%= @post.imageSrc %>"/>
+    <% end %>
+    <p><%= simple_format(@post.content) %></p>
+
+    <br />
+
+    <hr>
+
+    <h3>Comments:</h3>
+
+    <hr>
+    <% @post.comments.each do |comment| %>
+        <div>
+            <span style="float:left;"><b><%= comment.commenter %></b></span>
+            <span id="timePostedComment"><%= comment.created_at.localtime.strftime("%B %e, %Y at %-I:%M %p") %></span>  <!-- Ex. April 4, 2017 at 3:30 PM -->
+        </div>
+		
+        <p id="commentBody"><%= simple_format(comment.body) %></p>
+        <hr>
+    <% end %>
+
+    <% if @post.comments.length == 0 %>
+        <p>No one has commented on this post yet.</p>
+        <hr>
+    <% end %>
+
+    <br />
+
+    <h3>Post a comment:</h3>
+        <% flash.each do |key, value| %>
+            <h4 id="errorMessage"><%= value %></h4>
+        <% end %>
+		
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+        <p>Display name: <%= f.text_field :commenter, class: "input-font" %></p>
+        <p>Comment: <%= f.text_area :body, class: "text-area-align input-font" %></p>
+        <p><%= f.submit "Post comment", class: "custom-button" %></p>
+    <% end %>
+</section>

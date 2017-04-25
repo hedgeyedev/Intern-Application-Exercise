@@ -1,0 +1,45 @@
+    You should pick me for the Developer Intern (Dana Point) position because I’m
+an independent, curious, and diligent student who enjoys working with others to
+ship high-quality code. I am currently a senior at the University of Washington
+Tacoma and this June I will be graduating with a Bachelor of Science in Computer
+Science, with a minor in Mathematics. I have been passionate about technology
+and coding ever since I was a child. Over the years I have coded in many
+different languages (C, Python, Java, JavaScript, VB.NET, Assembly), but my
+favorite two are Java and JavaScript. I had never tried Ruby or Ruby on Rails
+before, but I thoroughly enjoyed my time with them over the course of this
+exercise. I found it fairly interesting to see classic object-oriented
+principles being applied to web development. I am familiar with TDD, but am not
+as well-versed with the process as I would like to be; I see this position as a
+good opportunity to improve those skills. On the other hand, I have had multiple
+experiences with Agile software development. These experiences included weekly
+meetings, incremental development, prioritized user stories, etc., etc. The
+latest experience involved building an Android application that used PHP to
+read and write to a MySQL database. I am currently enrolled in a databases
+course, where I hope to learn how to expertly design relational databases.
+Through my years of experience I have often encountered Linux, but I have never
+heard of Nix or NixOS before, though I have often used the APT and yum package
+managers. I have some experience designing user interfaces for my programs, and
+am versed in Photoshop (and Illustrator), but I would not call myself a designer.
+
+    Regarding the required proficiencies, I consider that my extensive experience
+with coding adequately fulfills the programming requirement. I strongly believe
+that my diverse knowledge will allow me to rapidly pick up and excel at Ruby on
+Rails development. The web development proficiency is a little more problematic.
+I have developed web apps with HTML, CSS, and JavaScript (sometimes with a
+little jQuery), but have minimal experience shipping such code into production.
+However, I surpass the testing proficiency requirement due to my comprehension
+of practical software testing. I have often written unit tests for projects (and
+GUI tests on one occasion), and I’ve spent this whole year grading other
+people’s code. This involved studying and testing 35 students’ code submissions
+on 4-6 occasions a quarter (3 quarters total). Due to these competencies, I
+firmly feel that I am in a strong position to quickly adapt and begin positively
+contributing to Hedgeye.
+
+Sincerely,
+
+Vlad
+vkaganyk (at) uw.edu
+
+P.S. I have family in Irvine, so relocation would be trivial.
+
+Resume: goo.gl/ybes11
