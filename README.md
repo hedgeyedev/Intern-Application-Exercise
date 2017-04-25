@@ -15,7 +15,7 @@ This is the intern version of https://github.com/hedgeyedev/Developer-Applicant-
    * Add a file pick_me.txt which describes why we should choose you as an intern.  It would be nice to stand out, but a fallback would be typical cover letter type verbiage.  Include why you think our internship is interesting to you.
    * (Optional) Anything else you want us to know, resume, portfolio, etc. is appropriate.
 3. In the blog directory, create a simple Ruby on Rails scaffold based blog.  you will have to do the following
-   * setup your computer for Ruby on Rails development.  [Rails Installer](http://railsinstaller.org/) is a good start point for Windows and OSX, if you're running Linux, I imagine you know how to use your package manager to set it up.  This [setup for Ubuntu](http://coding.smashingmagazine.com/2011/06/21/set-up-an-ubuntu-local-development-machine-for-ruby-on-rails/) might be a good start point.
+   * setup your computer for Ruby on Rails development.  For windows, and older than Mavericks versions of OSX [Rails Installer](http://railsinstaller.org/en) is the easiest. [Go Rails](https://gorails.com/setup) is a more technical and covers Windows 10, OSX and Ubuntu. If you're running a different version of Linux, you probably know what to do.
    * Create a rails project in the blog directory
 
             $ rails new blog
