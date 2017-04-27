@@ -1,0 +1,73 @@
+====== Yu Jiang ======
+
+612-423-7117 | jiang461@umn.edu
+621 Huron Blvd SE Apt #2202C, Minneapolis, MN 55414
+
+
+====== EDUCATION ======
+ 
+==== University of Minnesota, Twin Cities ====
+
+Sep 2011 - Dec 2013 (Expected)  Minnesota, MN
+                
+Master of Science - Computer Science Major                                   
+GPA - 3.95 / 4.0
+ 
+Related Courses:
+-- Programming Languages                                                    
+-- Data Communication & Networks
+-- Introduction to Data Mining                                              
+-- Advanced Algorithm & Data
+-- Computer Graphics                                                             
+-- Advanced Compiler Techniques 
+-- Software Engineering
+-- Operating System (Current Semester) 
+
+==== Tsinghua University ====
+
+Sep 2006 - Jul 2010  Beijing, China 
+
+Bachelor of Engineering - Automation Major
+            
+                                                                                   
+====== EXPERIENCE ======
+ 
+==== Smart Learning Inc. ====       
+                                                                                       
+Mar 2012 - Jan 2013  Minneapolis, MN
+ 
+Part-time Software Developer Intern                                                                      
+-- Individually design and develop the windows version of the company's major 
+   product Smart Chess based on its iOS version. [ C# .Net, MySQL ]
+
+==== National CIMS Engineering Research Center ====  
+    
+Oct 2010 - Jul 2011  Beijing, China
+
+Software Developer Intern                                                                                          
+-- Individually designed and developed the strategy-view module of a 
+   state-of-the-art integrated enterprise modeling platform. [ C# .Net, SQL ]
+
+==== PetroChina Planning & Engineering Institute ====
+
+Summer 2009  Beijing, China
+
+Software Developer Intern                                                                                                    
+-- Implemented VCF (Volume Correction Factor) algorithm of petroleum products and 
+   developed external UI with other 2 group members. [ C++ ]
+
+
+====== PROJECT ======
+
+==== Course Projects ====
+
+-- Peer-to-Peer (P2P) File Sharing System Using Socket Programming [ Java ]
+-- Implementation and Execution of Denotational Semantics [ Haskell ]
+-- Basic Optimization of the Compiler Monta [ C ]
+-- Graphics Processing Pipeline Based on COLLADA Modeling [ C++ ]
+-- Type-ahead Search Algorithm for A Specified Database [ C++, SQL ]
+-- Analysis and Diagnostic Tool for Financial Reports [ C# ]
+
+==== Other Projects ====
+
+-- Firefox Extension - eSports Game Reminder [ HTML, CSS, JavaScript, JQuery ]

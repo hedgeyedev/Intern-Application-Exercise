@@ -1,0 +1,27 @@
+<% if @posts.size == 0 %>
+  <h1>No Posts Found</h1>
+<% else %>
+  <h1>All <%= @posts.size %> Posts</h1>
+<% end %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2>
+      <span class="title">
+        <%= post.title %>
+      </span>
+      <span class="operation">
+        <%= link_to 'Show', post %> |
+        <%= link_to 'Edit', edit_post_path(post) %> |
+        <%= link_to 'Delete', post, confirm: 'Are you sure?', method: :delete %>
+      </span>
+    </h2>
+    <%= truncate post.content, length: 150 %>
+    <% if post.content.length > 150 %>
+      <%= link_to 'Read more', post %>
+    <% end %>
+  </div>
+  <br/>
+<% end %>
+  
+<%= button_to "New Post", new_post_path, :method => "get", :class => "button" %>
