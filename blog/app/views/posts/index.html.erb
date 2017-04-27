@@ -1,0 +1,36 @@
+<h1 class = "main-title">SimpleBlog 1.0</h1>
+<br />
+<%= link_to 'New Post', new_post_path %>
+<h3>Recent Posts:</h3>
+<body>
+<div class = "content">
+<% @posts.each do |post| %>
+<table>
+  <tr>
+        <td class = "head"><%= post.title %></td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+  <tr></tr>
+      <tr>
+        <td class = "content"><%= post.content %><br></td>
+      </tr>
+  </table>
+  <br />
+  <table>
+  <tr>
+    <td></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+</table>
+<div class = "separating-line">
+</div>
+<br />
+<% end %>
+</div>
+<br />
+
+<%= link_to 'New Post', new_post_path %>
+</body>
