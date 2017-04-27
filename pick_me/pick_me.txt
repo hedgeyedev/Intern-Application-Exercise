@@ -1,0 +1,23 @@
+Hey Hedgeye!
+
+My name is Ha Min Ko and I am a junior at Babson College. I’ve spend the last four months honing my abilities in full-stack web development at an intensive software engineering and entrepreneurship fellowship called Horizons, and now I’m eager to put my newly gained skills to the test working on real world projects as a software engineering intern. I’ve built several applications on my own that you can check out here (http://haminko.com).
+
+Why am I applying to Hedgeye? The fact that you guys screen through prospective interns by providing this intern-application-exercise makes Hedgeye pop out out of all the companies I’ve applied to in the past. Having written hundreds of cover letters and filling hundreds of forms, I find this exercise to be a refreshing change in the internship application process. If anything, I’m extremely glad I’m able to showcase my abilities and passion for web technologies up front, and I’m already under the impression that if I intern here I will be able to take my knowledge of web technologies to the next level.
+
+I also find Hedgeye interesting as a business because it seems to be rattling and disrupting the fortress itself… Wall Street. Companies like yours that prioritizes “transparency, accountability, and trust” means a lot to me, (especially in the financial industry where many uneducated people get screwed over and where uncontrolled speculative investing causes economic disasters like the 2008 economic crisis). Above all else, I value freedom, and I believe Hedgeye is helping bring that quality into the financial industry. I’d like to help make that happen.
+
+More about myself:
+
+They say the hardest person in the world to understand is yourself, but I am sure of two things. One, I enjoy tackling challenging problems, and two, I enjoy finishing tasks and seeing my work in production. Ever since I was a kid, I loved solving puzzles, and this fascination of mine has led to my desire to work as a software engineer. I want to spend the rest of my life challenging myself with difficult but impactful problems, because that brings me immense satisfaction while simultaneously generating value for the world.
+
+Currently, I’m working as a contract software engineer for a startup competition called PennVention at Upenn. We’ve been building an end-to-end management platform called PennTracker to help expedite the process of the compeition and to consolidate all the data into one location. I’ve also built http://farebuddy-public.herokuapp.com, which allows users to find cheaper Uber rides; it uses Node.js,/Express, and MongoDb. Other projects include clones of popular sites such as Yelp and Facebook, chat applications utilizing sockets and React.js, and a mobile iOS game and a Yo-alternative app built with React Native.
+
+But the real reason you should hire me is because I saw your main website and there’s a couple bugs relating to the navigation bar. Looks like you guys could use some extra help and I’m more than willing!
+
+Anyways, I’d love to set up a time to have a quick chat about Hedgeye and any potential questions you have! Please let me know if this is possible, and if so, what a good time would be! I put my contact info and resume below:
+
+Phone: 213-819-2885
+
+Email: hko1@babson.edu
+
+Resume: haminko.com/resume.pdf
