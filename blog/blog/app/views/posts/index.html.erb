@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= link_to 'New Post', new_post_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <!-- <th>Content</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <p id="p1">Hello World!</p>
+
+    <script>
+      document.getElementById("p1").innerHTML = "New text!";
+    </script>
+    
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td id="date"><%= post.updated_at %></td>
+        <td><%= link_to 'Read', post %></td>
+
+        <script>
+          var el = document.getElementById("date");
+          <!--var x = post.updated_at-->
+          <!--x.console_log()-->
+          el.innerHTML = "HI";<!--post.updated_at[0:2]-->
+        </script>
+        <!--
+        <td><%= post.content %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
