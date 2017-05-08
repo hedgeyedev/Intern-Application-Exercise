@@ -9,13 +9,4 @@ module ApplicationHelper
       post_title
     end
   end
-
-  # Capitalizes first word in content of post, if it exists
-  def capitalize_first(post_content)
-    if post_content.length != 0
-      post_content[0].upcase
-    else
-      ""
-    end
-  end
 end

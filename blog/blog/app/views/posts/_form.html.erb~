@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field" align="center">
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :post_title %>
   </div>
 
-  <div class="field" align="center">
+  <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :post_content %>
   </div>
 
-  <div class="actions" align="center">
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
