@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Andrew Savage
+5/9/17
+Hedgeye Intern Exercise
 
-Things you may want to cover:
+Ruby version 2.4.1
+Rails version 5.1.0
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The server was run on localhost:3000, using
+$ rails server
+in /Intern-Application-Exercise/blog/blog/
+        
+Edited files were mostly limited to scss editing in posts.scss and various
+webpage layouts in the posts folder.
