@@ -1,0 +1,33 @@
+Hello! Thanks for taking the time to look over my version of your exercise and
+consider me for this job. I feel that I am already well-qualified for the
+position as a Developer Intern in Stamford, and think that my passion to learn
+more about web programming will drive me to become an even better employee as
+the summer progresses.
+
+I'm currently a sophomore at Tufts University studying Computer Science and
+Math. I've done a variety of things that prepare me well for the internship,
+from classes to side projects. I have enough experience with C++ and Java,
+mostly through classes, to be well-versed in object-oriented programming. I
+have also had to work in groups or pairs, whether it has been during a hackathon
+or during a project, so feel that my communication skills are excellent.
+
+I am also very familiar with bugfixes and an extensive amount of testing through
+a Machine Structures and Programming course I took last semester. Many of the
+projects required very careful testing and debugging, which has turned into
+regular practice for me.
+
+My motivation helps me stand out: I taught myself web programming languages
+during high school to create a small (local) website, and have continued coding
+with these languages in college, as you can see in the Water Irrigation project
+on my github, which was done in a 20 hour span at a hackathon. This motivation
+serves me well, as even with no experience with Ruby on Rails beforehand, once
+I began editing the blog given to me, I started to enjoy it and picked it up
+very quickly. Unfortunately, I'm applying to this job in the middle of finals,
+so don't have much time to work on the blog, but I'm sure I'll do more once
+time permits.
+
+Thank you again for considering me for this position. I hope you agree that I
+am a good fit for this job, and hope to hear from you soon.
+
+Best,
+Andrew Savage

@@ -1,0 +1,12 @@
+module ApplicationHelper
+
+  # Shortens post title, if necessary
+  def convert_title(post_title = '')
+    x = 25
+    if post_title.length >= x
+      post_title[0..(x-2)] + " ..."
+    else
+      post_title
+    end
+  end
+end
