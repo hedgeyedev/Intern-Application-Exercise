@@ -1,0 +1,33 @@
+June 25, 2017
+
+Scott Zoba
+19 Blackberry Lane 
+Shelton, CT  06484 
+203-321-6104
+scottzoba94@gmail.com
+
+Dear Hedgeye Team,
+
+	I am applying for the position of Developer Intern. I learned of this position through glassdoor.com. This position stood out 
+  to me, because I am very interested in web development, and have recently begun teaching myself HTML and CSS. I also have 
+  experience using object oriented programming with C# and C++. I recently graduated from Sacred Heart University with a BS in 
+  Computer Science. During my studies, I took several classes that combined aspects of programming and software engineering. 
+
+	As a senior, myself along with my partner were required to spend the year designing and developing a video game, using 
+  self-taught tools and programs. We started off by creating documentation, such as data flow diagrams, event tables, and modules, 
+  and then implemented features into the game itself. We were required to update our professors on our progress according to a 
+  project schedule. We needed to regularly adapt our game to changing variables such as time, user feedback during testing, or 
+  simply coming up with stronger ideas. While developing the game, it was immensely satisfying to bounce ideas off my partner, 
+  and come up with something to work on together. The dynamic nature of this type of work appeals greatly to me.
+
+	I also gained valuable work experience at Sacred Heart. For nearly two years, I worked in Sacred Heart’s IT department, 
+  performing front desk, call center, and onsite support. I regularly encountered clients who were having problems I had never 
+  seen before, and would need to analyze the situation, and identify solutions either on my own, or by working together with my 
+  co-workers. Multi-tasking and prioritizing important issues over minor ones were large aspects of the job. 
+
+	I believe that my positive attitude, experience, and passion for technology solutions makes me a strong candidate for 
+  this position. My skills and abilities will help support Hedgeye in the independent investment research business. 
+
+
+Sincerely, 
+Scott Zoba
