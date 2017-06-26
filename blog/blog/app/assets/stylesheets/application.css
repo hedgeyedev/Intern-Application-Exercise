@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+h1{
+font-size: 60px;
+font-family: tahoma;
+color: #030666;
+
+}
+
+body{
+background-color: rgba(58, 71, 255, .2);
+}
