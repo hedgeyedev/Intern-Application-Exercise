@@ -18,3 +18,9 @@
 	padding: 40px;
 	border-radius: 10px;
 }
+
+.post-body {
+	text-align: justify;
+	height: 70px; 
+	overflow: hidden;
+}
