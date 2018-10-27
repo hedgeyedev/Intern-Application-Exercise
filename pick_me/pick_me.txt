@@ -15,8 +15,8 @@ Currently I am working on a management tool my husband could benefit at work to 
 https://github.com/lizzie92869/
  
 I take every project seriously, developing it to the point where I would feel comfortable to propose this tool for anyone to use. 
-This means I am working toward filling up the main functions of the tool, the security aspect of the application and, of course, a pleasant 
-user experience. 
+This means I am working toward filling up the main functions of the tool, the security aspect of the application and, of course, a 
+pleasant user experience. 
 
 Today I am hoping to bring a valuable contribution to a team of other passionate developers. 
 So if your company is looking to for a realiable junior developer with a strong team spirit to add to their software development team, 
