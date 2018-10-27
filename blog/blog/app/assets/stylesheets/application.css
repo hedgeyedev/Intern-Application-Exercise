@@ -24,3 +24,12 @@
 	height: 70px; 
 	overflow: hidden;
 }
+
+a, a:link, a:visited, a:hover {
+    color: #27DAA8;
+}
+
+/*a:hover {
+	
+	background-color: none;
+}*/

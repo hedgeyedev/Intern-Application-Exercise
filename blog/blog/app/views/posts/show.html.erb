@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<div class="row blue-grey lighten-5 block-post">
+      <div class="row right-align">
+        <%= link_to 'Show', @post %> |
+        <%= link_to 'Edit', edit_post_path(@post) %> |
+        <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>             
+      <div class="row blue-grey-text"><h5><%= @post.title %></h5></div>
+      <div class="row post-body"><%= @post.content %></div>   
+</div>
+
+
+
+
+
