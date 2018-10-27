@@ -1,17 +1,21 @@
 Dear Mr. Forest Chang, 
 
-Two months ago I succeeded to accomplish something few have been able to go through: graduating from an intensive six-month bootcamp while taking care of a toddler full-time. 
-This statement may seem funny at first, but in order to do so I coded eight hours a day, taking advantage of any naptime and time where my husband could watch our son. 
+Two months ago I succeeded to accomplish something few have been able to go through: graduating from an intensive six-month bootcamp 
+while taking care of a toddler full-time. 
+This statement may seem funny at first, but in order to do so I coded eight hours a day, taking advantage of any naptime and time where 
+my husband could watch our son. 
 My training shedule often went into the late hours of the night. I knew it was worth every sacrifice. 
 I am passionate with Ruby on Rails; every hour spent on a project makes me want to spend another one on it. 
 
 I take pride in making applications solving needs and problems I encounter. 
-For example, I realized that too often I would be halfway through a movie when I remembered having already seen the movie and that I didn't like it.  
+For example, I realized that too often I would be halfway through a movie when I remembered having already seen the movie and that I 
+didn't like it.  
 So I created an application to keep track of movies I have already seen and those I want to see. 
 Currently I am working on a management tool my husband could benefit at work to organize his team around projects.
 https://github.com/lizzie92869/
  
-I take every project seriously, developing it to the point where I would feel comfortable to propose this tool for anyone to use. This means I am working toward filling up the main functions of the tool, the security aspect of the application and, of course, a pleasant user experience. 
+I take every project seriously, developing it to the point where I would feel comfortable to propose this tool for anyone to use. This means I am working toward filling up the main functions of the tool, the security aspect of the application and, of course, a pleasant 
+user experience. 
 
 Today I am hoping to bring a valuable contribution to a team of other passionate developers. 
 So if your company is looking to for a realiable junior developer with a strong team spirit to add to their software development team, I would be a great fit in your environment. 
