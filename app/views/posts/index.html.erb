@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div class="#607d8b blue-grey lighten-2">
+  <div class="row">
+    <div class="col s3"></div>
+    <div class="col s6">
+          <h2 class="white-text">Posts</h2>
+        <% @posts.each do |post| %>
+          <div class="row">
+            <div class="row blue-grey lighten-5 block-post">
+              <div class="row right-align">
+                <%= link_to 'Show', post %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>             
+              <div class="row blue-grey-text"><h5><%= post.title %></h5></div>
+              <div class="row"><%= post.content %></div>         
+            </div>
+          </div>
+        <% end %>
+    <br>
+    <%= link_to 'New Post', new_post_path %>
+    </div>
+    <div class="col s3"></div>
+  </div>
+</div>
