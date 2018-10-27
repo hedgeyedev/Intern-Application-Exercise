@@ -29,7 +29,6 @@ a, a:link, a:visited, a:hover {
     color: #27DAA8;
 }
 
-/*a:hover {
-	
-	background-color: none;
-}*/
+.container-show {
+	margin-top: 10%;
+}
