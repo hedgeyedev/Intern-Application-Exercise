@@ -14,13 +14,16 @@ So I created an application to keep track of movies I have already seen and thos
 Currently I am working on a management tool my husband could benefit at work to organize his team around projects.
 https://github.com/lizzie92869/
  
-I take every project seriously, developing it to the point where I would feel comfortable to propose this tool for anyone to use. This means I am working toward filling up the main functions of the tool, the security aspect of the application and, of course, a pleasant 
+I take every project seriously, developing it to the point where I would feel comfortable to propose this tool for anyone to use. 
+This means I am working toward filling up the main functions of the tool, the security aspect of the application and, of course, a pleasant 
 user experience. 
 
 Today I am hoping to bring a valuable contribution to a team of other passionate developers. 
-So if your company is looking to for a realiable junior developer with a strong team spirit to add to their software development team, I would be a great fit in your environment. 
+So if your company is looking to for a realiable junior developer with a strong team spirit to add to their software development team, 
+I would be a great fit in your environment. 
 
-Knowing you and Mr. Scott Smith for 2 years in the context of our Ruby meetups, I can see your expertise on the subjects we discuss and really would like the opportunity to learn from your experience.
+Knowing you and Mr. Scott Smith for 2 years in the context of our Ruby meetups, I can see your expertise on the subjects we discuss and 
+really would like the opportunity to learn from your experience.
 
 Looking forward to working on your biggest challenges with dedication, 
 
