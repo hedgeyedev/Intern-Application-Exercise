@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :update_like, :update_dislike]
+   skip_before_action :verify_authenticity_token, :only => [:update_like, :update_dislike]
   # GET /posts
   # GET /posts.json
   def index
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    set_post 
+    # set_post 
     if !current_user
       flash[:error] = "You must be logged in to see this page"
       redirect_to "/login"
@@ -83,6 +83,18 @@ class PostsController < ApplicationController
         format.json { head :no_content }
       end
     end
+  end
+
+  # POST /posts/1/update_like
+  def update_like
+    @post.likes +=1
+    @post.save
+  end
+
+   # POST /posts/1/update_dislike
+  def update_dislike
+    @post.dislikes +=1
+    @post.save
   end
 
   private

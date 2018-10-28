@@ -92,5 +92,18 @@ a.blanc {
 	color: white;
 }
 
+.thumbs {
+	font-size: 20px;
+	color: white;
+}
+
+.button_likes {
+	display: inline;
+	background-color: black;
+	border-radius: 10px;
+	padding: 10px;
+	margin-right: 10px;
+}
+
 
 

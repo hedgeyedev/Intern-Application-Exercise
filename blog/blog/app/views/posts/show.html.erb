@@ -11,6 +11,19 @@
 	      <div class="row blue-grey-text"><h5><%= @post.title %></h5></div>
 	      <div class="row"><%= @post.content %></div>   
 	</div>
+
+	<form action="/posts/<%=@post.id%>/update_like" method="post" class="button_likes">
+		<button type="submit" class="">
+	    <i class="far fa-thumbs-up thumbs"></i> <%=@post.likes%>
+		</button>
+	</form>
+
+	<form action="/posts/<%=@post.id%>/update_dislike" method="post" class="button_likes">
+		<button type="submit" class="">
+	    <i class="far fa-thumbs-down thumbs"></i> <%=@post.dislikes%>
+		</button>
+	</form>
+
 </div>
 </br>
 </br>
