@@ -1,17 +1,18 @@
 class UsersController < ApplicationController
 
 	def new
+
 	end
 
 	def create
 		user = User.new(
-			name: params[:email],
+			email: params[:email],
 			password: params[:password],
 			password_confirmation: params[:password_confirmation]
 		)
 		# require bootstrap gem
 		if user.save
-			session[:user_id] = user.user_id 
+			session[:user_id] = user.id 
 			flash[:success] = "You signed up successfully!"
 			redirect_to "/posts"
 		else
