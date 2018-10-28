@@ -3463,3 +3463,137 @@ Migrating to CreateUsers (20181028151119)
   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/new" for 127.0.0.1 at 2018-10-28 08:27:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:27:47 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 34ms
+
+
+  
+SyntaxError (/Users/brasstacks/Desktop/hedgeyedev/Intern-Application-Exercise/blog/blog/app/views/users/new.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...“Sign Up”, class: “btn btn-default”);@output_buffer.s...
+...                                ^):
+  
+app/views/users/new.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:28:09 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (456.8ms)
+Completed 500 Internal Server Error in 482ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“' for #<#<Class:0x007faca9567c70>:0x007faca8fb3ef0>):
+    1: <h2> Create Account</h2>
+    2: <%=form_tag “/users”, method: :post do%>
+    3:  <div>
+    4:   <%= label_tag :email%>
+    5:   <%= text_field_tag :email%>
+  
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__473501795005993808_70189772997740'
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:28:54 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (377.4ms)
+Completed 500 Internal Server Error in 406ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“' for #<#<Class:0x007faca7ba6f20>:0x007faca7ba50f8>):
+    1: <h2> Create Account</h2>
+    2: <%=form_tag “/users”, method: :post do%>
+    3:  <div>
+    4:   <%= label_tag :email%>
+    5:   <%= text_field_tag :email%>
+  
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__473501795005993808_70189762558940'
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:29:19 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 38ms
+
+
+  
+ActionView::Template::Error (uninitialized constant Up”):
+    13:   <%= password_field_tag :password_confirmation%>
+    14:  </div>
+    15:  
+    16: <%= submit_tag “Sign Up”, class: “”%>
+    17: <%end%>
+  
+app/views/users/new.html.erb:16:in `block in _app_views_users_new_html_erb__473501795005993808_70189761595900'
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__473501795005993808_70189761595900'
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:30:24 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 40ms
+
+
+  
+ActionView::Template::Error (uninitialized constant Up”):
+    13:   <%= password_field_tag :password_confirmation%>
+    14:  </div>
+    15:  
+    16: <%= submit_tag “Sign Up”%>
+    17: <%end%>
+  
+app/views/users/new.html.erb:16:in `block in _app_views_users_new_html_erb__473501795005993808_70189776016920'
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__473501795005993808_70189776016920'
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:30:44 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (471.7ms)
+Completed 500 Internal Server Error in 497ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Signup”' for #<#<Class:0x007faca7ba6f20>:0x007faca7ee9ac0>):
+    13:   <%= password_field_tag :password_confirmation%>
+    14:  </div>
+    15:  
+    16: <%= submit_tag “Signup”%>
+    17: <%end%>
+  
+app/views/users/new.html.erb:16:in `block in _app_views_users_new_html_erb__473501795005993808_70189764269920'
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__473501795005993808_70189764269920'
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 08:30:59 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 174ms (Views: 168.0ms)
+
+
