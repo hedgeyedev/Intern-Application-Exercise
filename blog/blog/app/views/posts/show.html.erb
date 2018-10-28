@@ -6,13 +6,15 @@
 	<div class="row blue-grey lighten-5 block-post">
 	      <div class="row right-align">
 	        <%= link_to 'Edit', edit_post_path(@post) %> |
-	        <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+	        <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 	      </div>             
 	      <div class="row blue-grey-text"><h5><%= @post.title %></h5></div>
 	      <div class="row"><%= @post.content %></div>   
 	</div>
 </div>
-
+</br>
+</br>
+</br>
 
 
 

@@ -18,15 +18,22 @@
   </head>
 
   <body class="#607d8b blue-grey lighten-2">
-  <p id="notice"><%= notice %></p>
+  
   <div class="row">
-    <div class="col s3"></div>
-    <div class="col s6">
+    <div class="col s2"></div>
+
+    <div class="col s8 runner">
+    <p id="notice"><%= notice %></p> 
+      <div class="col s1"></div>
+      <div class="col s10">
 
       <%= yield %>
 
+      </div>
+      <div class="col s1"></div>
     </div>
-    <div class="col s3"></div>
+
+    <div class="col s2"></div>
   </div>
   </body>
 
