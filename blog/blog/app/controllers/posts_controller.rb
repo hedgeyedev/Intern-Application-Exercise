@@ -40,20 +40,15 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    if !current_user
-      flash[:error] = "You must be logged in to see this page"
-      redirect_to "/login"
-    else
-      @post = Post.new(post_params)
-      @post.user_id = current_user.id
-      respond_to do |format|
-        if @post.save
-          format.html { redirect_to @post, notice: 'Post was successfully created.' }
-          format.json { render :show, status: :created, location: @post }
-        else
-          format.html { render :new }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
-        end
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -75,10 +70,18 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    if !current_user
+      flash[:error] = "You must be logged in to delete a post"
+      redirect_to "/login"
+    elsif current_user.id != @post.user_id 
+      flash[:error] = "Only the author can delete a post"
+      redirect_to "/posts"
+    else
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
