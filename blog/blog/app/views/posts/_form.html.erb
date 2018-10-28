@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field">   
     <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    <%= form.text_field :title, id: :post_title %>  
   </div>
+
 
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :post_content %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions right">
+    <i class="fas fa-save update-button"><%= form.submit %></i>
   </div>
 <% end %>

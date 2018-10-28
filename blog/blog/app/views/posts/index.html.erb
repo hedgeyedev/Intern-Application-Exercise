@@ -1,4 +1,16 @@
-<h2 class="white-text">Posts</h2>
+<h2 class="white-text inline">Posts</h2>
+
+<div class="row badge-create">
+ <div class="center"><i class="fas fa-plus"></i>
+<%= link_to ' Create Post', new_post_path %>
+
+ </div>
+</div>
+<br class="clearBoth" />
+
+</br>
+</br>
+</br>
 
 <% @posts.each do |post| %>
   <div class="row">
@@ -15,7 +27,5 @@
   </div>
 <% end %>
 <br>
-<div class="row blue-grey lighten-5 block-post">
- <%= link_to 'New Post', new_post_path %>
-</div>
+
 

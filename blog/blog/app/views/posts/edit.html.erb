@@ -1,6 +1,16 @@
-<h1>Editing Post</h1>
+<h2 class="white-text">Edit Post</h2>
 
-<%= render 'form', post: @post %>
 
-<%= link_to 'Show', @post %> |
+<i class="fas fa-angle-left"></i>
 <%= link_to 'Back', posts_path %>
+</br>
+</br>
+
+<div class="row blue-grey lighten-5 block-post">
+	<div class="row right-align">
+	<%= link_to 'Show', @post %> 
+	</div>
+	<%= render 'form', post: @post %>
+</div>
+
+
