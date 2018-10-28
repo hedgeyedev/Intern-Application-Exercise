@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 			password: params[:password],
 			password_confirmation: params[:password_confirmation]
 		)
-		# require bootstrap gem
 		if user.save
 			session[:user_id] = user.id 
 			flash[:notice] = "You signed up successfully!"
