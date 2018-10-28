@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20181028172021) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -24,7 +25,6 @@ ActiveRecord::Schema.define(version: 20181028172021) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
 end

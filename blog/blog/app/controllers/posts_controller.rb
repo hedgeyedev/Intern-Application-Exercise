@@ -14,26 +14,46 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    if !current_user
+      flash[:error] = "You must be logged in to see this page"
+      redirect_to "/login"
+    else 
+      @post = Post.new
+    end
   end
 
   # GET /posts/1/edit
   def edit
+    set_post 
+    if !current_user
+      flash[:error] = "You must be logged in to see this page"
+      redirect_to "/login"
+    elsif current_user.id != @post.user_id 
+      flash[:error] = "Only the author can edit this post"
+      redirect_to "/posts"
+    else
+      render "edit"
+    end
+
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-    binding.pry
-    @post.user_id = current_user.id
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    if !current_user
+      flash[:error] = "You must be logged in to see this page"
+      redirect_to "/login"
+    else
+      @post = Post.new(post_params)
+      @post.user_id = current_user.id
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to @post, notice: 'Post was successfully created.' }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { render :new }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
