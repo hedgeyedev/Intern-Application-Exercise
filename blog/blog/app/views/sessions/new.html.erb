@@ -1,12 +1,22 @@
-<h1>Login</h1>
-<%= form_tag "/login", method: :post do %>
- <div>
-  <%= label_tag :email %>
-  <%= text_field_tag :email%>
- </div>
- <div>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
- </div>
-  <%= submit_tag "Submit" %>
-<%end%>
+<h2 class="white-text">Login</h2>
+
+<i class="fas fa-angle-left"></i>
+<%= link_to 'Back', posts_path %>
+</br>
+</br>
+
+<div class="row blue-grey lighten-5 block-post">
+	<%= form_tag "/login", method: :post do %>
+	 <div>
+	  <%= label_tag :email %>
+	  <%= text_field_tag :email%>
+	 </div>
+	 <div>
+	  <%= label_tag :password %>
+	  <%= password_field_tag :password %>
+	 </div>
+	  <div class="actions right">
+    	<i class="fas fa-sign-in-alt update-button"><%= submit_tag "Login!"%></i>
+  	  </div>
+	<%end%>
+</div>

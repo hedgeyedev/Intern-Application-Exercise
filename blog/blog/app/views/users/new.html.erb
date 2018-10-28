@@ -1,17 +1,30 @@
-<h2> Create Account</h2>
-<%=form_tag "/users", method: :post do%>
- <div>
-  <%= label_tag :email%>
-  <%= text_field_tag :email%>
- </div>
- <div>
-  <%= label_tag :password%>
-  <%= password_field_tag :password%>
- </div>
- <div>
-  <%= label_tag :password_confirmation%>
-  <%= password_field_tag :password_confirmation%>
- </div>
- 
-<%= submit_tag "Sign Up"%>
-<%end%>
+<h2 class="white-text">Sign Up</h2>
+
+<i class="fas fa-angle-left"></i>
+<%= link_to 'Back', posts_path %>
+</br>
+</br>
+
+<div class="row blue-grey lighten-5 block-post">
+	<%=form_tag "/users", method: :post do%>
+	 <div>
+	  <%= label_tag :email%>
+	  <%= text_field_tag :email%>
+	 </div>
+	 <div>
+	  <%= label_tag :password%>
+	  <%= password_field_tag :password%>
+	 </div>
+	 <div>
+	  <%= label_tag :password_confirmation%>
+	  <%= password_field_tag :password_confirmation%>
+	 </div>
+	 
+	<div class="actions right">
+    <i class="fas fa-save update-button"><%= submit_tag "Sign Up!"%></i>
+  	</div>
+	<%end%>
+</div>
+</br>
+</br>
+</br>

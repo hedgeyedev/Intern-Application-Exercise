@@ -13,10 +13,10 @@ class UsersController < ApplicationController
 		# require bootstrap gem
 		if user.save
 			session[:user_id] = user.id 
-			flash[:success] = "You signed up successfully!"
+			flash[:notice] = "You signed up successfully!"
 			redirect_to "/posts"
 		else
-			flash[:warning] = "Invalid Email or Password"
+			flash[:error] = "Invalid Email or Password"
 			redirect_to "/signup"
 		end
 	end

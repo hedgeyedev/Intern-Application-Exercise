@@ -23,11 +23,25 @@
     <div class="col s2"></div>
 
     <div class="col s8 runner">
-    <p id="notice"><%= notice %></p> 
-    <div class="right"><a href="/signup" class="blanc">Sign Up</a> | <a href="/login" class="blanc">Sign In</a></div>
+<!--     <p id="notice"><%= @notice %></p>  -->
+
+    <% if flash[:error] -%>
+      <p class='error'><%=h flash[:error] %></p>
+    <% end -%>
+    <% if flash[:notice] -%>
+      <p class='notice'><%=h flash[:notice] %></p>
+    <% end -%>
+
+
+
       <div class="col s1"></div>
       <div class="col s10">
-
+        <div class="right">
+          <a href="/signup" class="blanc">Sign Up</a> | 
+          <a href="/login" class="blanc">Sign In</a> |
+          <a href="/logout" class="blanc">Logout</a>
+        </div>
+        </br>
       <%= yield %>
 
       </div>

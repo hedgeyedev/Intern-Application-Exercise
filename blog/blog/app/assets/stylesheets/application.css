@@ -2,6 +2,17 @@
  *= require_tree .
  *= require_self
  */
+.error {
+	font-weight: bold;
+	background-color: red;
+}
+
+.notice {
+	font-weight: bold;
+	background-color: lightgreen;
+}
+
+
 .runner {
 	background-color: #ABB8C0;
 }
