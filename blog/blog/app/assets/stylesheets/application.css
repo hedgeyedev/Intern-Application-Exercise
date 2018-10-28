@@ -77,6 +77,9 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 	align-content: right;
 }
 
+a.blanc {
+	color: white;
+}
 
 
 
