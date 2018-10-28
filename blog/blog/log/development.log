@@ -4460,3 +4460,139 @@ Migrating to AddUserIdToUsers (20181028172021)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-28 10:22:21 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.6ms)
+  Rendered posts/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 103ms (Views: 83.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-28 10:22:25 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HtJgqISCQ8HUBnLRYjSwcO769vPN0lUb3kTmI2VneC4uAdv4how5zwOMHhQYwSh0sAT/n429n7B568SqlswzkQ==", "post"=>{"title"=>"dsf", "content"=>"sdgs"}, "commit"=>"Create Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dsf"], ["content", "sdgs"], ["created_at", "2018-10-28 17:22:25.555854"], ["updated_at", "2018-10-28 17:22:25.555854"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 12ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2018-10-28 10:22:25 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 95ms (Views: 84.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-28 10:32:18 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 111ms (Views: 98.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-28 10:32:22 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.8ms)
+  Rendered posts/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 135ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-28 10:32:36 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KUwpGl0x4VrbFvOkBP+jFmklX/8Jdv7kFj6vi/LJGwsZn5JKXz+bVAycn2F+CjsSN9tWk0kZNE+xkY0CAWJQtA==", "post"=>{"title"=>"hello", "content"=>"hello I am the new post"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2018-10-28 10:35:14 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zdP9T1G3lwSdMFPoTJvMEUkqdy3OaW9bjJKcra5r7i/ZRddn384oUPgV2bQ/9c3P3hVSU7H7hE80yuXnFJLZeA==", "post"=>{"title"=>"hello", "content"=>"hello I am the new post"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x007f7f198389a8>
+Did you mean?  pretty_print
+               pretty_inspect
+               pretty_print_cycle
+               try):
+  
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2018-10-28 10:35:42 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zdP9T1G3lwSdMFPoTJvMEUkqdy3OaW9bjJKcra5r7i/ZRddn384oUPgV2bQ/9c3P3hVSU7H7hE80yuXnFJLZeA==", "post"=>{"title"=>"hello", "content"=>"hello I am the new post!"}, "commit"=>"Create Post"}
+Started GET "/login" for 127.0.0.1 at 2018-10-28 10:41:12 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 730ms (Views: 709.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 10:41:30 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 114ms (Views: 103.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-28 10:41:34 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 172ms (Views: 159.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-10-28 10:41:36 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 190ms (Views: 175.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-28 10:41:37 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 220ms (Views: 202.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-28 10:41:58 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W59F9hTKQ3oSKrbBx6oK4eBOesuA3px5yCE7cX5Pjb8Q3GmS25Ylvx4rj0179Xdc1pB62w4l+9tCnp9QNfz1MQ==", "email"=>"lizzie.sorin@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login!"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lizzie.sorin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 148ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-28 10:41:58 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 107ms (Views: 93.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-28 10:42:09 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (47.2ms)
+  Rendered posts/new.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 240ms (Views: 227.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-28 10:42:29 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bSbBVgXmNW1SrJz5MEtMf7I/mUbr9szvN+msXQN4/y5d9XoGB+hPY4Um8DxKvtR77MGQKquZBkSQRo7U8NO0kQ==", "post"=>{"title"=>"titletest", "content"=>"heellllllo test"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
