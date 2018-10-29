@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'comments/show'
 
-  get 'comments/new'
-
-  get 'comments/delete'
-
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   root :to => "posts#index"
   get "/signup" => "users#new"
   post "/users" => "users#create"

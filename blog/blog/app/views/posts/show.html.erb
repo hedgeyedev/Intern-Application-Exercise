@@ -26,17 +26,14 @@
 		</button>
 	</form>
 
-	<!-- comments -->
-	<%= form_with(model: @comment) do |form| %>
-  		<div class="field">   
-    		<%= form.label :content %>
-    		<%= form.text_field :content %>  
-  		</div>
+	</br>
+	</br>
 
-  		<div class="actions right">
-   			<i class="fas fa-save update-button"><%= form.submit %></i>
-  		</div>
-	<% end %>
+	<div class="row blue-grey lighten-3 block-post">
+	<%= @post.comments.count %> comments
+	<%= render @post.comments %>
+	<%= render "comments/new" %>
+	</div>
 
 
 </div>

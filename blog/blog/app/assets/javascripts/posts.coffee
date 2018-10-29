@@ -1,7 +1,7 @@
 $(document).on 'turbolinks:load', ->
 	return unless page.controller() == 'posts' 
 
-	$('.block-post').append 'hellooooooooooo'
+	$('.block-post').append ''
 
 	DisableButton = ->
   		$('.thumb-up').addClass 'hide'

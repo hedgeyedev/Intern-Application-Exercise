@@ -1,0 +1,5 @@
+<div class="comment_block">
+	<div id="username"><%= comment.user.email.split('@')[0] %></div>
+	<div><%= comment.content %></div>
+	<div id="timestamp"><%= time_ago_in_words(comment.created_at) %></div>
+</div>
