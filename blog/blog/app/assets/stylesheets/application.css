@@ -1,6 +1,7 @@
 /*
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
 .error {
 	font-weight: bold;
@@ -153,6 +154,12 @@ a.blanc, .blanc {
 	padding-bottom: 10px;
 }
 
+.social_media {
+	float: right;
+	align-content: right;
+}
 
-
+/*.social-share-button .ssb-icon {
+	height: 20px;
+}*/
 
