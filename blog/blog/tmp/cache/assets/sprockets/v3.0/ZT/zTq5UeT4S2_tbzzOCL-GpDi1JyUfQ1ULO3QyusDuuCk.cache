@@ -1,0 +1,10 @@
+I"É(function() {
+  $(document).on('turbolinks:load', function() {
+    if (page.controller() !== 'posts') {
+      return;
+    }
+    return $('.block-post').append('hellooooooooooo');
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,11 @@
+I"ø(function() {
+  $(document).on('turbolinks:load', function() {
+    if (page.controller() !== 'posts') {
+      return;
+    }
+    $('.block-post').append('hellooooooooooo');
+    return $('.thumb-up').on("click", disableButton);
+  });
+
+}).call(this);
+:ET

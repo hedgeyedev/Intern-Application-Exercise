@@ -1,0 +1,17 @@
+I"p(function() {
+  $(document).on('turbolinks:load', function() {
+    var addClass;
+    if (page.controller() !== 'posts') {
+      return;
+    }
+    $('.block-post').append('hellooooooooooo');
+    addClass = function() {
+      return addClass("hide");
+    };
+    return $(".thumb-up").on('click', function() {
+      return addClass("hide");
+    });
+  });
+
+}).call(this);
+:ET

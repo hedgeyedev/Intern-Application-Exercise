@@ -1,0 +1,16 @@
+I"¼(function() {
+  $(document).on('turbolinks:load', function() {
+    var DisableButton;
+    if (page.controller() !== 'posts') {
+      return;
+    }
+    $('.block-post').append('hellooooooooooo');
+    DisableButton = function() {
+      return $('.thumb-up').addClass('hide');
+    };
+    return;
+    return $('.thumb-up').on('click', $('.like_form').append('<i class=`far fa-thumbs-up thumbs`></i> <%=@post.likes%> hello'));
+  });
+
+}).call(this);
+:ET

@@ -3,6 +3,8 @@
 	<%= link_to 'Back', posts_path %>
 	</br>
 	</br>
+
+	<!-- post -->
 	<div class="row blue-grey lighten-5 block-post">
 	      <div class="row right-align">
 	        <%= link_to 'Edit', edit_post_path(@post) %> |
@@ -12,17 +14,30 @@
 	      <div class="row"><%= @post.content %></div>   
 	</div>
 
-	<form action="/posts/<%=@post.id%>/update_like" method="post" class="button_likes">
-		<button type="submit" class="">
+	<form action="/posts/<%=@post.id%>/update_like" method="post" class="button_likes like_form">
+		<button type="submit" class="thumb-up">
 	    <i class="far fa-thumbs-up thumbs"></i> <%=@post.likes%>
 		</button>
 	</form>
 
 	<form action="/posts/<%=@post.id%>/update_dislike" method="post" class="button_likes">
-		<button type="submit" class="">
+		<button type="submit" class="thumb-down">
 	    <i class="far fa-thumbs-down thumbs"></i> <%=@post.dislikes%>
 		</button>
 	</form>
+
+	<!-- comments -->
+	<%= form_with(model: @comment) do |form| %>
+  		<div class="field">   
+    		<%= form.label :content %>
+    		<%= form.text_field :content %>  
+  		</div>
+
+  		<div class="actions right">
+   			<i class="fas fa-save update-button"><%= form.submit %></i>
+  		</div>
+	<% end %>
+
 
 </div>
 </br>

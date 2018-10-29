@@ -1,0 +1,14 @@
+I"E(function() {
+  $(document).on('turbolinks:load', function() {
+    if (page.controller() !== 'posts') {
+      return;
+    }
+    $('.block-post').append('hellooooooooooo');
+    $('.thumb-up').on("click", disableButton);
+    return $('.thumb-up').on('click', function() {
+      return log('abc');
+    });
+  });
+
+}).call(this);
+:ET
