@@ -10,12 +10,17 @@ class CommentsController < ApplicationController
 	  	@post = Post.find(params[:post_id])
 	  	@comment = @post.comments.new(comment_params)
 	  	@comment.user_id = current_user.id
-	  	@comment.save
+      if @comment.save
+      flash[:notice] = "You created a comment successfully"
 	  	redirect_to post_path(@post)
-	else
-		flash[:error] = "You must be logged in to add a comment"
-		redirect_to "/login"
-	end	
+	     else
+		  flash[:error] = @comment.errors.full_messages.to_sentence
+		  redirect_to post_path(@post)
+	     end
+    else
+    	flash[:error] = "You must be logged in to comment a post"
+      redirect_to login_path()
+    end
   end
 
   def destroy

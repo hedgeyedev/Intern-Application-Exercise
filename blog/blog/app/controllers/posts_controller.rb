@@ -45,15 +45,13 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @comment = Comment.new
     @post.user_id = current_user.id
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        flash[:notice] = "Your post was successfully created!"
+        redirect_to post_path(@post)
       else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        flash[:error] = @post.errors.full_messages.to_sentence
+        redirect_to new_post_path()
       end
-    end
   end
 
   # PATCH/PUT /posts/1

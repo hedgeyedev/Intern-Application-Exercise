@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
 	def new
-
 	end
 
 	def create
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
 			flash[:notice] = "You signed up successfully!"
 			redirect_to "/posts"
 		else
-			flash[:error] = "Invalid Email or Password"
+			flash[:error] = user.errors.full_messages.to_sentence
 			redirect_to "/signup"
 		end
 	end
