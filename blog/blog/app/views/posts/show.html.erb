@@ -1,7 +1,5 @@
 <div class="container-show">
-	<!-- back to home button -->
-	<i class="fas fa-angle-left"></i>
-	<%= link_to 'Back', posts_path %>
+	<%= render 'layouts/back_arrow'%>
 	<!-- social media -->
 	<div class="social_media"><%= social_share_button_tag(@post.title) %></div>
 	</br>

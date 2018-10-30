@@ -1,9 +1,5 @@
 <h2 class="white-text">Login</h2>
-<!-- back to home button -->
-<i class="fas fa-angle-left"></i>
-<%= link_to 'Back', posts_path %>
-</br>
-</br>
+<%= render 'layouts/back_arrow'%>
 <!-- display login form -->
 <div class="row blue-grey lighten-5 block-post">
 	<%= form_tag "/login", method: :post do %>
