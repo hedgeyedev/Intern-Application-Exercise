@@ -2,14 +2,10 @@
 <%= render 'layouts/back_arrow'%>
 
 <!-- form to edit the post -->
-<div class="row blue-grey lighten-5 block-post">
-	<div class="row right-align">
-	<%= link_to 'View Post', @post %> 
-	</div>
-	<%= render 'form', post: @post %>
+<div class="row right-align">
+<%= link_to 'View Post', @post %> 
 </div>
-</br>
-</br>
-</br>
+<%= render 'form', post: @post %>
+
 
 
