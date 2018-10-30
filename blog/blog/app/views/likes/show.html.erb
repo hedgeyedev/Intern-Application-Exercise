@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Commenter:</strong>
+  <%= @like.commenter_id %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @like.post_id %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @like.like %>
+</p>
+
+<p>
+  <strong>Dislike:</strong>
+  <%= @like.dislike %>
+</p>
+
+<%= link_to 'Edit', edit_like_path(@like) %> |
+<%= link_to 'Back', likes_path %>
