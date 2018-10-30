@@ -85,7 +85,7 @@ a, a:link, a:visited, a:hover {
 
 /*overwritting materialize for button update in _form*/
 button, html [type="button"], [type="reset"], [type="submit"] {
-	background-color: black;
+	background-color: transparent;
 	border: none;
 	color: #27DAA8;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
@@ -119,7 +119,6 @@ a.blanc, .blanc {
 	background-color: black;
 	border-radius: 10px;
 	padding: 10px;
-	margin-right: 10px;
 }
 
 #timestamp {
@@ -151,8 +150,4 @@ a.blanc, .blanc {
 	display: none;
 }
 
-form.new_like[type="radio"]:not(:checked), form.new_like[type="radio"]:checked {
-	opacity: 100% !important;
-	position: relative !important;
-}
 

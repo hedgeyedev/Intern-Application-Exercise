@@ -1,29 +1,29 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
-  # GET /likes
+  # GET posts/:id/likes
   # GET /likes.json
   def index
     @likes = Like.all
   end
 
-  # GET /likes/1
+  # GET posts/:id/likes/1
   # GET /likes/1.json
   def show
   end
 
-  # GET /likes/new
+  # GET posts/:id/likes/new
   def new
     @like = Like.new
 
     # @post = Post.find(params[:post_id].to_i)
   end
 
-  # GET /likes/1/edit
+  # GET posts/:id/likes/1/edit
   def edit
   end
 
-  # POST /likes
+  # POST posts/:id/likes
   # POST /likes.json
   def create
     @post = Post.find(params[:post_id].to_i)
@@ -47,7 +47,7 @@ class LikesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /likes/1
+  # PATCH/PUT posts/:id/likes/1
   # PATCH/PUT /likes/1.json
   def update
     respond_to do |format|
@@ -61,7 +61,7 @@ class LikesController < ApplicationController
     end
   end
 
-  # DELETE /likes/1
+  # DELETE posts/:id/likes/1
   # DELETE /likes/1.json
   def destroy
     @like.destroy
