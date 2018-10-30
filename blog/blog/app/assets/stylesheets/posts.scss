@@ -1,3 +1,48 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.block-post {
+	padding: 40px;
+	border-radius: 10px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+/*for posts/index.html*/
+#author {
+	margin-top: -30px;
+}
+
+.button-create {
+	width: 130px;
+	border-radius: 10px;
+	padding: 10px;
+	float: right;
+	margin-top: 50px;
+}
+
+.post-body {
+	text-align: justify;
+	height: 70px; 
+	overflow: hidden;
+}
+
+/*for posts/show.html*/
+.social_media {
+	float: right;
+}
+.container-show {
+	margin-top: 10%;
+}
+
+/*for posts/_form*/
+.update-button {
+	border-radius: 10px;
+	padding: 10px;
+	color: white;
+	align-content: right;
+}
+
+	/*overwritting rails id for posts/_form.html*/
+#post_content {
+	min-height: 400px;
+	border-radius: 10px;
+	border-color: lightgrey;
+}
