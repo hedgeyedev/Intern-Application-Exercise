@@ -22590,3 +22590,882 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 137ms (Views: 118.5ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:01:50 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (20.0ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (24.5ms)
+  Rendered comments/_new.html.erb (3.7ms)
+  Rendered posts/show.html.erb within layouts/application (92.9ms)
+Completed 200 OK in 309ms (Views: 207.2ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:01:52 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EgwEJblxnUQgjDrfk7FzZZ3CtSUOuayjK9pSdBbgor0VO18ytfiXihJ9RnG+9ui8nsd74IJYuIHzwR29Oa9Z3w==", "like"=>"1", "dislike"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("commenter_id", "post_id", "like", "dislike", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["commenter_id", 6], ["post_id", 2], ["like", 1], ["dislike", 0], ["created_at", "2018-10-30 21:01:52.575470"], ["updated_at", "2018-10-30 21:01:52.575470"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 18ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:01:52 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (4.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (6.2ms)
+  Rendered comments/_new.html.erb (3.4ms)
+  Rendered posts/show.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 140ms (Views: 120.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:01:54 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UXpSQ86HbZ8VzvxhJJn5G/3MMFS7blaYcRz7ZfsL3bVWTQlUwg5nUSc/gM8J3mLC/sn+kTePQrqpB7Ss1EQm1w==", "like"=>"1", "dislike"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:01:54 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (4.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (6.3ms)
+  Rendered comments/_new.html.erb (3.2ms)
+  Rendered posts/show.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 120ms (Views: 106.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:19:16 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5MXGzSBkQEK3ZZHgy79RyPDTiqfFfx8DvN6zQ+bmUUDj8p3aLO1KjIWU7U7m+MoR89ZEYkmeCyFkxfyKyamqIg==", "like"=>"1", "dislike"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:16 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (4.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (7.0ms)
+  Rendered comments/_new.html.erb (4.4ms)
+  Rendered posts/show.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 175ms (Views: 160.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:18 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (6.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (7.9ms)
+  Rendered comments/_new.html.erb (4.0ms)
+  Rendered posts/show.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 146ms (Views: 130.9ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:19:20 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rrU7JWikCiCKPIM6SJ3/10Y0IthtdHttjrhVEUH4NlepgmAyZC0A7rjN/5Rl2mQORTHsHeGVb09WoxrYbrfNNQ==", "dislike"=>"1", "like"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:20 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (4.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (6.0ms)
+  Rendered comments/_new.html.erb (4.5ms)
+  Rendered posts/show.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 138ms (Views: 125.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:19:23 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (19.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 102ms (Views: 90.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:25 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (6.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (6.2ms)
+  Rendered comments/_new.html.erb (3.4ms)
+  Rendered posts/show.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 136ms (Views: 118.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-10-30 14:19:27 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:19:27 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (12.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 118ms (Views: 107.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2018-10-30 14:19:31 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:19:32 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (18.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 117ms (Views: 108.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:37 -0700
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MZFesvaEqStmGNUKNPeugC9zYemJ80l7w14900AyIag2pgWl+g2j5VTpqaQZsDVZLHavLAUSXVkbRXIab33ayg==", "id"=>"2"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:19:37 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (18.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 126ms (Views: 116.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:39 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (5.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (6.1ms)
+  Rendered comments/_new.html.erb (3.9ms)
+  Rendered posts/show.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 126ms (Views: 110.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:19:41 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i972U1YXJ1J8iGv1TK2iBzdHzLTen2a7ig12f9b1rlRDfTeHFHk6sVQ0sXiOf+A7XOX1YX8aOfkAuONorQY2Kg==", "dislike"=>"1", "like"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 11ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:19:41 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (5.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (5.7ms)
+  Rendered comments/_new.html.erb (5.3ms)
+  Rendered posts/show.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 136ms (Views: 123.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:20:42 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (5.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (7.5ms)
+  Rendered comments/_new.html.erb (3.9ms)
+  Rendered posts/show.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 199ms (Views: 181.6ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:20:45 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wihImagGMoGhkqYhVMIo458jBjMnR9ebPnkSIHutAGPFHxOOpI84T5Nj2o95hbM6nCbI9qumw7nmYl3pVOL7AQ==", "like"=>"1", "dislike"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:20:45 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (3.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (5.9ms)
+  Rendered comments/_new.html.erb (3.2ms)
+  Rendered posts/show.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 121ms (Views: 105.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/posts/2/likes" for 127.0.0.1 at 2018-10-30 14:20:47 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UjyhT6PGo7Ptz4Bz4/PTZhqjb3TT30jGrrj4CWQ9HI5VC/pYr0+pfd8+/N3OtEi/GaahsV8+XOR2o7fAS3Ln7A==", "dislike"=>"1", "like"=>"0", "post_id"=>"2", "button"=>""}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 9ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-30 14:20:47 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 2], ["like", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 2], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (4.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (6.2ms)
+  Rendered comments/_new.html.erb (4.0ms)
+  Rendered posts/show.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 130ms (Views: 112.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:20:49 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (15.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 86.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-10-30 14:20:53 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 5], ["like", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 5], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (4.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (2.9ms)
+  Rendered posts/show.html.erb within layouts/application (28.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 165ms (Views: 151.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/posts/5/likes" for 127.0.0.1 at 2018-10-30 14:20:54 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uiadu0qfziFyj3ZEacLXJFzdeUtO5YGa3Id3jItvxTdkRuDZGJdSpOCsYcrANQxZeHyjYCj57VPd3kZ6mHGRlg==", "dislike"=>"1", "like"=>"0", "post_id"=>"5", "button"=>""}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("commenter_id", "post_id", "like", "dislike", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["commenter_id", 6], ["post_id", 5], ["like", 0], ["dislike", 1], ["created_at", "2018-10-30 21:20:54.890119"], ["updated_at", "2018-10-30 21:20:54.890119"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 14ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-10-30 14:20:54 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 5], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 5], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (5.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (4.9ms)
+  Rendered posts/show.html.erb within layouts/application (30.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 192ms (Views: 177.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-10-30 14:33:13 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 5], ["like", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 5], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (6.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (3.5ms)
+  Rendered posts/show.html.erb within layouts/application (30.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 611ms (Views: 596.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/posts/5/likes" for 127.0.0.1 at 2018-10-30 14:33:15 -0700
+Processing by LikesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KUsuBW96H3Bl07OaMeUCEvy5ymEED3J3E4GoYdhp5tEufHUSY/MVvlcizzQcopnL/7wEpIjuZlXLmueo9yYdsw==", "like"=>"1", "dislike"=>"0", "post_id"=>"5", "button"=>""}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLike Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."commenter_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["commenter_id", 6], ["post_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-10-30 14:33:15 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 5], ["like", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 5], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (3.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (3.3ms)
+  Rendered posts/show.html.erb within layouts/application (25.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 113ms (Views: 99.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:33:18 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 77.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2018-10-30 14:33:21 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 3], ["like", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 3], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (6.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (3.4ms)
+  Rendered posts/show.html.erb within layouts/application (27.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 129ms (Views: 116.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:34:14 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 116.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-30 14:34:18 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.6ms)
+  Rendered posts/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 95ms (Views: 84.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-30 14:34:43 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bd/Mh/robl/wIZRxhGpVG8kXJDqmRutR7FJTaOuahcfADsEj61le5tUNeyYRjEAOML30H9xO9els+8Z6B5ohpg==", "post"=>{"title"=>"wefewgfrwgr", "content"=>"egwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poq"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "wefewgfrwgr"], ["content", "egwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poq"], ["created_at", "2018-10-30 21:34:43.341402"], ["updated_at", "2018-10-30 21:34:43.341402"], ["user_id", 6]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 15ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2018-10-30 14:34:43 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 7], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 7], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (6.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (3.5ms)
+  Rendered posts/show.html.erb within layouts/application (31.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 126.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/7/edit" for 127.0.0.1 at 2018-10-30 14:34:50 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.2ms)
+  Rendered posts/edit.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 91ms (Views: 87.0ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/posts/7" for 127.0.0.1 at 2018-10-30 14:34:54 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jkMd+qVkvuROVCQe9rsHp8DjtcIKcQJxW39tLVyF56rLODDtUg/fXWoxtQPQl3VQ/IPiVWl8c9JFA9ku0dB+UA==", "post"=>{"title"=>"wefewgfrwgr", "content"=>""}, "commit"=>"Update Post", "id"=>"7"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/new
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-30 14:34:54 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.3ms)
+  Rendered posts/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 123ms (Views: 114.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:35:00 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (17.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 85.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-10-30 14:35:02 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:35:02 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (12.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 89.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2018-10-30 14:35:04 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:35:04 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (15.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 92ms (Views: 85.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2018-10-30 14:35:06 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:35:06 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (17.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 106ms (Views: 96.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2018-10-30 14:35:09 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:35:09 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (19.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 111ms (Views: 101.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/7/edit" for 127.0.0.1 at 2018-10-30 14:35:11 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.5ms)
+  Rendered posts/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 94ms (Views: 88.7ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/posts/7" for 127.0.0.1 at 2018-10-30 14:35:18 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gVnACW2TUtuXsTv0uM6jB+Q7Z5Z200oExAI8lujBqjrEIu0emvgzYrPUqume4tHw2FswARXeO6fafoiVZZQzwA==", "post"=>{"title"=>"", "content"=>"egwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poq"}, "commit"=>"Update Post", "id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/new
+Completed 302 Found in 13ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-30 14:35:18 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.1ms)
+  Rendered posts/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 120ms (Views: 111.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-30 14:36:22 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.3ms)
+  Rendered posts/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 184ms (Views: 107.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:36:26 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (19.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 110.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/7/edit" for 127.0.0.1 at 2018-10-30 14:36:28 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.6ms)
+  Rendered posts/edit.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 101ms (Views: 98.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/7" for 127.0.0.1 at 2018-10-30 14:36:32 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yYPocbEV9MWxTWxxbOhXEah0KCt7PY/biZM8+BS8S0GM+MVmRn6VfJUo/WxKxCXmlBR/vBgw/niX74j7menSuw==", "post"=>{"title"=>"", "content"=>"egwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poq"}, "commit"=>"Update Post", "id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 16ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2018-10-30 14:36:32 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."like" = ?[0m  [["post_id", 7], ["like", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."dislike" = ?[0m  [["post_id", 7], ["dislike", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered likes/_new.html.erb (23.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (16.7ms)
+  Rendered posts/show.html.erb within layouts/application (73.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 177ms (Views: 150.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/posts/7/edit" for 127.0.0.1 at 2018-10-30 14:36:39 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.3ms)
+  Rendered posts/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 92ms (Views: 88.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/7" for 127.0.0.1 at 2018-10-30 14:37:23 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rIDThacOJBWP6zru8yomP2sDIhaqKQLUirveofA2Kefp+/6SUGVFrKuOq/PVBlTIV2N1gckkc3eUx2qifWOwHQ==", "post"=>{"title"=>"", "content"=>"egwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poqegwerghihibibibbcsknvsdk hoisfsklnkhoirhsdncknksdfskdhjkszhc zi hiae ho  a oia hfa af ao fa oa  aah fa fa foah fpoa  fopaf poafj opa fopa fopafj opef ope fpo  po pq pp  p pof poq"}, "commit"=>"Update Post", "id"=>"7"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts/7/edit
+Completed 302 Found in 66ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/7/edit" for 127.0.0.1 at 2018-10-30 14:37:23 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.9ms)
+  Rendered posts/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 115ms (Views: 110.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:39:59 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (16.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 103.2ms | ActiveRecord: 1.2ms)
+
+

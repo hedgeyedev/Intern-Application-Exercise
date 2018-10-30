@@ -58,7 +58,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       flash[:error] = @post.errors.full_messages.to_sentence
-      redirect_to new_post_path()
+      redirect_to edit_post_path(@post)
     end
   end
 

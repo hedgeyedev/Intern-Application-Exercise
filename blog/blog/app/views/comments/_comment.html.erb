@@ -1,11 +1,24 @@
+<!-- display a single comment -->
 <div class="comment_block">
 	<div class="black_head_comment">
-		<span id="username"><%= comment.user.email.split('@')[0] %></span>
+	<!-- display the commenter name -->
+		<span id="username">
+			<%= comment.user.email.split('@')[0] %>
+		</span>
+		<!-- display a link to delete the comment only to the author of the comment -->
 		<% if current_user && current_user.id == comment.user_id %>
-			<span><%= link_to 'Delete my comment', [comment.post,comment], method: :delete, data: {confirm: 'Are you sure you want to delete your comment?'}, class:"delete_my_comment" %></span>
+			<span>
+				<%= link_to 'Delete my comment', [comment.post,comment], method: :delete, data: {confirm: 'Are you sure you want to delete your comment?'}, class:"delete_my_comment" %>	
+			</span>
 		<% end %>
 	</div>
 	</br>
-	<div><%= comment.content %></div>
-	<div id="timestamp"><%= time_ago_in_words(comment.created_at) %></div>
+	<div>
+	<!-- display the content of the content -->
+		<%= comment.content %>
+	</div>
+	<!-- display when the comment has been created -->
+	<div id="timestamp">
+		<%= time_ago_in_words(comment.created_at) %>		
+	</div>
 </div>

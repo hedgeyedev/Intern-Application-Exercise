@@ -7,7 +7,9 @@
     <%= csrf_meta_tags %>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- CSS -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- JavaScript -->
     <%= tag :meta, name: :psj, action: action_name, controller: controller_name %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- materialize librairy -->
@@ -22,23 +24,22 @@
   <body class="#607d8b blue-grey lighten-2">
   
   <div class="row">
+  <!-- grid on 12 columns 2 - 8 [1-10-1]- 2 -->
     <div class="col s2"></div>
-
     <div class="col s8 runner">
-<!--     <p id="notice"><%= @notice %></p>  -->
-
+  <!--     display flas messages for all the views -->
     <% if flash[:error] -%>
       <p class='error'><%=h flash[:error] %></p>
     <% end -%>
     <% if flash[:notice] -%>
       <p class='notice'><%=h flash[:notice] %></p>
     <% end -%>
-
-
-
+      <!-- fake background  -->
       <div class="col s1"></div>
+      <!-- runner -->
       <div class="col s10">
         <div class="right">
+          <!-- display sign in / sign up / logout depending on the need -->
           <% if !current_user %>
           <a href="/signup" class="blanc">Sign Up</a> | 
           <a href="/login" class="blanc">Sign In</a> |
@@ -48,6 +49,7 @@
           <% end %>
         </div>
         </br>
+      <!-- all the views displayed here  --> 
       <%= yield %>
 
       </div>

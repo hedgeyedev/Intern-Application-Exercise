@@ -1,14 +1,11 @@
 <div class="container-show">
-	<!-- back arrow -->
+	<!-- back to home button -->
 	<i class="fas fa-angle-left"></i>
 	<%= link_to 'Back', posts_path %>
-
 	<!-- social media -->
 	<div class="social_media"><%= social_share_button_tag(@post.title) %></div>
-
 	</br>
 	</br>
-
 	<!-- post -->
 	<div class="row blue-grey lighten-5 block-post">
 	    <div class="row right-align">
@@ -18,19 +15,16 @@
 	    <div class="row blue-grey-text"><h5><%= @post.title %></h5></div>
 	    <div class="row"><%= @post.content %></div>   
 	</div>
-
+	<!-- render partial for the likes -->
 	<%= render "likes/new" %>
-
 	</br>
 	</br>
-
+	<!-- render the comment section -->
 	<div class="row blue-grey lighten-3 block-post">
 	<%= @post.comments.count %> comments
 	<%= render @post.comments %>
 	<%= render "comments/new" %>
 	</div>
-
-
 </div>
 </br>
 </br>

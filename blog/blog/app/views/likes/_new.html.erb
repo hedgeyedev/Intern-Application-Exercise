@@ -1,33 +1,29 @@
 <div class="inline">
-
+<!-- button like passing params[:like], params[:dislike], params[:post_id] - user_id is retrieved in the controller -->
 <%= form_for [@post, @post.likes.build] do |f| %>
   <%= hidden_field_tag 'like', 1  %>
   <%= hidden_field_tag 'dislike', 0  %>
   <%= hidden_field_tag 'post_id', @post.id  %>
-
   <%= f.button :submit do %>
   	<div class="button_likes">
   	<i class="far fa-thumbs-up thumbs"></i> 
   	<%=@likes_count%></div>
   <% end %>
-
 <% end %>
 </div>
 
 
 <div class="inline">
-
+<!-- button dislike passing params[:like], params[:dislike], params[:post_id] - user_id is retrieved in the controller -->
 <%= form_for [@post, @post.likes.build] do |f| %>
   <%= hidden_field_tag 'dislike', 1  %>
   <%= hidden_field_tag 'like', 0  %>
   <%= hidden_field_tag 'post_id', @post.id  %>
-
   <%= f.button :submit do %>
   	<div class="button_likes">
   	<i class="far fa-thumbs-down thumbs"></i> 
   	<%=@dislikes_count%></div>
   <% end %>
-
 <% end %>
 </div>
 </br>
