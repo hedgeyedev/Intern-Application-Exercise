@@ -1,14 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :update_like, :update_dislike]
   skip_before_action :verify_authenticity_token, :only => [:update_like, :update_dislike]
+  
   # GET /posts
-  # GET /posts.json
   def index
     @posts = Post.all
   end
 
   # GET /posts/1
-  # GET /posts/1.json
   def show  
     @likes_count = @post.likes.where(like: 1).count
     @dislikes_count =@post.likes.where(dislike: 1).count
@@ -26,7 +25,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    # set_post 
     if !current_user
       flash[:error] = "You must be logged in to see this page"
       redirect_to "/login"
@@ -40,7 +38,6 @@ class PostsController < ApplicationController
   end
 
   # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
     @comment = Comment.new
@@ -55,21 +52,17 @@ class PostsController < ApplicationController
   end
 
   # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(post_params)
+      flash[:notice] = "Your post was successfully updated!"
+      redirect_to post_path(@post)
+    else
+      flash[:error] = @post.errors.full_messages.to_sentence
+      redirect_to new_post_path()
     end
   end
 
   # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     if !current_user
       flash[:error] = "You must be logged in to delete a post"
@@ -84,18 +77,6 @@ class PostsController < ApplicationController
         format.json { head :no_content }
       end
     end
-  end
-
-  # POST /posts/1/update_like
-  def update_like
-    @post.likes +=1
-    @post.save
-  end
-
-   # POST /posts/1/update_dislike
-  def update_dislike
-    @post.dislikes +=1
-    @post.save
   end
 
   private

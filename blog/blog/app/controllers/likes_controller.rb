@@ -1,30 +1,8 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
-  # GET posts/:id/likes
-  # GET /likes.json
-  def index
-    @likes = Like.all
-  end
-
-  # GET posts/:id/likes/1
-  # GET /likes/1.json
-  def show
-  end
-
-  # GET posts/:id/likes/new
-  def new
-    @like = Like.new
-
-    # @post = Post.find(params[:post_id].to_i)
-  end
-
-  # GET posts/:id/likes/1/edit
-  def edit
-  end
 
   # POST posts/:id/likes
-  # POST /likes.json
   def create
     @post = Post.find(params[:post_id].to_i)
     if current_user
@@ -44,30 +22,6 @@ class LikesController < ApplicationController
     else
       flash[:error] = "You must be logged in to see this page"
       redirect_to "/login"
-    end
-  end
-
-  # PATCH/PUT posts/:id/likes/1
-  # PATCH/PUT /likes/1.json
-  def update
-    respond_to do |format|
-      if @like.update(like_params)
-        format.html { redirect_to @like, notice: 'Like was successfully updated.' }
-        format.json { render :show, status: :ok, location: @like }
-      else
-        format.html { render :edit }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE posts/:id/likes/1
-  # DELETE /likes/1.json
-  def destroy
-    @like.destroy
-    respond_to do |format|
-      format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
