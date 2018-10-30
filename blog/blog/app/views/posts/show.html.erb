@@ -20,7 +20,7 @@
 	</div>
 
 	<!-- like and dislike post -->
-	<form action="/posts/<%=@post.id%>/update_like" method="post" class="button_likes like_form">
+	<form action="/posts/<%=@post.id%>/update_like" method="post" class="button_likes like_form" id="form_to_disable">
 		<button type="submit" class="thumb-up">
 	    <i class="far fa-thumbs-up thumbs"></i> <%=@post.likes%>
 		</button>

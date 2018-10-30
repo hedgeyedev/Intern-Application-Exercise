@@ -15,3 +15,28 @@
 //= require_tree .
 //= require social-share-button
 
+$(function() {
+    attachListeners();
+    
+});
+// attach the listeners of the element that display on the document
+function attachListeners() {
+    $(".thumb-up").on("click", disableButton);        
+}
+
+function disableButton() {
+	
+	$('#form_to_disable').one('submit', function() {
+		
+    	$(this).find('button[type="submit"]').attr('disabled','disabled');
+	});
+	// var buttonLike = document.getElementsByClassName("thumb-up");
+	// buttonLike.type = "";
+	// $('.like_form').append(`
+	// 	<button type="text" class="thumb-up">
+	//     	<i class="far fa-thumbs-up thumbs"></i> <%=@post.likes%>
+	// 	</button>
+	// `)
+	// $('.thumb-up').addClass('hide');
+	// $('.like_form').append('<i class=`far fa-thumbs-up thumbs`></i> <%=@post.likes%> hello')
+}
