@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
   # GET /likes
   # GET /likes.json
   def index
@@ -15,6 +15,8 @@ class LikesController < ApplicationController
   # GET /likes/new
   def new
     @like = Like.new
+
+    # @post = Post.find(params[:post_id].to_i)
   end
 
   # GET /likes/1/edit
@@ -24,16 +26,24 @@ class LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    @like = Like.new(like_params)
-
-    respond_to do |format|
+    @post = Post.find(params[:post_id].to_i)
+    if current_user
+    @like = Like.new()
+    @like.post_id = @post.id
+    @like.like = params[:like].to_i
+    @like.dislike = params[:dislike].to_i
+    @like.commenter_id = current_user.id
       if @like.save
-        format.html { redirect_to @like, notice: 'Like was successfully created.' }
-        format.json { render :show, status: :created, location: @like }
+        flash[:notice] = "You voted for this post"
+        redirect_to post_path(@post)
       else
-        format.html { render :new }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
+        flash[:notice] = "We have already saved your vote"
+        redirect_to post_path(@post)
       end
+
+    else
+      flash[:error] = "You must be logged in to see this page"
+      redirect_to "/login"
     end
   end
 
@@ -69,6 +79,6 @@ class LikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def like_params
-      params.require(:like).permit(:commenter_id, :post_id, :like, :dislike)
+      params.require(:like).permit(:post_id, :like, :dislike)
     end
 end

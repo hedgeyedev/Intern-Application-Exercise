@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20181030031240) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "likes", default: 0
-    t.integer "dislikes", default: 0
   end
 
   create_table "users", force: :cascade do |t|

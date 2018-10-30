@@ -151,3 +151,8 @@ a.blanc, .blanc {
 	display: none;
 }
 
+form.new_like[type="radio"]:not(:checked), form.new_like[type="radio"]:checked {
+	opacity: 100% !important;
+	position: relative !important;
+}
+

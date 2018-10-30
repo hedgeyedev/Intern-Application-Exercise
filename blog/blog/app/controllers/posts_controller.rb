@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :update_like, :update_dislike]
-   skip_before_action :verify_authenticity_token, :only => [:update_like, :update_dislike]
+  skip_before_action :verify_authenticity_token, :only => [:update_like, :update_dislike]
   # GET /posts
   # GET /posts.json
   def index
@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show  
+    @likes_count = @post.likes.where(like: 1).count
+    @dislikes_count =@post.likes.where(dislike: 1).count
   end
 
   # GET /posts/new

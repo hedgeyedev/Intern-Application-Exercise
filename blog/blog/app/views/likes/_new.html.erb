@@ -1,0 +1,15 @@
+<%= form_for [@post, @post.likes.build] do |f| %>
+  <%= hidden_field_tag 'like', 1  %>
+  <%= hidden_field_tag 'dislike', 0  %>
+  <%= hidden_field_tag 'post_id', @post.id  %>
+  <%= f.submit :Like, class: 'btn btn-success'%>
+<% end %>
+<%= @likes_count %>
+
+<%= form_for [@post, @post.likes.build] do |f| %>
+  <%= hidden_field_tag 'dislike', 1  %>
+  <%= hidden_field_tag 'like', 0  %>
+  <%= hidden_field_tag 'post_id', @post.id  %>
+  <%= f.submit :Dislike, class: 'btn btn-success'%>
+<% end %>
+<%= @dislikes_count %>
