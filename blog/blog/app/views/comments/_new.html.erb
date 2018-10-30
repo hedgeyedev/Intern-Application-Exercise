@@ -1,18 +1,15 @@
-
-
 <p class="blanc">Add a comment:</p>
 
 	<!-- comments -->
 	<%= form_for [@post, @post.comments.build] do |f| %>
-  		<div class="field">   
-    		<%= f.label :content %>
-    		<%= f.text_area  :content, id: :comment_content %>  
-  		</div>
+		<div class="field">   
+  		<%= f.label :content %>
+  		<%= f.text_area  :content, id: :comment_content %>  
+		</div>
 
-  		<div class="actions right">
-   			<i class="fas fa-save update-button"><%= f.submit %></i>
-  		</div>
-
+		<div class="actions right">
+ 			<i class="fas fa-save update-button"><%= f.submit %></i>
+		</div>
 	<% end %>
 
 
