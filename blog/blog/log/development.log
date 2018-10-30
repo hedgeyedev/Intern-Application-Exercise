@@ -20419,3 +20419,158 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 125ms (Views: 113.1ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:35:36 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (45.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 234ms (Views: 218.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:35:37 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (13.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 108.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:35:38 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (12.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 108ms (Views: 99.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-10-30 12:35:41 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:35:41 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 90ms (Views: 83.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-30 12:35:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 82ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-30 12:35:50 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cvI8r4NqDh3TxEy7C7uG35xdGQdZScIqbAbbecU2hEei47YF8G6XtGWoO+wy/O2VpZRxG8Gl2mkmLJXyPGPZqA==", "email"=>"lizzie.sorin@hotmail.fr", "password"=>"[FILTERED]", "commit"=>"Login!"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lizzie.sorin@hotmail.fr"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 98ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:35:50 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (11.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 86.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-10-30 12:35:56 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:35:56 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 87ms (Views: 77.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-30 12:35:57 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 79ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-30 12:36:02 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V5QRhSjMwshR28JBmnespDoP6Cncu7BQ8AKKvYfXUgmHhZsvW8hbYee3tRajMMfuA8aANURXqBO6KMQ2foIP5g==", "email"=>"lizzie.sorin@hotmail.fr", "password"=>"[FILTERED]", "commit"=>"Login!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lizzie.sorin@hotmail.fr"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 99ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-30 12:36:02 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 88ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-10-30 12:36:09 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 88ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-30 12:36:23 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MO5A/R6ELcnOaxwrzYtHppaqVHlVsjHY4FreRGhfZXZkVPmhS8iF6yk6NvsVZgWbqpJvjzTMnlx6Fd1b/ytgBA==", "email"=>"lizzie.sorin@laposte.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Sign Up!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "lizzie.sorin@laposte.net"], ["password_digest", "$2a$10$iew1xnPKiqia.KvaJVt93eRneiQg6XIC7y/c/5.rA0KmYSv1GILu2"], ["created_at", "2018-10-30 19:36:23.550479"], ["updated_at", "2018-10-30 19:36:23.550479"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 111ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:36:23 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 89.3ms | ActiveRecord: 1.0ms)
+
+
