@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
+	# GET /users/new
 	def new
 	end
 
+	# POST /users
 	def create
 		user = User.new(
 			email: params[:email],

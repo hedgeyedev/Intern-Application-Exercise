@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   # resources :likes
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
   resources :posts do
-    resources :likes
+    resources :likes, only: [:create]
   end
   root :to => "posts#index"
   get "/signup" => "users#new"
@@ -13,8 +13,4 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
-  # post "/posts/:id/update_like" => "posts#update_like"
-  # post "/posts/:id/update_dislike" => "posts#update_dislike"
-  # post "/posts/:id/likes" => "likes#create"
-  # get "/posts/:id/likes/new" => "likes#new"
 end

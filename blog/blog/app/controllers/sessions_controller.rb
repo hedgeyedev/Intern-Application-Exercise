@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
 
+	# GET /sessions/new
 	def new
 	end
-
+	
+	# POST /sessions
 	def create
 	 user = User.find_by(email: params[:email])
 	 if user && user.authenticate(params[:password])
@@ -15,6 +17,7 @@ class SessionsController < ApplicationController
 	 end
 	end
 
+	# DELETE /sessions/:id
 	def destroy
 	  session[:user_id] = nil
 	  flash[:notice] = "You logged out successfully!"
