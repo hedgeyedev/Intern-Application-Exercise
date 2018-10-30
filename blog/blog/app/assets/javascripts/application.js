@@ -14,25 +14,3 @@
 //= require turbolinks
 //= require_tree .
 //= require social-share-button
-
-// $(function() {
-//     attachListeners();
-    
-// });
-// // attach the listeners of the element that display on the document
-// function attachListeners() {
-//     $(".thumb-up").on("click", disableButtonLike);
-//     $(".thumb-down").on("click", disableButtonDislike);         
-// }
-
-// function disableButtonLike() {
-// 	$('#form_to_disable').one('submit', function() {
-//     	$(this).find('button[type="submit"]').attr('disabled','disabled');
-// 	});
-// }
-
-// function disableButtonDislike() {
-// 	$('#form_to_disable2').one('submit', function() {
-//     	$(this).find('button[type="submit"]').attr('disabled','disabled');
-// 	});
-// }
