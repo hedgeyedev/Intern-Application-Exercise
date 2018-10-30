@@ -21,6 +21,7 @@
         <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>             
       <div class="row blue-grey-text"><h5><%= post.title %></h5></div>
+      <div class="row grey-text" id="author"><p>by <%= post.user.email.split('@')[0]%></p></div>
       <div class="row post-body"><%= post.content %></div> 
       <%= link_to '... Read More', post %>
     </div>

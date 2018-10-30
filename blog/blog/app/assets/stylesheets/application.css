@@ -18,7 +18,6 @@
 	background-color: #ABB8C0;
 }
 
-
 .block-post {
 	padding: 40px;
 	border-radius: 10px;
@@ -150,4 +149,6 @@ a.blanc, .blanc {
 	display: none;
 }
 
-
+#author {
+	margin-top: -30px;
+}

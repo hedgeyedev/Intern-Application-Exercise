@@ -6,7 +6,9 @@
   <%= hidden_field_tag 'post_id', @post.id  %>
 
   <%= f.button :submit do %>
-  <div class="button_likes"><i class="far fa-thumbs-up thumbs"></i> <%=@likes_count%></div>
+  	<div class="button_likes">
+  	<i class="far fa-thumbs-up thumbs"></i> 
+  	<%=@likes_count%></div>
   <% end %>
 
 <% end %>
@@ -21,7 +23,9 @@
   <%= hidden_field_tag 'post_id', @post.id  %>
 
   <%= f.button :submit do %>
-  <div class="button_likes"><i class="far fa-thumbs-down thumbs"></i> <%=@dislikes_count%></div>
+  	<div class="button_likes">
+  	<i class="far fa-thumbs-down thumbs"></i> 
+  	<%=@dislikes_count%></div>
   <% end %>
 
 <% end %>
