@@ -1,10 +1,12 @@
 <h2 class="white-text">Edit Post</h2>
+
 <%= render 'layouts/back_arrow'%>
 
 <!-- form to edit the post -->
 <div class="row right-align">
 <%= link_to 'View Post', @post %> 
 </div>
+
 <%= render 'form', post: @post %>
 
 

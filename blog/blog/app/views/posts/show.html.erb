@@ -1,9 +1,11 @@
 <div class="container-show">
 	<%= render 'layouts/back_arrow'%>
+
 	<!-- social media -->
 	<div class="social_media"><%= social_share_button_tag(@post.title) %></div>
 	</br>
 	</br>
+
 	<!-- post -->
 	<div class="row blue-grey lighten-5 block-post">
 	    <div class="row right-align">
@@ -11,18 +13,22 @@
 	        <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 	    </div>             
 	    <div class="row blue-grey-text"><h5><%= @post.title %></h5></div>
+	    <div class="row grey-text" id="author"><p>by <%= @post.user.email.split('@')[0]%></p></div>
 	    <div class="row"><%= @post.content %></div>   
 	</div>
+
 	<!-- render partial for the likes -->
 	<%= render "likes/new" %>
 	</br>
 	</br>
+
 	<!-- render the comment section -->
 	<div class="row blue-grey lighten-3 block-post">
 	<%= @post.comments.count %> comments
 	<%= render @post.comments %>
 	<%= render "comments/new" %>
 	</div>
+	
 </div>
 </br>
 </br>

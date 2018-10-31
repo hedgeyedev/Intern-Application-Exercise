@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :update_like, :update_dislike]
   skip_before_action :verify_authenticity_token, :only => [:update_like, :update_dislike]
-  
+
   # GET /posts
   def index
     @posts = Post.all

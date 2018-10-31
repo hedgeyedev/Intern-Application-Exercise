@@ -15,7 +15,7 @@ class LikesController < ApplicationController
         flash[:notice] = "You voted for this post"
         redirect_to post_path(@post)
       else
-        flash[:notice] = "We have already saved your vote"
+        flash[:notice] = @like.errors.full_messages.to_sentence
         redirect_to post_path(@post)
       end
 

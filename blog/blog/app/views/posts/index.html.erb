@@ -1,4 +1,5 @@
 <h2 class="white-text inline">Posts</h2>
+
 <!-- display create post button -->
 <div class="row button-create">
  <div class="center"><i class="fas fa-plus"></i>
@@ -10,24 +11,27 @@
 </br>
 </br>
 </br>
+
 <!-- display all the posts -->
 <% @posts.each do |post| %>
-  <div class="row">
     <div class="row blue-grey lighten-5 block-post">
+
    <!--  action links for the post -->
       <div class="row right-align">
         <%= link_to 'View Post', post %> |
         <%= link_to 'Edit', edit_post_path(post) %> |
         <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div> 
+
       <!-- title, author and content preview of the post  -->           
       <div class="row blue-grey-text"><h5><%= post.title %></h5></div>
       <div class="row grey-text" id="author"><p>by <%= post.user.email.split('@')[0]%></p></div>
       <div class="row post-body"><%= post.content %></div> 
       <%= link_to '... Read More', post %>
+
     </div>
-  </div>
 <% end %>
+
 <br>
 
 

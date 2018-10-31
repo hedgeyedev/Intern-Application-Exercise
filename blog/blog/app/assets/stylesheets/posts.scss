@@ -32,7 +32,7 @@
 	margin-top: 10%;
 }
 
-/*for posts/_form*/
+/*for posts/_form.html*/
 .update-button {
 	border-radius: 10px;
 	padding: 10px;
@@ -46,3 +46,10 @@
 	border-radius: 10px;
 	border-color: lightgrey;
 }
+
+/*for posts/_post.html*/
+.conditionnal_hide {
+	display: none;
+}
+
+
