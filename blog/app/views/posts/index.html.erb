@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<section class="section extra-margins pb-3 text-center text-lg-left">
+  <h2 class="section-heading-updated h2 pt-1">Recent posts</h2>
+
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="view overlay hm-white-slight z-depth-1-half">
+          <%= image_tag(["https://mdbootstrap.com/img/Photos/Others/img (35).jpg", 
+          "https://mdbootstrap.com/img/Photos/Others/forest-sm.jpg", 
+          "https://mdbootstrap.com/img/Photos/Others/img (38).jpg", 
+          "https://mdbootstrap.com/img/Photos/Others/img (36).jpg",
+          "https://mdbootstrap.com/img/Photos/Others/img (29).jpg",
+          "https://mdbootstrap.com/img/Photos/Others/img (28).jpg",
+          "https://mdbootstrap.com/img/Photos/Others/img (27).jpg",
+          "https://mdbootstrap.com/img/Photos/Others/img (53).jpg",
+          "https://mdbootstrap.com/img/Photos/Others/img (44).jpg",
+          "https://mdbootstrap.com/img/Photos/Others/img (42).jpg"
+        ].sample, class: 'img-fluid') %>
+          <a><div class="mask"></div></a>
+        </div>
+      </div>
+      <div class="col-lg-7 ml-xl-4 mb-4">
+        <a href="" class="teal-text"><h6 class="pb-1"><strong><%= post.category %></strong></h6></a>
+        <h4><strong><%= post.title %></strong></h4>
+        <p><%= post.content %></p>
+        <p>by <a><strong><%= post.author %></strong></a>, <%= post.created_at %></p>
+        <a><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-primary btn-sm' %></a>
+        <a><%= link_to 'Delete', post, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></a>
+
+
+      </div>
+    </div>
+    <hr class="mb-5">
+  <% end %>
+</section>
