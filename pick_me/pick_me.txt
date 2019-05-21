@@ -1,0 +1,9 @@
+I am interested in your Developer Intern position because of my recent experience creating a Rails web application for my software engineering class at Cal Poly Pomona University. I really enjoyed the class where we learned about Agile development and the software development life-cycle and I am eager to put my newfound knowledge to work. If you would like to take a look at that project, here is the link on GitHub: [https://github.com/ionicsoft/vidon]. Interestingly enough, our project dealt with video technologies on the web which should align nicely with Hedgeye's products.
+
+Overall, I have a decent level of experience with Ruby on Rails development and web development in general. My main experience with the mobile web is through using the Bootstrap front-end framework. I have experience testing applications in Ruby and am familiar with the test driven development workflow. My development IDE of choice for Rails is the Cloud9 web IDE hosted through AWS. I feel at home using a terminal and text editor. I am genuinely interested in what I can offer for your company.
+
+You can best reach me via my email address: brandong661@yahoo.com
+
+Sincerely,
+
+Brandon Gastelo
