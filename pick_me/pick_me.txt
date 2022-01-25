@@ -1,0 +1,55 @@
+Why should you choose me as an intern?
+
+I love programming, and so I'd love to program for you. I've been a Linux user
+since I was 13 years old, and my dotfiles[^1] can attest to this. Playing around
+with Vim and shell scripts, among a myriad of other languages, has taught me the
+joy of computing. I've heard that Ruby aims to facilitate the joy of programming
+as well, and though I haven't written any sizable amount of software in Ruby or
+Rails, I do have a few small projects which might be relevant.
+
+I've written a short web scraper in Ruby which collects information on the
+California DMV's available locations and appointments[^2]. Using the Google
+Distance Matrix API (this unfortunately requires a corresponding API key), this
+web scraper sorts the offices by distance from a given address (specified in a
+yaml config file). This scraper can even send an email to a specified address,
+if it finds that the two closest offices have appointments available on a
+specified date.
+
+I also have a very unfinished project involving Rails: an online implementation
+of Spellbinder, a turn-based game in which wizards make hand signs to cast
+spells against each other[^3]. However, as far as web development is concerned,
+I used devise to implement user authentication and simply handled the turn-based
+sign inputs with forms. Unfortunately, I got too caught up trying to implement
+the rules of the game itself to go much further with the development. When it
+came to handling the rules of the game, I used rspec to (perhaps clumsily)
+handle test cases and found byebug and pry to be useful for debugging.
+
+In terms of projects which don't involve Ruby, my most notable one is probably
+rolf, a terminal file manager which displays images with the kitty image
+protocol[^4]. Written in Rust, this project won't currently run on macOS, since
+it relies on a Linux-specific system call to find the width and height of the
+terminal in pixels (which is used when resizing preview images to fit within the
+screen). This project is still a WIP, so it's not in a very usable state to
+anyone except me right now. However, GitHub Actions is set up to automatically
+make a new Linux build and place it on the releases page whenever a new commit
+is pushed.
+
+As an intern, I intend to learn more about the skills involved in Software
+Engineering and then provide value using these skills. This includes the
+technical skills used with Ruby, Rails, and git, as well as better programming
+practices like TDD and robust CI/CD, none of which I have explored to their full
+extent. But this also extends to the soft skills necessary for communication and
+organization, all of which I can significantly improve at this internship.
+
+Also, I'm a third-year Software Engineering major at Chapman University, so I
+have some qualification for this internship.
+
+[^1]: My dotfiles are available at https://github.com/Superchig/dotfiles.
+
+[^2]: My DMV scraper can be found at https://github.com/Superchig/dmv-scraper.
+
+[^3]: My very incomplete Spellbinder implementation is available at:
+      https://github.com/Superchig/spellbinder-rails.
+
+[^4]: The rolf file manager (and a preview gif) are available at:
+      https://github.com/Superchig/rolf
