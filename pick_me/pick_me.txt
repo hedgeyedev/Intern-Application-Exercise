@@ -41,9 +41,6 @@ practices like TDD and robust CI/CD, none of which I have explored to their full
 extent. But this also extends to the soft skills necessary for communication and
 organization, all of which I can significantly improve at this internship.
 
-Also, I'm a third-year Software Engineering major at Chapman University, so I
-have some qualification for this internship.
-
 [^1]: My dotfiles are available at https://github.com/Superchig/dotfiles.
 
 [^2]: My DMV scraper can be found at https://github.com/Superchig/dmv-scraper.
