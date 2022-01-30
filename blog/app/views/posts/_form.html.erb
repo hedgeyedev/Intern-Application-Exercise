@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <%= form.label :title, class: 'form-label h4' %>
-    <%= form.text_field :title, class: 'form-control' %>
+  <div class="mb-3 mt-3">
+    <%#= form.label :title, class: 'form-label h4' %>
+    <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :content, class: 'form-label h4' %>
-    <%= form.text_area :content, class: 'form-control' %>
+    <%#= form.label :content, class: 'form-label h4' %>
+    <%= form.text_area :content, class: 'form-control', placeholder: 'Content' %>
   </div>
 
   <div class="actions">
