@@ -2,7 +2,7 @@
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+  
       <ul>
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,18 +10,21 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="card">
+      <div class="card-header">
+          <%#= form.label :title, class: 'form-label h4' %>
+          <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
+      </div>
+      <div class="card-body">
+          <div class="mb-3">
+            <%#= form.label :content, class: 'form-label h4' %>
+            <%= form.text_area :content, class: 'form-control', placeholder: 'Content' %>
+          </div>
 
-  <div class="mb-3 mt-3">
-    <%#= form.label :title, class: 'form-label h4' %>
-    <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
-  </div>
-
-  <div class="mb-3">
-    <%#= form.label :content, class: 'form-label h4' %>
-    <%= form.text_area :content, class: 'form-control', placeholder: 'Content' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class: 'btn btn-success mb-3' %>
+          <div class="actions">
+            <%= form.submit class: 'btn btn-success' %>
+          </div>
+      </div>
   </div>
 <% end %>
