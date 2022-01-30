@@ -17,6 +17,15 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
+      <div class="mb-3"></div>
+
+      <% if notice %>
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
 
