@@ -1,0 +1,6 @@
+<div class="fw-light d-flex justify-content-between">
+  <div><%= post.created_at.strftime("%B #{post.created_at.day.ordinalize} %Y") %></div>
+  <% if post.created_at != post.updated_at %>
+    <div><em>edited on </em><%= post.updated_at.strftime("%B #{post.created_at.day.ordinalize} %Y") %></div>
+  <% end %>
+</div>
