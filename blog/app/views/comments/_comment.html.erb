@@ -1,5 +1,9 @@
 <%# Set the id for use with live updates. %>
 <div id="<%= dom_id(comment)%>" class="card mb-3">
+  <div class="card-header d-flex justify-content-between">
+    <div><%= "#{comment.name} (#{comment.email})" %></div>
+    <div class="fw-light"><%= format_date_time(comment.created_at) %></div>
+  </div>
   <div class="card-body">
     <%= comment.content %>
   </div>

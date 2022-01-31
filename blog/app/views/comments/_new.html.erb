@@ -4,6 +4,10 @@
       Your comment:
     </div>
     <div class="card-body">
+      <div class="d-flex justify-content-around mb-3 gap-3">
+        <%= form.text_field :name, placeholder: 'Name', class: 'form-control' %>
+        <%= form.text_field :email, placeholder: 'Email', class: 'form-control' %>
+      </div>
       <%= form.rich_text_area :content %><br/>
       <%= form.submit class: 'btn btn-primary' %>
     </div>
