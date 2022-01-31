@@ -1,3 +1,11 @@
+# Setup Notes
+
+You may need to set up Action Text before running the server.
+
+```bash
+rails action_text:install
+```
+
 # A Quick and Dirty Rails based blog
 
    * setup your computer for Ruby on Rails development.  [Rails Installer](http://railsinstaller.org/) is a good start point for Windows and OSX, if you're running Linux, I imagine you know how to use your package manager to set it up.  This [setup for Ubuntu](http://coding.smashingmagazine.com/2011/06/21/set-up-an-ubuntu-local-development-machine-for-ruby-on-rails/) might be a good start point.
