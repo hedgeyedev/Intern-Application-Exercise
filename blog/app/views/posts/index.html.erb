@@ -1,26 +1,10 @@
-<h1>Posts</h1>
+<h1 class="mb-3">Posts</h1>
 
 <% if @posts.empty? %>
   <p class="mb-3">No posts have been created yet.</p>
 <% else %>
   <% @posts.each do |post| %>
-    <div class="card mb-4">
-      <div class="card-header">
-        <h4 class="my-auto">
-          <%= post.title %>
-          <%= link_to ('<i class="fas fa-edit fa-xs"></i>').html_safe, edit_post_path(post), class: 'link-success' %>
-          <!-- https://stackoverflow.com/questions/31419317/linking-font-awesome-icon-to-rails-attribute -->
-          <%= link_to ('<i class="fas fa-trash fa-xs"></i>').html_safe, post, method: :delete, data: { confirm: 'You are about to delete a post. Are you sure?' }, class: 'link-danger' %>
-        </h4>
-      </div>
-      <div class="card-header">
-        <%= render 'date', post: post %>
-      </div>
-      <div class="card-body">
-        <%= post.content %>
-        <%= link_to 'Read More', post %>
-      </div>
-    </div>
+    <%= render 'card', post: post %>
   <% end %>
 <% end %>
 
