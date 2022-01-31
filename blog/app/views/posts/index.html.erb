@@ -17,11 +17,8 @@
         <%= render 'date', post: post %>
       </div>
       <div class="card-body">
-        <p class="my-auto">
-          <%= post.opening %>
-          <br/>
-          <%= link_to 'Read More', post %>
-        </p>
+        <%= post.content %>
+        <%= link_to 'Read More', post %>
       </div>
     </div>
   <% end %>
