@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @current_nav_tab = :new_post
   end
 
   # GET /posts/1/edit
