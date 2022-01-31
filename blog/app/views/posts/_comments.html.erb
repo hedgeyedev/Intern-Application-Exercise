@@ -1,0 +1,11 @@
+<h4 class="mb-3">Comments</h4>
+
+<% if post.comments.empty? %>
+  <p class="fw-light">Looks like no one's commented yet. Will you be the first one?<p>
+<% else %>
+  <% post.comments.each do |comment| %>
+    <%= render 'comments/comment', comment: comment %>
+  <% end %>
+<% end %>
+
+<%= render 'comments/new', post: post %>
