@@ -1,10 +1,15 @@
-<h1>
-  <%= @post.title %>
-</h1>
+<div class="card">
+  <div class="card-header">
+    <h4 class="my-auto">
+      <%= @post.title %>
+    </h4>
+  </div>
+  <div class="card-body">
+    <%= @post.content %>
+  </div>
+</div>
 
-<p>
-  <%= @post.content %>
-</p>
+<br/>
 
 <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary' %>
 <%= link_to 'Back', posts_path, class: 'btn btn-secondary' %>
