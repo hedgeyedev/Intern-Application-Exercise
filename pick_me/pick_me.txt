@@ -1,0 +1,22 @@
+Dear Hiring Manager,
+
+After graduating with a degree in Music and spending a year teaching English in Japan, I have honed in on what I want to do professionally. Initially, my long term goal was to become a Linux system administrator, so I became A+ certified and got an entry level IT job. I started looking into Bash scripting. I ended up finding this type of problem solving very enjoyable and eventually my goal shifted from wanting to be a Linux system administrator to wanting to be a programmer.
+
+I started working through The Odin Project, an open source coding curriculum.  After a year, I have created applications purely with Ruby on Rails and I have created applications using Rails as an API with a ReactJS frontend. Now I believe I am ready to get some real world experience and an internship with Hedgeye seems like a logical next step.
+
+Here are some of the skills I possess that would allow me to contribute to your organization:
+
+Ruby on Rails development
+ReactJS Development
+Vanilla Javascript
+JWT Authentication
+Version control with Git
+Competent on Linux machines
+
+If you go to https://lucas-odonnell.github.io/lucas-odonnell-website/ you can see a few of my sample projects. I can be reached anytime at (415) 539 6186 or at lucas.odonnelll@gmail.com.
+
+Thank you for your time and consideration. I look forward to speaking with you about this opportunity. 
+
+Sincerely,
+Lucas O’Donnell
+

@@ -1,0 +1,28 @@
+<div class="hero">
+  <h1>Posts</h1>
+</div>
+<% @posts.each do |post| %>
+  <div class="post-container">
+    <div class = "post-content">
+      <div class="header">
+        <h2><%= post.title %></h2>
+      </div>
+      <div class="body">
+        <p><%= post.context %></p>
+        <div class="post-options">
+          <%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do %>
+            <span class="delete"><i class="fa fa-trash-o"></i></span>
+          <% end %>
+          <%= link_to edit_post_path(post), class: "level-item" do %>
+            <span class="edit"><i class="fa fa-pencil"></i></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<br>
+<div class="new-post">
+  <%= link_to 'New Post', new_post_path, class:"post-link" %>
+</div>
+
