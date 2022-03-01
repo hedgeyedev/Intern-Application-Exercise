@@ -4,11 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
-
-  def show
-    @post = Post.find(params[:id])
-  end
-
+  
   def new
     @post = Post.new
   end
@@ -17,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to post_url(@post), notice: "Post was successfully created." 
+      redirect_to posts_url, notice: "Post was successfully created." 
       else
       render :new, status: :unprocessable_entity 
     end
@@ -44,6 +40,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :context)
+    params.require(:post).permit(:title, :post)
   end
 end

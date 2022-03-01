@@ -1,27 +1,43 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, id: "new-post") do |form| %>
+  <% @error_array = [] %>
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
         <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><% @error_array << error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :context %>
-    <%= form.text_area :context %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-body">
+    <div class="field">
+      <div class="label-input">
+        <div class="form-section">
+          <%= form.label :title %>
+        </div>
+        <div class="form-section">
+          <%= form.text_field :title %>
+          <p class="error">
+          <%= @error_array.shift if @error_array.include?("Title can't be blank") %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="label-input">
+        <div class="form-section">
+          <%= form.label :post %>
+        </div>
+        <div class="form-section">
+          <%= form.text_area :post %>
+          <p class="error">
+          <%= @error_array.shift if @error_array.include?("Post can't be blank")%>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <%= form.button "Submit", type: "submit" %>
+    </div>
   </div>
 <% end %>

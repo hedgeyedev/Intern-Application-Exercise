@@ -14,8 +14,8 @@ RSpec.describe Post, type: :model do
         @post1.title = ""
         expect(@post1).to_not be_valid
       end
-      it "should fail if there is no context" do
-        @post1.context = ""
+      it "should fail if there is no post" do
+        @post1.post = ""
         expect(@post1).to_not be_valid
       end
     end

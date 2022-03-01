@@ -5,13 +5,13 @@
 	justify-content: center;
 }
 
-.post-container {
+.container {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1.5em;
 }
 
-.post-content {
+.content {
 	width: 95%;
 	max-width: 70rem;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -54,7 +54,7 @@
 }
 
 .delete {
-	color: #8a0303;
+	color: var(--warning);
 }
 
 .edit {
@@ -69,7 +69,7 @@
 }
 
 .new-post .post-link {
-	background-color: #8a0303;
+	background-color: var(--warning);
 	color: white;
 	border-radius: 4px;
 	border: none;
@@ -79,9 +79,11 @@
 }
 
 .new-post .post-link:hover {
-	border: 2px solid #8a0303;
-	color: #8a0303;
+	border: 2px solid var(--warning);
+	color: var(--warning);
 	background-color: white;
 }
 
-
+.form-header {
+	color: white;
+}

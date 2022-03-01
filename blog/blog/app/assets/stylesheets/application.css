@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -74,6 +74,25 @@ h1 {
 	font-weight: bold;
 }
 
+button {
+	background-color: var(--warning);
+	color: white;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 1px solid var(--warning);
+}
+
+button:hover {
+	background-color: white;
+	color: var(--warning);
+}
+
+.error {
+	color: var(--warning);
+	font-size: 1rem;
+	margin-top: .5em;
+}
+
 .navbar {
 	display: flex;
 	justify-content: flex-end;
@@ -82,4 +101,55 @@ h1 {
 
 .fa.fa-sign-out {
 	color: var(--warning);
+}
+
+.fa.fa-arrow-left {
+	color: black;
+	font-weight: bold;
+	font-size: 2rem;
+	margin-bottom: 1em;
+}
+
+.form-body {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.field {
+	width: 80%;
+	margin-top: 1em;
+}
+
+.form-section {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.form-section input {
+	border-radius: 4px;
+	font-size: 1.5rem;
+	width: 100%;
+	padding: .5em 1em;
+}
+
+.form-section textarea {
+	font-size: 1.5rem;
+	border-radius: 4px;
+	padding: .5em 1em;
+	width: 100%;
+	min-height: 20rem;
+}
+
+.actions {
+	margin-top: 5em;
+	margin-bottom: 3em;
+	width: 80%;
+}
+
+.actions button {
+	width: 100%;
+	font-size: 2rem;
+	padding: .5em 1em;
 }

@@ -1,6 +1,11 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<div class="container">
+  <div class="content">
+    <div class="header">
+      <h1 class="form-header">Edit Post</h1>
+    </div>
+    <%= render 'form', post: @post %>
+  </div>
+</div>
+<%= link_to posts_path, method: :get do %>
+  <span class="edit"><i class="fa fa-arrow-left"></i></span>
+<% end %>
