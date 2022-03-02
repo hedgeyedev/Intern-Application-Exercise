@@ -29,7 +29,7 @@
           <%= form.label :post %>
         </div>
         <div class="form-section special">
-          <%= form.rich_text_area :post %>
+          <%= form.rich_text_area :content %>
           <p class="error">
           <%= @error_array.shift if @error_array.include?("Post can't be blank")%>
           </p>

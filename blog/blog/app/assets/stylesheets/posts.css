@@ -41,8 +41,9 @@
 }
 
 .intro-body p {
-	font-size: 1.5rem;
-	text-indent: .2em;
+	font-size: 1rem;
+	text-indent: 1em;
+	line-height: 2;
 }
 
 .body {
@@ -97,3 +98,5 @@
 .form-header {
 	color: white;
 }
+
+

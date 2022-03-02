@@ -1,5 +1,5 @@
 <div class="hero">
-  <h1>Posts</h1>
+  <h1>Blog</h1>
 </div>
 <div class="new-post">
   <%= link_to 'New Post', new_post_path, class:"post-link" %>
@@ -12,7 +12,8 @@
       </div>
       <div class="intro-body">
         <p>
-        <%= link_to "Read", post_path(post) %>
+        <%= post.post_preview %>
+        ...<%= link_to "continue reading", post_path(post) %>
         </p>
       </div>
     </div>
