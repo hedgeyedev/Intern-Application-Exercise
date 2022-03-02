@@ -68,6 +68,8 @@ body {
 
 :root {
 	--warning: #8a0303;
+	--vibrant: #028090;
+	--green: #038a03;
 }
 
 h1 {
@@ -81,11 +83,27 @@ button {
 	font-weight: bold;
 	border-radius: 4px;
 	border: 1px solid var(--warning);
+	cursor: pointer;
 }
 
 button:hover {
 	background-color: white;
 	color: var(--warning);
+}
+
+.alert-container {
+	background-color: var(--warning);
+}
+
+.alert-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.alert {
+	font-size: 2rem;
 }
 
 .error {
@@ -100,8 +118,18 @@ button:hover {
 	padding: 1em 3em;
 }
 
+.nav-right {
+	width: 10%;
+	display: flex;
+	justify-content: space-between;
+}
+
 .fa.fa-sign-out {
 	color: var(--warning);
+}
+
+.fa.fa-wrench {
+	color: var(--green);
 }
 
 .fa.fa-arrow-left {
@@ -153,4 +181,10 @@ button:hover {
 	width: 100%;
 	font-size: 2rem;
 	padding: .5em 1em;
+}
+
+.devise-links {
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: var(--warning);
 }

@@ -34,9 +34,19 @@
 	color: white;
 }
 
+.intro-body {
+	background-color: white;
+	min-height: 3rem;
+	padding: 1em 2em;
+}
+
+.intro-body p {
+	font-size: 1.5rem;
+	text-indent: .2em;
+}
+
 .body {
 	background-color: white;
-	background-size: 20px 20px;
 	min-height: 10rem;
 	padding: 1em 2em;
 }
@@ -59,7 +69,7 @@
 
 .edit {
 	margin-left: 1em;
-	color: #038a03;
+	color: var(--green);
 }
 
 .new-post {

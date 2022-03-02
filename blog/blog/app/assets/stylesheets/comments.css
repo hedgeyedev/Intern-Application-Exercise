@@ -1,0 +1,32 @@
+.comment-section {
+	margin-top: 5em;
+}
+
+.comment-amount {
+	margin-bottom: 1em;
+	font-size: .5rem;
+}
+
+.comment {
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	border-radius: 4px;
+	margin-bottom: 1em;
+}
+
+.comment-body {
+	padding: 1em 2em;
+}
+
+.comment-body h3 {
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: var(--vibrant);
+	font-size: 1.5rem;
+}
+
+.comment-options {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 1em;
+	padding-bottom: 1em;
+}
