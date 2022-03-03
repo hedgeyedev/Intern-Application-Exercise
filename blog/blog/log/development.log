@@ -26083,3 +26083,572 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 8685)
 
 
+Started GET "/" for ::1 at 2022-03-02 16:48:48 -0800
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 283)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-03-02 16:48:48 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1078)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5638)
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 6366)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-03-02 16:48:58 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lucas.odonnelll@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lucas.odonnelll@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.3ms | Allocations: 4419)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lucas.odonnelll@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5703)
+Completed 200 OK in 231ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 6434)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-03-02 16:49:04 -0800
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1389)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 5886)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 6572)
+
+
+Started POST "/users" for ::1 at 2022-03-02 16:49:20 -0800
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"lucas", "email"=>"lucas.odonnelll@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lucas.odonnelll@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?)[0m  [["email", "lucas.odonnelll@gmail.com"], ["encrypted_password", "$2a$12$7QMuEkKU5Mz2n7uoy2EDV.tuWGVB5VhKqCq8.Igf8FM4WBXznF23y"], ["created_at", "2022-03-03 00:49:20.819050"], ["updated_at", "2022-03-03 00:49:20.819050"], ["name", "lucas"]]
+  [1m[36mTRANSACTION (56.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 295ms (ActiveRecord: 57.2ms | Allocations: 7220)
+
+
+Started GET "/" for ::1 at 2022-03-02 16:49:20 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 739)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5232)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 6922)
+
+
+Started GET "/posts/new" for ::1 at 2022-03-02 16:49:22 -0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.9ms | Allocations: 1143)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5802)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 7541)
+
+
+Started POST "/rails/active_storage/direct_uploads" for ::1 at 2022-03-02 16:49:34 -0800
+Processing by ActiveStorage::DirectUploadsController#create as JSON
+  Parameters: {"blob"=>{"filename"=>"dov.jpg", "content_type"=>"image/jpeg", "byte_size"=>84760, "checksum"=>"sGAscZYBQ48Vc3N6OcLmJg=="}, "direct_upload"=>{"blob"=>{"filename"=>"dov.jpg", "content_type"=>"image/jpeg", "byte_size"=>84760, "checksum"=>"sGAscZYBQ48Vc3N6OcLmJg=="}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "1abs05r9jrxvo2nyospf9l9zpe1o"], ["filename", "dov.jpg"], ["content_type", "image/jpeg"], ["service_name", "local"], ["byte_size", 84760], ["checksum", "sGAscZYBQ48Vc3N6OcLmJg=="], ["created_at", "2022-03-03 00:49:34.783741"]]
+  [1m[36mTRANSACTION (54.1ms)[0m  [1m[36mcommit transaction[0m
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: 1abs05r9jrxvo2nyospf9l9zpe1o (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9UWTI5dWRHVnVkRjlzWlc1bmRHaHBBeGhMQVRvTlkyaGxZMnR6ZFcxSkloMXpSMEZ6WTFwWlFsRTBPRlpqTTA0MlQyTk1iVXBuUFQwR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wMy0wM1QwMDo1NDozNC44NDVaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--2153e86fa3148c9d53ca506634ed06a295282334)[0m
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 54.9ms | Allocations: 11603)
+
+
+Started PUT "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9UWTI5dWRHVnVkRjlzWlc1bmRHaHBBeGhMQVRvTlkyaGxZMnR6ZFcxSkloMXpSMEZ6WTFwWlFsRTBPRlpqTTA0MlQyTk1iVXBuUFQwR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wMy0wM1QwMDo1NDozNC44NDVaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--2153e86fa3148c9d53ca506634ed06a295282334" for ::1 at 2022-03-02 16:49:34 -0800
+Processing by ActiveStorage::DiskController#update as */*
+  Parameters: {"encoded_token"=>"[FILTERED]"}
+[36m  Disk Storage (0.9ms) [0m[32mUploaded file to key: 1abs05r9jrxvo2nyospf9l9zpe1o (checksum: sGAscZYBQ48Vc3N6OcLmJg==)[0m
+No template found for ActiveStorage::DiskController#update, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 3242)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4/dov.jpg" for ::1 at 2022-03-02 16:49:34 -0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4", "filename"=>"dov"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: 1abs05r9jrxvo2nyospf9l9zpe1o (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6MzQuODkwWiIsInB1ciI6ImJsb2Jfa2V5In19--d425dc7b5829d6857f06695da46a9d92c326cf36/dov.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6MzQuODkwWiIsInB1ciI6ImJsb2Jfa2V5In19--d425dc7b5829d6857f06695da46a9d92c326cf36/dov.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 2325)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6MzQuODkwWiIsInB1ciI6ImJsb2Jfa2V5In19--d425dc7b5829d6857f06695da46a9d92c326cf36/dov.jpg" for ::1 at 2022-03-02 16:49:34 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6MzQuODkwWiIsInB1ciI6ImJsb2Jfa2V5In19--d425dc7b5829d6857f06695da46a9d92c326cf36/dov.jpg" for ::1 at 2022-03-02 16:49:34 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6MzQuODkwWiIsInB1ciI6ImJsb2Jfa2V5In19--d425dc7b5829d6857f06695da46a9d92c326cf36/dov.jpg" for ::1 at 2022-03-02 16:49:38 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV0ZpY3pBMWNqbHFjbmgyYnpKdWVXOXpjR1k1YkRsNmNHVXhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6MzQuODkwWiIsInB1ciI6ImJsb2Jfa2V5In19--d425dc7b5829d6857f06695da46a9d92c326cf36/dov.jpg" for ::1 at 2022-03-02 16:49:40 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started POST "/posts" for ::1 at 2022-03-02 16:49:42 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Beginning of a book", "content"=>"<div><figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/jpeg&quot;,&quot;filename&quot;:&quot;dov.jpg&quot;,&quot;filesize&quot;:84760,&quot;height&quot;:1027,&quot;sgid&quot;:&quot;BAh7CEkiCGdpZAY6BkVUSSIwZ2lkOi8vYmxvZy9BY3RpdmVTdG9yYWdlOjpCbG9iLzE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--6b1b72095ba23e2de2f2186e5905a5be824acd19&quot;,&quot;url&quot;:&quot;http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4/dov.jpg&quot;,&quot;width&quot;:700}\" data-trix-content-type=\"image/jpeg\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--jpg\"><img src=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4/dov.jpg\" width=\"700\" height=\"1027\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">dov.jpg</span> <span class=\"attachment__size\">82.77 KB</span></figcaption></figure> ON an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge. |&nbsp; &nbsp; 1<br>&nbsp; He had successfully avoided meeting his landlady on the staircase. His garret was under the roof of a high, five-storied house, and was more like a cupboard than a room. The landlady, who provided him with garret, dinners, and attendance, lived on the floor below, and every time he went out he was obliged to pass her kitchen, the door of which invariably stood open. And each time he passed, the young man had a sick, frightened feeling, which made him scowl and feel ashamed. He was hopelessly in debt to his landlady, and was afraid of meeting her. |&nbsp; &nbsp; 2<br>&nbsp; This was not because he was cowardly and abject, quite the contrary; but for some time past he had been in an overstrained, irritable condition, verging on hypochondria. He had become so completely absorbed in himself, and isolated from his fellows that he dreaded meeting, not only his landlady, but any one at all. He was crushed by poverty, but the anxieties of his position had of late ceased to weigh upon him. He had given up attending to matters of practical importance; he had lost all desire to do so. Nothing that any landlady could do had a real terror for him. But to be stopped on the stairs, to be forced to listen to her trivial, irrelevant gossip, to pestering demands for payment, threats and complaints, and to rack his brains for excuses, to prevaricate, to lie—no, rather than that, he would creep down the stairs like a cat and slip out unseen. |&nbsp; &nbsp; 3<br>&nbsp; This evening, however, on coming out into the street, he became acutely aware of his fears. |&nbsp; &nbsp; 4<br>&nbsp; “I want to attempt a thing like that and am frightened by these trifles,” he thought, with an odd smile. “Hm … yes, all is in a man’s hands and he lets it all slip from cowardice, that’s an axiom. It would be interesting to know what it is men are most afraid of. Taking a new step, uttering a new word is what they fear most.… But I am talking too much. It’s because I chatter that I do nothing. Or perhaps it is that I chatter that I do nothing. I’ve learned to chatter this last month, lying for days together in my den thinking … of Jack the Giant-killer. Why am I going there now? Am I capable of that? Is that serious? It is not serious at all. It’s simply a fantasy to amuse myself; a plaything! Yes, maybe it is a plaything.” |&nbsp; &nbsp; 5<br>&nbsp; The heat in the street was terrible: and the airlessness, the bustle and the plaster, scaffolding, bricks, and dust all about him, and that special Petersburg stench, so familiar to all who are unable to get out of town in summer—all worked painfully upon the young man’s already overwrought nerves. The insufferable stench from the pot-houses, which are particularly numerous in that part of the town, and the drunken men whom he met continually, although it was a working day, completed the revolting misery of the picture. An expression of the profoundest disgust gleamed for a moment in the young man’s refined face. He was, by the way, exceptionally handsome, above the average in height, slim, well-built, with beautiful dark eyes and dark brown hair. Soon he sank into deep thought, or more accurately speaking into a complete blankness of mind; he walked along not observing what was about him and not caring to observe it. From time to time, he would mutter something, from the habit of talking to himself, to which he had just confessed. At these moments he would become conscious that his ideas were sometimes in a tangle and that he was very weak; for two days he had scarcely tasted food. |&nbsp; &nbsp; 6<br>&nbsp; He was so badly dressed that even a man accustomed to shabbiness would have been ashamed to be seen in the street in such rags. In that quarter of the town, however, scarcely any short-coming in dress would have created surprise. Owing to the proximity of the Hay Market, the number of establishments of bad character, the preponderance of the trading and working class population crowded in these streets and alleys in the heart of Petersburg, types so various were to be seen in the streets that no figure, however queer, would have caused surprise. But there was such accumulated bitterness and contempt in the young man’s heart that, in spite of all the fastidiousness of youth, he minded his rags least of all in the street. It was a different matter when he met with acquaintances or with former fellow students, whom, indeed, he disliked meeting at any time. And yet when a drunken man who, for some unknown reason, was being taken some-where in a huge wagon dragged by a heavy dray horse, suddenly shouted at him as he drove past: “Hey there, German hatter!” bawling at the top of his voice and pointing at him—the young man stopped suddenly and clutched tremulously at his hat. It was a tall round hat from Zimmerman’s, but completely worn out, rusty with age, all torn and bespattered, brimless and bent on one side in a most unseemly fashion. Not shame, however, but quite another feeling akin to terror had overtaken him. |&nbsp; &nbsp; 7<br>&nbsp; “I knew it,” he muttered in confusion, “I thought so! That’s the worst of all! Why, a stupid thing like this, the most trivial detail might spoil the whole plan. Yes, my hat is too noticeable.… It looks absurd and that makes it noticeable.… With my rags I ought to wear a cap, any sort of old pancake, but not this grotesque thing. Nobody wears such a hat, it would be noticed a mile off, it would be remembered.… What matters is that people would remember it, and that would give them a clue. For this business one should be as little conspicuous as possible.… Trifles, trifles are what matter! Why, it’s just such trifles that always ruin everything.…” |&nbsp; &nbsp; 8<br>&nbsp; He had not far to go; he knew indeed how many steps it was from the gate of his lodging house: exactly seven hundred and thirty. He had counted them once when he had been lost in dreams. At the time he had put no faith in those dreams and was only tantalising himself by their hideous but daring recklessness. Now, a month later, he had begun to look upon them differently, and, in spite of the monologues in which he jeered at his own impotence and indecision, he had involuntarily come to regard this “hideous” dream as an exploit to be attempted, although he still did not realise this himself. He was positively going now for a “rehearsal” of his project, and at every step his excitement grew more and more violent. |&nbsp; &nbsp; 9<br>&nbsp; With a sinking heart and a nervous tremor, he went up to a huge house which on one side looked on to the canal, and on the other into the street. This house was let out in tiny tenements and was inhabited by working people of all kinds—tailors, locksmiths, cooks, Germans of sorts, girls picking up a living as best they could, petty clerks, &amp;c. There was a continual coming and going through the two gates and in the two courtyards of the house. Three or four door-keepers were employed on the building. The young man was very glad to meet none of them, and at once slipped unnoticed through the door on the right, and up the staircase. It was a back staircase, dark and narrow, but he was familiar with it already, and knew his way, and he liked all these surroundings: in such darkness even the most inquisitive eyes were not to be dreaded.</div>"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/post.rb:11:in `plain_post'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:11:in `plain_post'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:11:in `plain_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "post", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Beginning of a book"], ["post", "[dov.jpg] ON an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge. |    1\n  He had successfully avoided meeting his landlady on the staircase. His garret was under the roof of a high, five-storied house, and was more like a cupboard than a room. The landlady, who provided him with garret, dinners, and attendance, lived on the floor below, and every time he went out he was obliged to pass her kitchen, the door of which invariably stood open. And each time he passed, the young man had a sick, frightened feeling, which made him scowl and feel ashamed. He was hopelessly in debt to his landlady, and was afraid of meeting her. |    2\n  This was not because he was cowardly and abject, quite the contrary; but for some time past he had been in an overstrained, irritable condition, verging on hypochondria. He had become so completely absorbed in himself, and isolated from his fellows that he dreaded meeting, not only his landlady, but any one at all. He was crushed by poverty, but the anxieties of his position had of late ceased to weigh upon him. He had given up attending to matters of practical importance; he had lost all desire to do so. Nothing that any landlady could do had a real terror for him. But to be stopped on the stairs, to be forced to listen to her trivial, irrelevant gossip, to pestering demands for payment, threats and complaints, and to rack his brains for excuses, to prevaricate, to lie—no, rather than that, he would creep down the stairs like a cat and slip out unseen. |    3\n  This evening, however, on coming out into the street, he became acutely aware of his fears. |    4\n  “I want to attempt a thing like that and am frightened by these trifles,” he thought, with an odd smile. “Hm … yes, all is in a man’s hands and he lets it all slip from cowardice, that’s an axiom. It would be interesting to know what it is men are most afraid of. Taking a new step, uttering a new word is what they fear most.… But I am talking too much. It’s because I chatter that I do nothing. Or perhaps it is that I chatter that I do nothing. I’ve learned to chatter this last month, lying for days together in my den thinking … of Jack the Giant-killer. Why am I going there now? Am I capable of that? Is that serious? It is not serious at all. It’s simply a fantasy to amuse myself; a plaything! Yes, maybe it is a plaything.” |    5\n  The heat in the street was terrible: and the airlessness, the bustle and the plaster, scaffolding, bricks, and dust all about him, and that special Petersburg stench, so familiar to all who are unable to get out of town in summer—all worked painfully upon the young man’s already overwrought nerves. The insufferable stench from the pot-houses, which are particularly numerous in that part of the town, and the drunken men whom he met continually, although it was a working day, completed the revolting misery of the picture. An expression of the profoundest disgust gleamed for a moment in the young man’s refined face. He was, by the way, exceptionally handsome, above the average in height, slim, well-built, with beautiful dark eyes and dark brown hair. Soon he sank into deep thought, or more accurately speaking into a complete blankness of mind; he walked along not observing what was about him and not caring to observe it. From time to time, he would mutter something, from the habit of talking to himself, to which he had just confessed. At these moments he would become conscious that his ideas were sometimes in a tangle and that he was very weak; for two days he had scarcely tasted food. |    6\n  He was so badly dressed that even a man accustomed to shabbiness would have been ashamed to be seen in the street in such rags. In that quarter of the town, however, scarcely any short-coming in dress would have created surprise. Owing to the proximity of the Hay Market, the number of establishments of bad character, the preponderance of the trading and working class population crowded in these streets and alleys in the heart of Petersburg, types so various were to be seen in the streets that no figure, however queer, would have caused surprise. But there was such accumulated bitterness and contempt in the young man’s heart that, in spite of all the fastidiousness of youth, he minded his rags least of all in the street. It was a different matter when he met with acquaintances or with former fellow students, whom, indeed, he disliked meeting at any time. And yet when a drunken man who, for some unknown reason, was being taken some-where in a huge wagon dragged by a heavy dray horse, suddenly shouted at him as he drove past: “Hey there, German hatter!” bawling at the top of his voice and pointing at him—the young man stopped suddenly and clutched tremulously at his hat. It was a tall round hat from Zimmerman’s, but completely worn out, rusty with age, all torn and bespattered, brimless and bent on one side in a most unseemly fashion. Not shame, however, but quite another feeling akin to terror had overtaken him. |    7\n  “I knew it,” he muttered in confusion, “I thought so! That’s the worst of all! Why, a stupid thing like this, the most trivial detail might spoil the whole plan. Yes, my hat is too noticeable.… It looks absurd and that makes it noticeable.… With my rags I ought to wear a cap, any sort of old pancake, but not this grotesque thing. Nobody wears such a hat, it would be noticed a mile off, it would be remembered.… What matters is that people would remember it, and that would give them a clue. For this business one should be as little conspicuous as possible.… Trifles, trifles are what matter! Why, it’s just such trifles that always ruin everything.…” |    8\n  He had not far to go; he knew indeed how many steps it was from the gate of his lodging house: exactly seven hundred and thirty. He had counted them once when he had been lost in dreams. At the time he had put no faith in those dreams and was only tantalising himself by their hideous but daring recklessness. Now, a month later, he had begun to look upon them differently, and, in spite of the monologues in which he jeered at his own impotence and indecision, he had involuntarily come to regard this “hideous” dream as an exploit to be attempted, although he still did not realise this himself. He was positively going now for a “rehearsal” of his project, and at every step his excitement grew more and more violent. |    9\n  With a sinking heart and a nervous tremor, he went up to a huge house which on one side looked on to the canal, and on the other into the street. This house was let out in tiny tenements and was inhabited by working people of all kinds—tailors, locksmiths, cooks, Germans of sorts, girls picking up a living as best they could, petty clerks, &c. There was a continual coming and going through the two gates and in the two courtyards of the house. Three or four door-keepers were employed on the building. The young man was very glad to meet none of them, and at once slipped unnoticed through the door on the right, and up the staircase. It was a back staircase, dark and narrow, but he was familiar with it already, and knew his way, and he liked all these surroundings: in such darkness even the most inquisitive eyes were not to be dreaded."], ["user_id", 2], ["created_at", "2022-03-03 00:49:42.726664"], ["updated_at", "2022-03-03 00:49:42.726664"]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActionText::RichText Create (0.2ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "content"], ["body", "<div><action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSIwZ2lkOi8vYmxvZy9BY3RpdmVTdG9yYWdlOjpCbG9iLzE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--6b1b72095ba23e2de2f2186e5905a5be824acd19\" content-type=\"image/jpeg\" url=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4/dov.jpg\" filename=\"dov.jpg\" filesize=\"84760\" width=\"700\" height=\"1027\" presentation=\"gallery\"></action-text-attachment> ON an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge. |    1<br>  He had successfully avoided meeting his landlady on the staircase. His garret was under the roof of a high, five-storied house, and was more like a cupboard than a room. The landlady, who provided him with garret, dinners, and attendance, lived on the floor below, and every time he went out he was obliged to pass her kitchen, the door of which invariably stood open. And each time he passed, the young man had a sick, frightened feeling, which made him scowl and feel ashamed. He was hopelessly in debt to his landlady, and was afraid of meeting her. |    2<br>  This was not because he was cowardly and abject, quite the contrary; but for some time past he had been in an overstrained, irritable condition, verging on hypochondria. He had become so completely absorbed in himself, and isolated from his fellows that he dreaded meeting, not only his landlady, but any one at all. He was crushed by poverty, but the anxieties of his position had of late ceased to weigh upon him. He had given up attending to matters of practical importance; he had lost all desire to do so. Nothing that any landlady could do had a real terror for him. But to be stopped on the stairs, to be forced to listen to her trivial, irrelevant gossip, to pestering demands for payment, threats and complaints, and to rack his brains for excuses, to prevaricate, to lie—no, rather than that, he would creep down the stairs like a cat and slip out unseen. |    3<br>  This evening, however, on coming out into the street, he became acutely aware of his fears. |    4<br>  “I want to attempt a thing like that and am frightened by these trifles,” he thought, with an odd smile. “Hm … yes, all is in a man’s hands and he lets it all slip from cowardice, that’s an axiom. It would be interesting to know what it is men are most afraid of. Taking a new step, uttering a new word is what they fear most.… But I am talking too much. It’s because I chatter that I do nothing. Or perhaps it is that I chatter that I do nothing. I’ve learned to chatter this last month, lying for days together in my den thinking … of Jack the Giant-killer. Why am I going there now? Am I capable of that? Is that serious? It is not serious at all. It’s simply a fantasy to amuse myself; a plaything! Yes, maybe it is a plaything.” |    5<br>  The heat in the street was terrible: and the airlessness, the bustle and the plaster, scaffolding, bricks, and dust all about him, and that special Petersburg stench, so familiar to all who are unable to get out of town in summer—all worked painfully upon the young man’s already overwrought nerves. The insufferable stench from the pot-houses, which are particularly numerous in that part of the town, and the drunken men whom he met continually, although it was a working day, completed the revolting misery of the picture. An expression of the profoundest disgust gleamed for a moment in the young man’s refined face. He was, by the way, exceptionally handsome, above the average in height, slim, well-built, with beautiful dark eyes and dark brown hair. Soon he sank into deep thought, or more accurately speaking into a complete blankness of mind; he walked along not observing what was about him and not caring to observe it. From time to time, he would mutter something, from the habit of talking to himself, to which he had just confessed. At these moments he would become conscious that his ideas were sometimes in a tangle and that he was very weak; for two days he had scarcely tasted food. |    6<br>  He was so badly dressed that even a man accustomed to shabbiness would have been ashamed to be seen in the street in such rags. In that quarter of the town, however, scarcely any short-coming in dress would have created surprise. Owing to the proximity of the Hay Market, the number of establishments of bad character, the preponderance of the trading and working class population crowded in these streets and alleys in the heart of Petersburg, types so various were to be seen in the streets that no figure, however queer, would have caused surprise. But there was such accumulated bitterness and contempt in the young man’s heart that, in spite of all the fastidiousness of youth, he minded his rags least of all in the street. It was a different matter when he met with acquaintances or with former fellow students, whom, indeed, he disliked meeting at any time. And yet when a drunken man who, for some unknown reason, was being taken some-where in a huge wagon dragged by a heavy dray horse, suddenly shouted at him as he drove past: “Hey there, German hatter!” bawling at the top of his voice and pointing at him—the young man stopped suddenly and clutched tremulously at his hat. It was a tall round hat from Zimmerman’s, but completely worn out, rusty with age, all torn and bespattered, brimless and bent on one side in a most unseemly fashion. Not shame, however, but quite another feeling akin to terror had overtaken him. |    7<br>  “I knew it,” he muttered in confusion, “I thought so! That’s the worst of all! Why, a stupid thing like this, the most trivial detail might spoil the whole plan. Yes, my hat is too noticeable.… It looks absurd and that makes it noticeable.… With my rags I ought to wear a cap, any sort of old pancake, but not this grotesque thing. Nobody wears such a hat, it would be noticed a mile off, it would be remembered.… What matters is that people would remember it, and that would give them a clue. For this business one should be as little conspicuous as possible.… Trifles, trifles are what matter! Why, it’s just such trifles that always ruin everything.…” |    8<br>  He had not far to go; he knew indeed how many steps it was from the gate of his lodging house: exactly seven hundred and thirty. He had counted them once when he had been lost in dreams. At the time he had put no faith in those dreams and was only tantalising himself by their hideous but daring recklessness. Now, a month later, he had begun to look upon them differently, and, in spite of the monologues in which he jeered at his own impotence and indecision, he had involuntarily come to regard this “hideous” dream as an exploit to be attempted, although he still did not realise this himself. He was positively going now for a “rehearsal” of his project, and at every step his excitement grew more and more violent. |    9<br>  With a sinking heart and a nervous tremor, he went up to a huge house which on one side looked on to the canal, and on the other into the street. This house was let out in tiny tenements and was inhabited by working people of all kinds—tailors, locksmiths, cooks, Germans of sorts, girls picking up a living as best they could, petty clerks, &amp;c. There was a continual coming and going through the two gates and in the two courtyards of the house. Three or four door-keepers were employed on the building. The young man was very glad to meet none of them, and at once slipped unnoticed through the door on the right, and up the staircase. It was a back staircase, dark and narrow, but he was familiar with it already, and knew his way, and he liked all these surroundings: in such darkness even the most inquisitive eyes were not to be dreaded.</div>"], ["record_type", "Post"], ["record_id", 1], ["created_at", "2022-03-03 00:49:42.733143"], ["updated_at", "2022-03-03 00:49:42.733143"]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true}"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "embeds"], ["record_type", "ActionText::RichText"], ["record_id", 2], ["blob_id", 1], ["created_at", "2022-03-03 00:49:42.752269"]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2022-03-03 00:49:42.755608"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mActionText::RichText Update (0.1ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "updated_at" = ? WHERE "action_text_rich_texts"."id" = ?[0m  [["updated_at", "2022-03-03 00:49:42.755313"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (88.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:19:in `create'
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b27ca5f8-1815-4f84-8bc2-6b027b8267ce) to Async(default) with arguments: #<GlobalID:0x00007fec4c951cb8 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 150ms (ActiveRecord: 90.2ms | Allocations: 36541)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b27ca5f8-1815-4f84-8bc2-6b027b8267ce] Performing ActiveStorage::AnalyzeJob (Job ID: b27ca5f8-1815-4f84-8bc2-6b027b8267ce) from Async(default) enqueued at 2022-03-03T00:49:42Z with arguments: #<GlobalID:0x00007fec50084d20 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b27ca5f8-1815-4f84-8bc2-6b027b8267ce] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: 1abs05r9jrxvo2nyospf9l9zpe1o[0m
+Started GET "/posts" for ::1 at 2022-03-02 16:49:42 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6945)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.3ms | Allocations: 9018)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b27ca5f8-1815-4f84-8bc2-6b027b8267ce]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b27ca5f8-1815-4f84-8bc2-6b027b8267ce]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":700,\"height\":1027,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b27ca5f8-1815-4f84-8bc2-6b027b8267ce]   [1m[36mTRANSACTION (84.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b27ca5f8-1815-4f84-8bc2-6b027b8267ce] Performed ActiveStorage::AnalyzeJob (Job ID: b27ca5f8-1815-4f84-8bc2-6b027b8267ce) from Async(default) in 145.29ms
+Started GET "/posts/1" for ::1 at 2022-03-02 16:49:44 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 5.5ms | Allocations: 2821)
+  Rendered /home/lucas/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.6/app/views/action_text/content/_layout.html.erb (Duration: 12.5ms | Allocations: 7261)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of posts/_comment.html.erb [0 times] (Duration: 0.1ms | Allocations: 109)
+  Rendered comments/_form.html.erb (Duration: 1.0ms | Allocations: 466)
+  Rendered posts/show.html.erb within layouts/application (Duration: 20.7ms | Allocations: 11037)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 15553)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 1.0ms | Allocations: 17850)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUJHa0NBQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--c3eabc9af792a30131c2a0d4355426185af640db/dov.jpg" for ::1 at 2022-03-02 16:49:44 -0800
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08fb31054463fc56ed49002883093c68cdd543c4", "variation_key"=>"[FILTERED]", "filename"=>"dov"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 1], ["variation_digest", "g9oDsuZ2Ke1OimlPvx7V2sj306E="], ["LIMIT", 1]]
+[36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: 1abs05r9jrxvo2nyospf9l9zpe1o[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::VariantRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("blob_id", "variation_digest") VALUES (?, ?)[0m  [["blob_id", 1], ["variation_digest", "g9oDsuZ2Ke1OimlPvx7V2sj306E="]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "ysws3asepsjzqvgi446m87fgdhmw"], ["filename", "dov.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 48776], ["checksum", "wHq2pSFjjiO5YEOtPKP29Q=="], ["created_at", "2022-03-03 00:49:44.487479"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "ActiveStorage::VariantRecord"], ["record_id", 1], ["blob_id", 2], ["created_at", "2022-03-03 00:49:44.490977"]]
+  [1m[36mTRANSACTION (118.2ms)[0m  [1m[36mcommit transaction[0m
+[36m  Disk Storage (2.2ms) [0m[32mUploaded file to key: ysws3asepsjzqvgi446m87fgdhmw (checksum: wHq2pSFjjiO5YEOtPKP29Q==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 419e3a54-9594-4080-891e-358c03756c82) to Async(default) with arguments: #<GlobalID:0x000055aec7de7648 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/2>>
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: ysws3asepsjzqvgi446m87fgdhmw (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 302 Found in 213ms (ActiveRecord: 119.9ms | Allocations: 34567)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [419e3a54-9594-4080-891e-358c03756c82] Performing ActiveStorage::AnalyzeJob (Job ID: 419e3a54-9594-4080-891e-358c03756c82) from Async(default) enqueued at 2022-03-03T00:49:44Z with arguments: #<GlobalID:0x000055aec7f2ed58 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [419e3a54-9594-4080-891e-358c03756c82] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: ysws3asepsjzqvgi446m87fgdhmw[0m
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg" for ::1 at 2022-03-02 16:49:44 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 366)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [419e3a54-9594-4080-891e-358c03756c82]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [419e3a54-9594-4080-891e-358c03756c82]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":523,\"height\":768,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [419e3a54-9594-4080-891e-358c03756c82]   [1m[36mTRANSACTION (102.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [419e3a54-9594-4080-891e-358c03756c82] Performed ActiveStorage::AnalyzeJob (Job ID: 419e3a54-9594-4080-891e-358c03756c82) from Async(default) in 137.67ms
+Started POST "/posts/1/comments" for ::1 at 2022-03-02 16:49:50 -0800
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"comment"=>"meow"}, "button"=>"", "post_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("username", "comment", "created_at", "updated_at", "user_id", "post_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "lucas"], ["comment", "meow"], ["created_at", "2022-03-03 00:49:50.178319"], ["updated_at", "2022-03-03 00:49:50.178319"], ["user_id", 2], ["post_id", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (110.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 129ms (ActiveRecord: 111.5ms | Allocations: 8793)
+
+
+Started GET "/posts/1" for ::1 at 2022-03-02 16:49:50 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.0ms | Allocations: 627)
+  Rendered /home/lucas/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.6/app/views/action_text/content/_layout.html.erb (Duration: 6.4ms | Allocations: 4570)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of posts/_comment.html.erb [1 times] (Duration: 0.8ms | Allocations: 245)
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 438)
+  Rendered posts/show.html.erb within layouts/application (Duration: 17.5ms | Allocations: 8320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 12873)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 0.5ms | Allocations: 15142)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg" for ::1 at 2022-03-02 16:49:50 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started GET "/posts/1" for ::1 at 2022-03-02 16:49:53 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.0ms | Allocations: 559)
+  Rendered /home/lucas/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.6/app/views/action_text/content/_layout.html.erb (Duration: 7.1ms | Allocations: 4429)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of posts/_comment.html.erb [1 times] (Duration: 0.6ms | Allocations: 230)
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 407)
+  Rendered posts/show.html.erb within layouts/application (Duration: 32.3ms | Allocations: 8017)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 12456)
+Completed 200 OK in 70ms (Views: 45.4ms | ActiveRecord: 0.6ms | Allocations: 14678)
+
+
+Started GET "/posts/1" for ::1 at 2022-03-02 16:50:07 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.0ms | Allocations: 557)
+  Rendered /home/lucas/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.6/app/views/action_text/content/_layout.html.erb (Duration: 6.7ms | Allocations: 4427)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of posts/_comment.html.erb [1 times] (Duration: 0.4ms | Allocations: 230)
+  Rendered comments/_form.html.erb (Duration: 0.6ms | Allocations: 407)
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.9ms | Allocations: 8017)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 12456)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 0.5ms | Allocations: 14677)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg" for ::1 at 2022-03-02 16:50:07 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/posts/1" for ::1 at 2022-03-02 16:50:09 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.9ms | Allocations: 558)
+  Rendered /home/lucas/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.6/app/views/action_text/content/_layout.html.erb (Duration: 6.8ms | Allocations: 4428)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of posts/_comment.html.erb [1 times] (Duration: 0.4ms | Allocations: 230)
+  Rendered comments/_form.html.erb (Duration: 0.6ms | Allocations: 407)
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 8017)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 12456)
+Completed 200 OK in 24ms (Views: 19.6ms | ActiveRecord: 0.4ms | Allocations: 14683)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg" for ::1 at 2022-03-02 16:50:09 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/posts/1" for ::1 at 2022-03-02 16:50:13 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.0ms | Allocations: 555)
+  Rendered /home/lucas/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.6/app/views/action_text/content/_layout.html.erb (Duration: 6.5ms | Allocations: 4423)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of posts/_comment.html.erb [1 times] (Duration: 0.4ms | Allocations: 230)
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 407)
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 8009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 12376)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 0.4ms | Allocations: 14596)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg" for ::1 at 2022-03-02 16:50:13 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/posts" for ::1 at 2022-03-02 16:50:17 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 6696)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 8372)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlWE4zY3pOaGMyVndjMnA2Y1habmFUUTBObTA0TjJablpHaHRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmRpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJSdmRpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDNUMDA6NTQ6NDQuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--48ed78e47bcc25c87b86eca962a544dee4f7f91f/dov.jpg" for ::1 at 2022-03-02 16:50:17 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dov"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/posts" for ::1 at 2022-03-02 16:50:19 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6694)
+Completed 200 OK in 15ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 8360)
+
+
+Started GET "/posts" for ::1 at 2022-03-02 16:50:20 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 6767)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.3ms | Allocations: 8433)
+
+
+Started GET "/users/edit" for ::1 at 2022-03-02 16:50:25 -0800
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 6017)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.1ms | Allocations: 7785)
+
+
+Started PUT "/users" for ::1 at 2022-03-02 16:50:43 -0800
+Processing by RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lucas.odonnelll@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$12$Op7ssAh7Q5cCtcVWysZufem9IuW2x3378oufBbzOrsZqHt57/zLuG"], ["updated_at", "2022-03-03 00:50:44.208352"], ["id", 2]]
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 546ms (ActiveRecord: 89.8ms | Allocations: 11082)
+
+
+Started GET "/" for ::1 at 2022-03-02 16:50:44 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 6696)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 8369)
+
+
+Started GET "/users/edit" for ::1 at 2022-03-02 16:50:50 -0800
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5801)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 7612)
+
+
+Started DELETE "/users" for ::1 at 2022-03-02 16:50:53 -0800
+Processing by RegistrationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "content"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  [1m[36mActionText::RichText Destroy (0.2ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."id" = ?[0m  [["id", 2]]
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (77.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 60eb804e-03f5-4571-b9e9-8014230a3538) to Async(default) with arguments: #<GlobalID:0x000055aec7404e78 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/
+Completed 302 Found in 132ms (ActiveRecord: 79.3ms | Allocations: 27625)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538] Performing ActiveStorage::PurgeJob (Job ID: 60eb804e-03f5-4571-b9e9-8014230a3538) from Async(default) enqueued at 2022-03-03T00:50:53Z with arguments: #<GlobalID:0x000055aec7981f90 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::VariantRecord Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mTRANSACTION (113.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538] Enqueued ActiveStorage::PurgeJob (Job ID: edd41d2d-7f42-468e-88ff-f100a0b17261) to Async(default) with arguments: #<GlobalID:0x000055aec83eeb40 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/2>>
+Started GET "/" for ::1 at 2022-03-02 16:50:53 -0800
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538] [36m  Disk Storage (0.5ms) [0m[31mDeleted file from key: 1abs05r9jrxvo2nyospf9l9zpe1o[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/1abs05r9jrxvo2nyospf9l9zpe1o/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [60eb804e-03f5-4571-b9e9-8014230a3538] Performed ActiveStorage::PurgeJob (Job ID: 60eb804e-03f5-4571-b9e9-8014230a3538) from Async(default) in 139.59ms
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261] Performing ActiveStorage::PurgeJob (Job ID: edd41d2d-7f42-468e-88ff-f100a0b17261) from Async(default) enqueued at 2022-03-03T00:50:53Z with arguments: #<GlobalID:0x000055aec80a0bc8 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 2], ["LIMIT", 1]]
+Processing by PostsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 2]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261]   [1m[36mTRANSACTION (50.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261] [36m  Disk Storage (0.5ms) [0m[31mDeleted file from key: ysws3asepsjzqvgi446m87fgdhmw[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/ysws3asepsjzqvgi446m87fgdhmw/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edd41d2d-7f42-468e-88ff-f100a0b17261] Performed ActiveStorage::PurgeJob (Job ID: edd41d2d-7f42-468e-88ff-f100a0b17261) from Async(default) in 65.71ms
+Started GET "/users/sign_in" for ::1 at 2022-03-02 16:50:53 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5793)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 6520)
+
+

@@ -2,7 +2,7 @@ Dear Hiring Manager,
 
 After graduating with a degree in Music and spending a year teaching English in Japan, I have honed in on what I want to do professionally. Initially, my long term goal was to become a Linux system administrator, so I became A+ certified and got an entry level IT job. I started looking into Bash scripting. I ended up finding this type of problem solving very enjoyable and eventually my goal shifted from wanting to be a Linux system administrator to wanting to be a programmer.
 
-I started working through The Odin Project, an open source coding curriculum.  After a year, I have created applications purely with Ruby on Rails and I have created applications using Rails as an API with a ReactJS frontend. Now I believe I am ready to get some real world experience and an internship with Hedgeye seems like a logical next step.
+I started working through The Odin Project, an open source coding curriculum.  After a year, I have created applications purely with Ruby on Rails and I have created applications using Rails as an API with a ReactJS frontend. I am ready to get some real world experience and an internship with Hedgeye seems like it would help me improve my abilities as a web developer.
 
 Here are some of the skills I possess that would allow me to contribute to your organization:
 
