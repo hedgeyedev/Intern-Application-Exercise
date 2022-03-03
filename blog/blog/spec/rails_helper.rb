@@ -1,7 +1,9 @@
+ENV['RAILS_ENV'] = 'test'
 require 'factory_bot_rails'
+require 'database_cleaner/active_record'
 require_relative 'support/factory_bot.rb'
 require_relative './spec_helper.rb'
-ENV['RAILS_ENV'] ||= 'test'
+
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -33,8 +35,8 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
   end
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do

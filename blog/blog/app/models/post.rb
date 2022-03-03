@@ -7,8 +7,10 @@ class Post < ApplicationRecord
   before_validation :plain_post
 
   def plain_post
-    text = self.rich_text_content.to_plain_text
-    self.post = text
+    if self.post.nil?
+      text = self.rich_text_content.to_plain_text
+      self.post = text
+    end
   end
 
   def post_preview
